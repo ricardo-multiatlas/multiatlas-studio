@@ -1,0 +1,17 @@
+{
+  "name": "light-editorial",
+  "tokens": {
+    "--ma-bg": "#faf9f6",
+    "--ma-surface": "rgba(10,10,10,0.03)",
+    "--ma-border": "rgba(10,10,10,0.10)",
+    "--ma-text": "#111113",
+    "--ma-muted": "rgba(17,17,19,0.55)",
+    "--ma-accent": "#7c3aed",
+    "--ma-accent-2": "#db2777",
+    "--ma-accent-3": "#0284c7",
+    "--ma-glow": "rgba(124,58,237,0.18)",
+    "--ma-radius": "0.75rem",
+    "--ma-font-display": "'Playfair Display', serif",
+    "--ma-font-body": "'Inter', sans-serif"
+  }
+}

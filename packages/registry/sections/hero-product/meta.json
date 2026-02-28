@@ -1,0 +1,27 @@
+{
+  "slug": "hero-product",
+  "title": "Hero Producto (mockup tilt)",
+  "category": "Heroes",
+  "industry_tags": [
+    "saas",
+    "app",
+    "herramienta",
+    "startup"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
+  "reference": "Stillmind / product heroes",
+  "defaults": {
+    "eyebrow": "Nuevo",
+    "headline": "Claridad en un universo ruidoso",
+    "sub": "La herramienta que convierte tu caos en un sistema que trabaja por ti.",
+    "cta": "Pruébalo ahora",
+    "cta_href": "#contacto",
+    "mock_title": "studio.multiatlas.site",
+    "mock_line1": "▸ Generando dirección de arte…",
+    "mock_line2": "▸ Componiendo 9 secciones del registry…",
+    "mock_line3": "✓ Site listo en 42s — preview desplegado"
+  }
+}

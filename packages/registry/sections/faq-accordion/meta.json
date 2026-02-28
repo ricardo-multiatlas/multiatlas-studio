@@ -1,0 +1,19 @@
+{
+  "slug": "faq-accordion",
+  "title": "FAQ acordeón",
+  "category": "FAQs",
+  "industry_tags": ["general"],
+  "variants": ["dark-glow", "light-editorial"],
+  "defaults": {
+    "eyebrow": "FAQ",
+    "headline": "Preguntas frecuentes",
+    "q1": "¿En qué se diferencia de v0 o Lovable?",
+    "a1": "Esas herramientas generan diseño desde cero y el resultado promedia hacia lo genérico. Aquí el modelo compone sobre un registry curado a mano: cada sección ya es premium antes de que la AI la toque.",
+    "q2": "¿El código es mío?",
+    "a2": "Sí. Exportas HTML o React limpio, sin lock-in ni marcas de agua en planes de pago.",
+    "q3": "¿Puedo usarlo para clientes?",
+    "a3": "Sí, todos los planes de pago incluyen uso comercial y de clientes. Para agencias hay servicio white-label con entrega hecha por nosotros.",
+    "q4": "¿Cuánto tarda un site?",
+    "a4": "Una generación tarda minutos. Un site white-label entregado y revisado por humanos, menos de 5 días."
+  }
+}

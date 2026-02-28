@@ -1,0 +1,201 @@
+{
+  "name": "clinica-novadent",
+  "lang": "es",
+  "theme": {
+    "tokens": {
+      "--ma-bg": "#F7FAFA",
+      "--ma-surface": "rgba(12,60,70,0.035)",
+      "--ma-border": "rgba(12,60,70,0.13)",
+      "--ma-text": "#0E2A31",
+      "--ma-muted": "rgba(14,42,49,0.58)",
+      "--ma-accent": "#0E7C86",
+      "--ma-accent-2": "#0A5560",
+      "--ma-accent-3": "#0E7C86",
+      "--ma-glow": "rgba(14,124,134,0.08)",
+      "--ma-radius": "1rem",
+      "--ma-font-display": "'Archivo', sans-serif",
+      "--ma-font-body": "'Inter', sans-serif"
+    }
+  },
+  "meta": {
+    "title": "NovaDent — Clínica dental (Demo Multiatlas Studio)",
+    "description": "Demo generada con el motor de Multiatlas Studio."
+  },
+  "sections": [
+    {
+      "use": "nav-simple",
+      "copy": {
+        "brand": "NovaDent",
+        "link1": "Tratamientos",
+        "link1_href": "#servicios",
+        "link2": "Especialistas",
+        "link2_href": "#equipo",
+        "link3": "Ubicación",
+        "link3_href": "#ubicacion",
+        "cta": "Agendar",
+        "cta_href": "#contacto"
+      }
+    },
+    {
+      "use": "hero-glow",
+      "copy": {
+        "eyebrow": "Demo · Hecho con Multiatlas Studio",
+        "headline_1": "Tu sonrisa,",
+        "headline_em": "diseñada",
+        "headline_2": "con precisión",
+        "sub": "Ortodoncia invisible y estética dental en el corazón de la ciudad. Primera valoración sin costo.",
+        "cta": "Agendar valoración",
+        "cta_href": "#contacto",
+        "cta2": "Ver tratamientos",
+        "cta2_href": "#servicios",
+        "bg_img": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=60"
+      }
+    },
+    {
+      "use": "services-grid",
+      "copy": {
+        "eyebrow": "Tratamientos",
+        "headline": "Lo que hacemos por tu sonrisa",
+        "sub": "Precios claros desde la primera cita.",
+        "s1_icon": "◎",
+        "s1_title": "Ortodoncia invisible",
+        "s1_desc": "Alineadores a medida con seguimiento digital.",
+        "s1_price": "desde $4,500 MXN/mes",
+        "s2_icon": "✦",
+        "s2_title": "Carillas de porcelana",
+        "s2_desc": "Diseño de sonrisa con resultado natural.",
+        "s2_price": "desde $6,900 MXN/pieza",
+        "s3_icon": "◐",
+        "s3_title": "Blanqueamiento",
+        "s3_desc": "Una sesión, hasta 6 tonos más claro.",
+        "s3_price": "$3,200 MXN",
+        "s4_icon": "✚",
+        "s4_title": "Implantes",
+        "s4_desc": "Titanio con corona incluida y garantía.",
+        "s4_price": "desde $18,500 MXN",
+        "s5_icon": "▣",
+        "s5_title": "Limpieza profunda",
+        "s5_desc": "Ultrasonido y pulido en 40 minutos.",
+        "s5_price": "$1,100 MXN",
+        "s6_icon": "◈",
+        "s6_title": "Odontopediatría",
+        "s6_desc": "Consultorio adaptado para niños.",
+        "s6_price": "consulta $650 MXN"
+      }
+    },
+    {
+      "use": "steps-process",
+      "copy": {
+        "eyebrow": "Tu primera visita",
+        "headline": "De la valoración al plan, en una sola cita",
+        "p1_title": "Escaneo digital 3D",
+        "p1_desc": "Sin moldes incómodos. 15 minutos y vemos todo.",
+        "p2_title": "Diagnóstico y plan",
+        "p2_desc": "Opciones de tratamiento con precio cerrado y plazos reales.",
+        "p3_title": "Empiezas cuando decidas",
+        "p3_desc": "Sin presión. El plan y el presupuesto son tuyos."
+      }
+    },
+    {
+      "use": "team-cards",
+      "copy": {
+        "eyebrow": "Especialistas",
+        "headline": "Quiénes te atienden",
+        "sub": "Certificados y en formación continua.",
+        "t1_ini": "MR",
+        "t1_name": "Dra. Mariana Reyes",
+        "t1_role": "Ortodoncia",
+        "t1_cred": "Esp. UNAM · 12 años de práctica",
+        "t2_ini": "JC",
+        "t2_name": "Dr. Jorge Cantú",
+        "t2_role": "Implantología",
+        "t2_cred": "Esp. UANL · 15 años de práctica",
+        "t3_ini": "AS",
+        "t3_name": "Dra. Ana Sofía Vega",
+        "t3_role": "Odontopediatría",
+        "t3_cred": "Esp. UAG · 8 años de práctica"
+      }
+    },
+    {
+      "use": "faq-accordion",
+      "copy": {
+        "eyebrow": "Dudas frecuentes",
+        "headline": "Antes de tu primera cita",
+        "q1": "¿La valoración inicial tiene costo?",
+        "a1": "No. La primera valoración con escaneo digital es gratuita y sin compromiso.",
+        "q2": "¿Cuánto dura un tratamiento de ortodoncia invisible?",
+        "a2": "Depende de cada caso; el rango típico va de 6 a 18 meses. Lo sabrás con exactitud tras el escaneo.",
+        "q3": "¿Manejan planes de pago?",
+        "a3": "Sí, planes quincenales o mensuales sin intereses en la mayoría de los tratamientos.",
+        "q4": "¿Atienden urgencias?",
+        "a4": "Sí, reservamos espacios diarios para urgencias con dolor."
+      }
+    },
+    {
+      "use": "location-hours",
+      "copy": {
+        "eyebrow": "La clínica",
+        "headline": "Fácil de llegar, fácil de agendar",
+        "direccion": "Av. Reforma 1234, Col. Juárez, CDMX (demo)",
+        "telefono": "(55) 5555 0100 (demo)",
+        "h1_dias": "Lunes a viernes",
+        "h1_horas": "9:00 – 20:00",
+        "h2_dias": "Sábado",
+        "h2_horas": "9:00 – 15:00",
+        "h3_dias": "Domingo",
+        "h3_horas": "Urgencias con cita"
+      }
+    },
+    {
+      "use": "contact-form",
+      "copy": {
+        "eyebrow": "Agenda",
+        "headline": "Reserva tu valoración",
+        "sub": "Te confirmamos por WhatsApp o email en menos de 24 horas.",
+        "b1": "Valoración inicial sin costo",
+        "b2": "Escaneo digital 3D incluido",
+        "b3": "Planes de pago sin intereses",
+        "form_subject": "Lead DEMO NovaDent — Multiatlas Studio",
+        "cta": "Solicitar cita",
+        "email_directo": "hola@novadent-demo.mx",
+        "form_action": "#",
+        "nota": "Formulario de demostración — en tu site enviaría la cita a tu correo o WhatsApp.",
+        "opt1": "Valoración inicial (gratuita)",
+        "opt2": "Ortodoncia invisible",
+        "opt3": "Estética dental / carillas",
+        "opt4": "Urgencia con dolor",
+        "opt5": "Otro tratamiento",
+        "f3_label": "Teléfono / WhatsApp",
+        "f3_placeholder": "(55) 1234 5678",
+        "f2_placeholder": "tu@correo.com",
+        "f5_placeholder": "Cuéntanos qué necesitas o cuándo te gustaría venir…"
+      }
+    },
+    {
+      "use": "footer-cta",
+      "copy": {
+        "headline": "Sonríe con confianza",
+        "sub": "NovaDent · Demo creada con Multiatlas Studio.",
+        "cta": "Agendar valoración",
+        "cta_href": "#contacto",
+        "brand": "NovaDent",
+        "tagline": "Clínica dental de especialidades. Sitio de demostración generado con Multiatlas Studio.",
+        "col1_title": "Clínica",
+        "col1_l1": "Tratamientos",
+        "col1_l2": "Especialistas",
+        "col1_l3": "Preguntas frecuentes",
+        "col2_title": "Pacientes",
+        "col2_l1": "Agendar cita",
+        "col2_l2": "Ubicación y horarios",
+        "col2_l3": "Primera visita",
+        "legal": "Demo de Multiatlas Studio — negocio ficticio con fines de demostración.",
+        "col1_l1_href": "#servicios",
+        "col1_l2_href": "#equipo",
+        "col1_l3_href": "#faq",
+        "col2_l1_href": "#contacto",
+        "col2_l2_href": "#ubicacion",
+        "col2_l3_href": "#proceso"
+      }
+    }
+  ]
+}

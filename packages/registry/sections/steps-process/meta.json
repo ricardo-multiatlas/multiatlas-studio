@@ -1,0 +1,14 @@
+{
+  "slug": "steps-process",
+  "title": "Proceso en 3 pasos",
+  "category": "Process",
+  "industry_tags": ["general"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "defaults": {
+    "eyebrow": "Cómo funciona",
+    "headline": "Tres pasos, cero fricción",
+    "p1_title": "Paso uno", "p1_desc": "Descripción del primer paso.",
+    "p2_title": "Paso dos", "p2_desc": "Descripción del segundo paso.",
+    "p3_title": "Paso tres", "p3_desc": "Descripción del tercer paso."
+  }
+}

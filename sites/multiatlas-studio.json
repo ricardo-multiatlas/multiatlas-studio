@@ -1,0 +1,114 @@
+{
+  "name": "multiatlas-studio",
+  "lang": "es",
+  "theme": "multiatlas",
+  "meta": {
+    "title": "Multiatlas Studio — Sites premium creados con AI",
+    "description": "Registry curado + generación AI. Sites de nivel agencia en minutos, no semanas. White-label para agencias."
+  },
+  "sections": [
+    {
+      "use": "nav-header",
+      "copy": {
+        "cta": "Solicitar propuesta",
+        "cta_href": "#contacto",
+        "link1": "Registry",
+        "link1_href": "registry/index.html",
+        "link2": "Cómo funciona",
+        "link2_href": "#features",
+        "link3": "Demos",
+        "link3_href": "#gallery"
+      }
+    },
+    {
+      "use": "hero-glow",
+      "copy": {
+        "eyebrow": "Más de 30 años de marketing · Ahora con AI",
+        "headline_1": "Sites premium,",
+        "headline_em": "criterio",
+        "headline_2": "de tres décadas",
+        "sub": "La AI genera. Nosotros curamos. Cada site se compone sobre diseño aprobado por una agencia con más de 30 años de oficio.",
+        "cta": "Solicitar propuesta",
+        "cta2": "Ver el registry",
+        "cta_href": "#contacto",
+        "cta2_href": "registry/index.html"
+      }
+    },
+    {
+      "use": "features-bento",
+      "copy": {
+        "eyebrow": "Por qué Multiatlas",
+        "headline": "Premium por diseño, no por suerte",
+        "sub": "Lo que otros generadores promedian, nosotros lo curamos."
+      }
+    },
+    {
+      "use": "hero-product",
+      "copy": {
+        "eyebrow": "El motor",
+        "headline": "De brief a site desplegado",
+        "sub": "Describe tu negocio. El pipeline selecciona secciones, define dirección de arte, escribe el copy y hace QA. Tú apruebas.",
+        "cta": "Ver cómo funciona",
+        "cta_href": "#features",
+        "mock_title": "studio.multiatlas.site",
+        "mock_line1": "▸ Brief recibido: clínica dental, CDMX…",
+        "mock_line2": "▸ Componiendo 8 secciones del registry…",
+        "mock_line3": "✓ QA 9/10 — preview desplegado en 42s"
+      }
+    },
+    {
+      "use": "gallery-hover",
+      "copy": {
+        "eyebrow": "Galería",
+        "headline": "Hecho con el registry",
+        "sub": "Sites reales compuestos con secciones curadas."
+      }
+    },
+    {
+      "use": "pricing-duo",
+      "copy": {
+        "sub": "Para freelancers y agencias. El servicio white-label se cotiza aparte.",
+        "bar_text": "Founding Members — 100 plazas · el precio sube al cerrar la beta",
+        "p1_cta": "Empezar — hablemos",
+        "p2_cta": "Reservar plaza founding",
+        "countdown_hours": ""
+      }
+    },
+    {
+      "use": "faq-accordion",
+      "copy": {}
+    },
+    {
+      "use": "background-animated",
+      "copy": {
+        "headline": "¿Agencia? Nosotros producimos, tú revendes",
+        "sub": "Sites white-label de $300–600 USD, entregados en menos de 5 días, con tu marca.",
+        "cta": "Hablar con nosotros",
+        "cta_href": "#contacto"
+      }
+    },
+    {
+      "use": "contact-form",
+      "copy": {}
+    },
+    {
+      "use": "footer-cta",
+      "copy": {
+        "cta": "Solicitar propuesta",
+        "cta_href": "#contacto",
+        "col1_l1": "Biblioteca",
+        "col1_l1_href": "registry/index.html",
+        "col1_l2": "Cómo funciona",
+        "col1_l2_href": "#features",
+        "col1_l3": "Precios",
+        "col1_l3_href": "#pricing",
+        "col2_l1": "Demos",
+        "col2_l1_href": "#gallery",
+        "col2_l2": "Solicitar propuesta",
+        "col2_l2_href": "#contacto",
+        "col2_l3": "Contacto",
+        "col2_l3_href": "#contacto"
+      }
+    }
+  ]
+}

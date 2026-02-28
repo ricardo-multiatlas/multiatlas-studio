@@ -1,0 +1,175 @@
+{
+  "name": "restaurante-casaorigen",
+  "lang": "es",
+  "theme": {
+    "tokens": {
+      "--ma-bg": "#FBF6EF",
+      "--ma-surface": "rgba(60,30,15,0.04)",
+      "--ma-border": "rgba(60,30,15,0.13)",
+      "--ma-text": "#2B1D14",
+      "--ma-muted": "rgba(43,29,20,0.58)",
+      "--ma-accent": "#B4552D",
+      "--ma-accent-2": "#7D4020",
+      "--ma-accent-3": "#B4552D",
+      "--ma-glow": "rgba(180,85,45,0.09)",
+      "--ma-radius": "1rem",
+      "--ma-font-display": "'Playfair Display', serif",
+      "--ma-font-body": "'Inter', sans-serif"
+    }
+  },
+  "meta": {
+    "title": "Casa Origen — Cocina de raíz (Demo Multiatlas Studio)",
+    "description": "Demo generada con el motor de Multiatlas Studio."
+  },
+  "sections": [
+    {
+      "use": "nav-simple",
+      "copy": {
+        "brand": "Casa Origen",
+        "link1": "Menú",
+        "link1_href": "#menu",
+        "link2": "Horarios",
+        "link2_href": "#ubicacion",
+        "link3": "Preguntas",
+        "link3_href": "#faq",
+        "cta": "Reservar",
+        "cta_href": "#contacto"
+      }
+    },
+    {
+      "use": "hero-glow",
+      "copy": {
+        "eyebrow": "Demo · Hecho con Multiatlas Studio",
+        "headline_1": "Cocina de",
+        "headline_em": "raíz,",
+        "headline_2": "mesa de hoy",
+        "sub": "Ingrediente local, fuego lento y una carta corta que cambia con la temporada.",
+        "cta": "Reservar mesa",
+        "cta_href": "#contacto",
+        "cta2": "Ver el menú",
+        "cta2_href": "#menu",
+        "bg_img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=60"
+      }
+    },
+    {
+      "use": "menu-list",
+      "copy": {
+        "eyebrow": "La carta",
+        "headline": "Temporada de brasa y maíz",
+        "sub": "Seis semanas, luego cambia.",
+        "cat1": "Para empezar",
+        "c1i1_name": "Tetela de hoja santa",
+        "c1i1_desc": "Maíz azul, requesón de rancho, salsa macha.",
+        "c1i1_price": "$145",
+        "c1i2_name": "Aguachile de callo",
+        "c1i2_desc": "Chile serrano, limón de colima, pepino.",
+        "c1i2_price": "$210",
+        "c1i3_name": "Tuétano a la brasa",
+        "c1i3_desc": "Tortillas recién hechas, salsa tatemada.",
+        "c1i3_price": "$185",
+        "cat2": "Del fuego",
+        "c2i1_name": "Costilla 12 horas",
+        "c2i1_desc": "Encino, puré de plátano macho, jugo de cocción.",
+        "c2i1_price": "$390",
+        "c2i2_name": "Pesca del día",
+        "c2i2_desc": "Al carbón, mantequilla de chintextle.",
+        "c2i2_price": "$340",
+        "c2i3_name": "Mole de la casa",
+        "c2i3_desc": "Guajolote, 28 ingredientes, receta de familia.",
+        "c2i3_price": "$310",
+        "nota": "Precios en MXN (demo). La carta real cambia por temporada."
+      }
+    },
+    {
+      "use": "background-animated",
+      "copy": {
+        "headline": "La mesa está puesta",
+        "sub": "Reserva y déjanos el resto a nosotros.",
+        "cta": "Reservar ahora",
+        "cta_href": "#contacto"
+      }
+    },
+    {
+      "use": "location-hours",
+      "copy": {
+        "eyebrow": "La casa",
+        "headline": "Encuéntranos",
+        "direccion": "Calle Origen 45, Col. Roma Norte, CDMX (demo)",
+        "telefono": "(55) 5555 0200 (demo)",
+        "h1_dias": "Miércoles a sábado",
+        "h1_horas": "13:30 – 23:00",
+        "h2_dias": "Domingo",
+        "h2_horas": "13:30 – 18:00",
+        "h3_dias": "Lunes y martes",
+        "h3_horas": "Cerrado",
+        "mapa_nota": "Mapa interactivo en el site final"
+      }
+    },
+    {
+      "use": "faq-accordion",
+      "copy": {
+        "eyebrow": "Reservas",
+        "headline": "Antes de tu visita",
+        "q1": "¿Necesito reservar?",
+        "a1": "Recomendado, especialmente jueves a sábado. La mesa del chef es solo con reserva.",
+        "q2": "¿Tienen opciones vegetarianas?",
+        "a2": "Sí, cada temporada incluye un menú verde completo.",
+        "q3": "¿Aceptan grupos grandes?",
+        "a3": "Hasta 12 personas en salón; para más, cotizamos la casa completa.",
+        "q4": "¿Hay estacionamiento?",
+        "a4": "Valet parking de miércoles a domingo a partir de las 19:00."
+      }
+    },
+    {
+      "use": "contact-form",
+      "copy": {
+        "eyebrow": "Reservas",
+        "headline": "Reserva tu mesa",
+        "sub": "Confirmamos por WhatsApp el mismo día.",
+        "b1": "Confirmación el mismo día",
+        "b2": "Mesa del chef solo con reserva",
+        "b3": "Eventos privados hasta 40 personas",
+        "form_subject": "Lead DEMO Casa Origen — Multiatlas Studio",
+        "cta": "Solicitar reserva",
+        "email_directo": "reservas@casaorigen-demo.mx",
+        "form_action": "#",
+        "nota": "Formulario de demostración — en tu site enviaría la reserva a tu correo o WhatsApp.",
+        "opt1": "Reservar mesa (2–4 personas)",
+        "opt2": "Reservar grupo (5–12)",
+        "opt3": "Mesa del chef",
+        "opt4": "Evento privado",
+        "opt5": "Otro",
+        "f3_label": "Teléfono / WhatsApp",
+        "f3_placeholder": "(55) 1234 5678",
+        "f2_placeholder": "tu@correo.com",
+        "f5_placeholder": "Fecha, hora y ocasión…"
+      }
+    },
+    {
+      "use": "footer-cta",
+      "copy": {
+        "headline": "Te esperamos en la mesa",
+        "sub": "Casa Origen · Demo creada con Multiatlas Studio.",
+        "cta": "Reservar",
+        "cta_href": "#contacto",
+        "brand": "Casa Origen",
+        "tagline": "Cocina de raíz. Sitio de demostración generado con Multiatlas Studio.",
+        "col1_title": "La casa",
+        "col1_l1": "Menú de temporada",
+        "col1_l2": "Preguntas frecuentes",
+        "col1_l3": "Ubicación",
+        "col2_title": "Visítanos",
+        "col2_l1": "Reservas",
+        "col2_l2": "Horarios",
+        "col2_l3": "Eventos privados",
+        "legal": "Demo de Multiatlas Studio — negocio ficticio con fines de demostración.",
+        "col1_l1_href": "#menu",
+        "col1_l2_href": "#faq",
+        "col1_l3_href": "#ubicacion",
+        "col2_l1_href": "#contacto",
+        "col2_l2_href": "#ubicacion",
+        "col2_l3_href": "#contacto"
+      }
+    }
+  ]
+}

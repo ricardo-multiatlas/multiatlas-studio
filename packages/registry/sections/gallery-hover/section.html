@@ -1,0 +1,32 @@
+<!-- gallery-hover -->
+<section id="gallery" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
+        <h2 class="ma-display ma-reveal text-2xl md:text-4xl font-semibold mt-6">{{headline}}</h2>
+      </div>
+      <p class="ma-muted ma-reveal max-w-xs text-sm">{{sub}}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <a href="{{g1_href}}" target="_blank" class="ma-card ma-reveal group overflow-hidden block">
+        <div class="relative h-56 overflow-hidden" style="border-bottom: 1px solid var(--ma-border);">
+          <iframe src="{{g1_href}}" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left pointer-events-none" style="width: 400%; height: 400%; transform: scale(0.25); border: 0;"></iframe>
+        </div>
+        <div class="p-5 flex items-center justify-between"><div><p class="font-semibold">{{g1_title}}</p><p class="ma-muted text-xs mt-1">{{g1_tag}}</p></div><span class="text-xs px-3 py-1 rounded-full font-semibold" style="border: 1px solid var(--ma-border); color: var(--ma-accent);">Ver demo →</span></div>
+      </a>
+      <a href="{{g2_href}}" target="_blank" class="ma-card ma-reveal group overflow-hidden block">
+        <div class="relative h-56 overflow-hidden" style="border-bottom: 1px solid var(--ma-border);">
+          <iframe src="{{g2_href}}" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left pointer-events-none" style="width: 400%; height: 400%; transform: scale(0.25); border: 0;"></iframe>
+        </div>
+        <div class="p-5 flex items-center justify-between"><div><p class="font-semibold">{{g2_title}}</p><p class="ma-muted text-xs mt-1">{{g2_tag}}</p></div><span class="text-xs px-3 py-1 rounded-full font-semibold" style="border: 1px solid var(--ma-border); color: var(--ma-accent);">Ver demo →</span></div>
+      </a>
+      <a href="{{g3_href}}" target="_blank" class="ma-card ma-reveal group overflow-hidden block">
+        <div class="relative h-56 overflow-hidden" style="border-bottom: 1px solid var(--ma-border);">
+          <iframe src="{{g3_href}}" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left pointer-events-none" style="width: 400%; height: 400%; transform: scale(0.25); border: 0;"></iframe>
+        </div>
+        <div class="p-5 flex items-center justify-between"><div><p class="font-semibold">{{g3_title}}</p><p class="ma-muted text-xs mt-1">{{g3_tag}}</p></div><span class="text-xs px-3 py-1 rounded-full font-semibold" style="border: 1px solid var(--ma-border); color: var(--ma-accent);">Ver demo →</span></div>
+      </a>
+    </div>
+  </div>
+</section>

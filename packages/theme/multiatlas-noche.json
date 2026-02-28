@@ -1,0 +1,18 @@
+{
+  "name": "multiatlas-noche",
+  "comment": "Variante nocturna de marca: azul profundo, texto claro, mismos acentos del logo.",
+  "tokens": {
+    "--ma-bg": "#0D1120",
+    "--ma-surface": "rgba(244,245,248,0.04)",
+    "--ma-border": "rgba(244,245,248,0.10)",
+    "--ma-text": "#F4F5F8",
+    "--ma-muted": "rgba(244,245,248,0.55)",
+    "--ma-accent": "#4D74FF",
+    "--ma-accent-2": "#FF5A33",
+    "--ma-accent-3": "#4D74FF",
+    "--ma-glow": "rgba(77,116,255,0.10)",
+    "--ma-radius": "0.75rem",
+    "--ma-font-display": "'Archivo', sans-serif",
+    "--ma-font-body": "'Inter', sans-serif"
+  }
+}

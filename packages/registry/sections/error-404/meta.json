@@ -1,0 +1,15 @@
+{
+  "slug": "error-404",
+  "title": "404 creativo",
+  "category": "404",
+  "industry_tags": ["general"],
+  "variants": ["dark-glow", "light-editorial"],
+  "reference": "Fun 404 / 404 Planet",
+  "defaults": {
+    "code": "404",
+    "headline": "Esta página se salió del mapa",
+    "sub": "Pero tu próximo site sigue exactamente donde lo dejaste.",
+    "cta": "Volver al inicio",
+    "cta_href": "/"
+  }
+}

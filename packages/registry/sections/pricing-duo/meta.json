@@ -1,0 +1,42 @@
+{
+  "slug": "pricing-duo",
+  "title": "Pricing 2 columnas + countdown",
+  "category": "Pricing",
+  "industry_tags": [
+    "saas",
+    "producto digital",
+    "membresía"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
+  "reference": "Motionsites pricing + founding members bar",
+  "defaults": {
+    "eyebrow": "Pricing",
+    "headline": "Acceso ilimitado",
+    "sub": "Elige el plan que encaja con tu flujo. Anual o lifetime.",
+    "p1_name": "Pro",
+    "p1_price": "$19",
+    "p1_period": "/mes · cancela cuando quieras",
+    "p1_f1": "Biblioteca completa de secciones",
+    "p1_f2": "20 generaciones al mes",
+    "p1_f3": "Export de código",
+    "p1_f4": "Uso personal y de clientes",
+    "p1_cta": "Suscribirme",
+    "p2_badge": "Más popular",
+    "p2_name": "Founding Lifetime",
+    "p2_price_old": "$490",
+    "p2_price": "$249",
+    "p2_period": "Pago único · acceso de por vida",
+    "p2_f1": "Todo lo de Pro, para siempre",
+    "p2_f2": "Generaciones ilimitadas",
+    "p2_f3": "Acceso a todos los drops futuros",
+    "p2_f4": "Soporte prioritario",
+    "p2_cta": "Pagar una vez, disfrutar siempre",
+    "bar_text": "Founding Members — solo 100 plazas",
+    "countdown_hours": "47",
+    "p1_href": "#contacto",
+    "p2_href": "#contacto"
+  }
+}

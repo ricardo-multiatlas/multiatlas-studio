@@ -1,0 +1,28 @@
+{
+  "slug": "hero-glow",
+  "title": "Hero Glow",
+  "category": "Heroes",
+  "industry_tags": [
+    "saas",
+    "agencia",
+    "producto digital",
+    "general"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
+  "reference": "Motionsites 'Unlock your AI superpowers'",
+  "defaults": {
+    "eyebrow": "Fresh drops cada semana",
+    "headline_1": "Sites premium",
+    "headline_em": "creados",
+    "headline_2": "con AI",
+    "sub": "Describe tu negocio y obtén un site de nivel agencia en minutos, no semanas.",
+    "cta": "Empieza gratis",
+    "cta2": "Ver galería",
+    "cta_href": "#pricing",
+    "cta2_href": "#gallery",
+    "bg_img": ""
+  }
+}

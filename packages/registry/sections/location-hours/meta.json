@@ -1,0 +1,17 @@
+{
+  "slug": "location-hours",
+  "title": "Ubicación y horarios",
+  "category": "Location",
+  "industry_tags": ["servicios locales", "salud", "gastronomía", "general"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "defaults": {
+    "eyebrow": "Visítanos",
+    "headline": "Dónde y cuándo",
+    "direccion": "Av. Ejemplo 123, Col. Centro, Ciudad",
+    "telefono": "(55) 0000 0000",
+    "h1_dias": "Lunes a viernes", "h1_horas": "9:00 – 19:00",
+    "h2_dias": "Sábado", "h2_horas": "9:00 – 14:00",
+    "h3_dias": "Domingo", "h3_horas": "Cerrado",
+    "mapa_nota": "Mapa interactivo en el site final"
+  }
+}

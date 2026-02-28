@@ -1,0 +1,25 @@
+<!-- location-hours -->
+<section id="ubicacion" class="relative py-24 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
+      <h2 class="ma-display ma-reveal text-2xl md:text-4xl font-semibold mt-6">{{headline}}</h2>
+      <div class="mt-8 space-y-4 text-sm ma-reveal">
+        <p class="flex gap-3"><span style="color: var(--ma-accent);">◉</span>{{direccion}}</p>
+        <p class="flex gap-3"><span style="color: var(--ma-accent);">✆</span>{{telefono}}</p>
+      </div>
+      <div class="mt-8 space-y-3 text-sm ma-reveal" style="border-top: 1px solid var(--ma-border); padding-top: 1.5rem;">
+        <div class="flex justify-between max-w-xs"><span class="ma-muted">{{h1_dias}}</span><span class="font-semibold">{{h1_horas}}</span></div>
+        <div class="flex justify-between max-w-xs"><span class="ma-muted">{{h2_dias}}</span><span class="font-semibold">{{h2_horas}}</span></div>
+        <div class="flex justify-between max-w-xs"><span class="ma-muted">{{h3_dias}}</span><span class="font-semibold">{{h3_horas}}</span></div>
+      </div>
+    </div>
+    <div class="ma-card ma-reveal h-72 relative overflow-hidden flex items-center justify-center">
+      <div class="absolute inset-0 opacity-40" style="background-image: linear-gradient(var(--ma-border) 1px, transparent 1px), linear-gradient(90deg, var(--ma-border) 1px, transparent 1px); background-size: 34px 34px;"></div>
+      <div class="relative text-center">
+        <p class="text-4xl" style="color: var(--ma-accent);">◉</p>
+        <p class="ma-muted text-xs mt-2">{{mapa_nota}}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+{
+  "slug": "footer-cta",
+  "title": "Footer premium con CTA final",
+  "category": "Footers",
+  "industry_tags": [
+    "general"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
+  "defaults": {
+    "headline": "Tu próximo site premium empieza aquí",
+    "sub": "Únete antes de que cierren las plazas founding.",
+    "cta": "Empezar ahora",
+    "cta_href": "#pricing",
+    "brand": "Multiatlas Studio",
+    "tagline": "Sites premium creados con AI, sobre diseño curado a mano.",
+    "col1_title": "Producto",
+    "col1_l1": "Biblioteca",
+    "col1_l2": "Generador",
+    "col1_l3": "Precios",
+    "col2_title": "Recursos",
+    "col2_l1": "Galería",
+    "col2_l2": "Changelog",
+    "col2_l3": "Contacto",
+    "legal": "© 2026 Multiatlas. Todos los derechos reservados.",
+    "col1_l1_href": "#contacto",
+    "col1_l2_href": "#contacto",
+    "col1_l3_href": "#contacto",
+    "col2_l1_href": "#contacto",
+    "col2_l2_href": "#contacto",
+    "col2_l3_href": "#contacto"
+  }
+}

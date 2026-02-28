@@ -1,0 +1,18 @@
+{
+  "slug": "services-grid",
+  "title": "Servicios con precio",
+  "category": "Services",
+  "industry_tags": ["salud", "servicios locales", "ferretería", "belleza", "general"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "defaults": {
+    "eyebrow": "Servicios",
+    "headline": "Qué hacemos",
+    "sub": "Precios claros, sin sorpresas.",
+    "s1_icon": "◈", "s1_title": "Servicio uno", "s1_desc": "Descripción breve del servicio.", "s1_price": "desde $000",
+    "s2_icon": "✦", "s2_title": "Servicio dos", "s2_desc": "Descripción breve del servicio.", "s2_price": "desde $000",
+    "s3_icon": "◐", "s3_title": "Servicio tres", "s3_desc": "Descripción breve del servicio.", "s3_price": "desde $000",
+    "s4_icon": "▣", "s4_title": "Servicio cuatro", "s4_desc": "Descripción breve del servicio.", "s4_price": "desde $000",
+    "s5_icon": "◎", "s5_title": "Servicio cinco", "s5_desc": "Descripción breve del servicio.", "s5_price": "desde $000",
+    "s6_icon": "✚", "s6_title": "Servicio seis", "s6_desc": "Descripción breve del servicio.", "s6_price": "desde $000"
+  }
+}

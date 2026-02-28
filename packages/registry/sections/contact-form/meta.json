@@ -1,0 +1,34 @@
+{
+  "slug": "contact-form",
+  "title": "Formulario de leads",
+  "category": "Contact",
+  "industry_tags": [
+    "general"
+  ],
+  "variants": [
+    "multiatlas",
+    "multiatlas-noche"
+  ],
+  "defaults": {
+    "eyebrow": "Hablemos",
+    "headline": "Cuéntanos qué necesitas",
+    "sub": "Respondemos en menos de 24 horas hábiles con una propuesta concreta.",
+    "b1": "Respuesta en <24h con propuesta y precio cerrado",
+    "b2": "Demo personalizada para tu negocio o tu cliente",
+    "b3": "White-label disponible para agencias",
+    "email_directo": "rubentoledano@multiatlas.net",
+    "form_action": "https://formsubmit.co/rubentoledano@multiatlas.net",
+    "form_subject": "Nuevo lead — Multiatlas Studio",
+    "cta": "Enviar solicitud",
+    "nota": "Sin spam. Solo una propuesta concreta.",
+    "opt1": "Un site para mi negocio ($300–600 USD)",
+    "opt2": "Sites white-label para mi agencia",
+    "opt3": "Acceso Founding Lifetime ($249)",
+    "opt4": "Plan Pro ($19/mes)",
+    "opt5": "Otro",
+    "f3_label": "Empresa o agencia",
+    "f3_placeholder": "Nombre de tu negocio",
+    "f2_placeholder": "tu@empresa.com",
+    "f5_placeholder": "Tu negocio, tu plazo, tu referencia…"
+  }
+}

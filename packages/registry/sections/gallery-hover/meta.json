@@ -1,0 +1,29 @@
+{
+  "slug": "gallery-hover",
+  "title": "Galería de cards con hover",
+  "category": "Galleries",
+  "industry_tags": [
+    "portfolio",
+    "agencia",
+    "marketplace"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
+  "reference": "Grid de Motionsites",
+  "defaults": {
+    "eyebrow": "Galería",
+    "headline": "Demos en vivo, generadas con el motor",
+    "sub": "Negocios de ejemplo. Haz clic: cada demo es una página real, con su propia dirección de arte.",
+    "g1_title": "NovaDent — Clínica dental",
+    "g1_tag": "Salud · Demo",
+    "g1_href": "demos/clinica-novadent/index.html",
+    "g2_title": "Altavista — Inmobiliaria",
+    "g2_tag": "Real Estate · Demo",
+    "g2_href": "demos/inmobiliaria-altavista/index.html",
+    "g3_title": "Casa Origen — Restaurante",
+    "g3_tag": "Gastronomía · Demo",
+    "g3_href": "demos/restaurante-casaorigen/index.html"
+  }
+}

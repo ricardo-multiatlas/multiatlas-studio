@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100">
+  <!-- Lockup APROXIMADO: icono + MULTIATLAS studio. Reemplazar icono por el oficial cuando esté el archivo. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 14 68 A 40 40 0 1 1 86 62" stroke="#F03A0D" stroke-width="9"/>
+    <path d="M 20 78 A 40 40 0 0 0 80 78" stroke="#1743D6" stroke-width="9"/>
+  </g>
+  <text x="50" y="67" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" font-style="italic" fill="#1743D6">M</text>
+  <text x="108" y="64" font-family="Arial Black, Arial, sans-serif" font-size="38" font-weight="900" font-style="italic" fill="#14192B" letter-spacing="2">MULTIATLAS</text>
+  <text x="112" y="90" font-family="Arial, sans-serif" font-size="22" font-weight="400" font-style="italic" fill="#E8380D" letter-spacing="10">studio</text>
+</svg>
