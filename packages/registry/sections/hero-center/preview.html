@@ -82,8 +82,8 @@ body.has-bg { background: transparent; }
 
 /* Aurora: manchas de color a la deriva */
 .ma-bg-aurora::before, .ma-bg-aurora::after { content: ""; position: absolute; width: 62vw; height: 62vw; border-radius: 50%; filter: blur(90px); opacity: .5; }
-.ma-bg-aurora::before { background: var(--ma-accent); top: -12%; left: -8%; animation: ma-aur1 19s ease-in-out infinite; }
-.ma-bg-aurora::after { background: var(--ma-accent-2, var(--ma-accent)); bottom: -16%; right: -8%; animation: ma-aur2 23s ease-in-out infinite; }
+.ma-bg-aurora::before { background: var(--ma-accent); top: -12%; left: -8%; animation: ma-aur1 8s ease-in-out infinite; }
+.ma-bg-aurora::after { background: var(--ma-accent-2, var(--ma-accent)); bottom: -16%; right: -8%; animation: ma-aur2 10s ease-in-out infinite; }
 @keyframes ma-aur1 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(18vw,9vh) scale(1.2) } }
 @keyframes ma-aur2 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(-14vw,-7vh) scale(1.12) } }
 
@@ -125,10 +125,10 @@ body.has-bg { background: transparent; }
   background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
   animation: ma-gradient-shift 4.5s linear infinite; }
 
-/* Respeta a quien prefiere menos movimiento */
-@media (prefers-reduced-motion: reduce) {
+/* Respeta a quien prefiere menos movimiento (Temporalmente desactivado para pruebas) */
+/* @media (prefers-reduced-motion: reduce) {
   .ma-bg::before, .ma-bg::after, .ma-bg, .ma-shimmer, .ma-float, .ma-pulse, .ma-marquee-track { animation: none !important; }
-}
+} */
 
 /* Reveal on scroll — SOLO si hay JS (clase .js en body); sin JS todo es visible */
 .ma-reveal { transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease; }
@@ -231,7 +231,7 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
   <div class="ma-glow-orb w-[300px] h-[300px] bottom-[-120px] right-[-80px] opacity-40" style="background: color-mix(in srgb, var(--ma-accent-3) 30%, transparent);"></div>
   <div class="relative z-10 max-w-3xl mx-auto">
     <span class="ma-eyebrow ma-reveal">Bienvenido</span>
-    <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.06]">Algo grande <em class="italic ma-shimmer" style="color: var(--ma-accent-2);">empieza</em> aquí</h1>
+    <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.06]">Algo grande <em class="italic ma-shimmer" >empieza</em> aquí</h1>
     <p class="ma-muted ma-reveal text-base md:text-lg mt-6 max-w-xl mx-auto">Una propuesta clara, directa y hecha para tu público. Da el primer paso hoy.</p>
     <div class="ma-reveal flex flex-wrap items-center justify-center gap-4 mt-9">
       <a href="#contacto" class="ma-btn ma-btn-gradient">Empezar →</a>
