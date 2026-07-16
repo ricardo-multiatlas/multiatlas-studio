@@ -61,30 +61,44 @@
         "eyebrow": "Tratamientos",
         "headline": "Lo que hacemos por tu sonrisa",
         "sub": "Precios claros desde la primera cita.",
-        "s1_icon": "◎",
-        "s1_title": "Ortodoncia invisible",
-        "s1_desc": "Alineadores a medida con seguimiento digital.",
-        "s1_price": "desde $4,500 MXN/mes",
-        "s2_icon": "✦",
-        "s2_title": "Carillas de porcelana",
-        "s2_desc": "Diseño de sonrisa con resultado natural.",
-        "s2_price": "desde $6,900 MXN/pieza",
-        "s3_icon": "◐",
-        "s3_title": "Blanqueamiento",
-        "s3_desc": "Una sesión, hasta 6 tonos más claro.",
-        "s3_price": "$3,200 MXN",
-        "s4_icon": "✚",
-        "s4_title": "Implantes",
-        "s4_desc": "Titanio con corona incluida y garantía.",
-        "s4_price": "desde $18,500 MXN",
-        "s5_icon": "▣",
-        "s5_title": "Limpieza profunda",
-        "s5_desc": "Ultrasonido y pulido en 40 minutos.",
-        "s5_price": "$1,100 MXN",
-        "s6_icon": "◈",
-        "s6_title": "Odontopediatría",
-        "s6_desc": "Consultorio adaptado para niños.",
-        "s6_price": "consulta $650 MXN"
+        "services": [
+          {
+            "icon": "◎",
+            "title": "Ortodoncia invisible",
+            "desc": "Alineadores a medida con seguimiento digital.",
+            "price": "desde $4,500 MXN/mes"
+          },
+          {
+            "icon": "✦",
+            "title": "Carillas de porcelana",
+            "desc": "Diseño de sonrisa con resultado natural.",
+            "price": "desde $6,900 MXN/pieza"
+          },
+          {
+            "icon": "◐",
+            "title": "Blanqueamiento",
+            "desc": "Una sesión, hasta 6 tonos más claro.",
+            "price": "$3,200 MXN"
+          },
+          {
+            "icon": "✚",
+            "title": "Implantes",
+            "desc": "Titanio con corona incluida y garantía.",
+            "price": "desde $18,500 MXN"
+          },
+          {
+            "icon": "▣",
+            "title": "Limpieza profunda",
+            "desc": "Ultrasonido y pulido en 40 minutos.",
+            "price": "$1,100 MXN"
+          },
+          {
+            "icon": "◈",
+            "title": "Odontopediatría",
+            "desc": "Consultorio adaptado para niños.",
+            "price": "consulta $650 MXN"
+          }
+        ]
       }
     },
     {
@@ -93,12 +107,23 @@
       "copy": {
         "eyebrow": "Tu primera visita",
         "headline": "De la valoración al plan, en una sola cita",
-        "p1_title": "Escaneo digital 3D",
-        "p1_desc": "Sin moldes incómodos. 15 minutos y vemos todo.",
-        "p2_title": "Diagnóstico y plan",
-        "p2_desc": "Opciones de tratamiento con precio cerrado y plazos reales.",
-        "p3_title": "Empiezas cuando decidas",
-        "p3_desc": "Sin presión. El plan y el presupuesto son tuyos."
+        "steps": [
+          {
+            "title": "Escaneo digital 3D",
+            "desc": "Sin moldes incómodos. 15 minutos y vemos todo.",
+            "num": "01"
+          },
+          {
+            "title": "Diagnóstico y plan",
+            "desc": "Opciones de tratamiento con precio cerrado y plazos reales.",
+            "num": "02"
+          },
+          {
+            "title": "Empiezas cuando decidas",
+            "desc": "Sin presión. El plan y el presupuesto son tuyos.",
+            "num": "03"
+          }
+        ]
       }
     },
     {
@@ -108,18 +133,26 @@
         "eyebrow": "Especialistas",
         "headline": "Quiénes te atienden",
         "sub": "Certificados y en formación continua.",
-        "t1_ini": "MR",
-        "t1_name": "Dra. Mariana Reyes",
-        "t1_role": "Ortodoncia",
-        "t1_cred": "Esp. UNAM · 12 años de práctica",
-        "t2_ini": "JC",
-        "t2_name": "Dr. Jorge Cantú",
-        "t2_role": "Implantología",
-        "t2_cred": "Esp. UANL · 15 años de práctica",
-        "t3_ini": "AS",
-        "t3_name": "Dra. Ana Sofía Vega",
-        "t3_role": "Odontopediatría",
-        "t3_cred": "Esp. UAG · 8 años de práctica"
+        "members": [
+          {
+            "ini": "MR",
+            "name": "Dra. Mariana Reyes",
+            "role": "Ortodoncia",
+            "cred": "Esp. UNAM · 12 años de práctica"
+          },
+          {
+            "ini": "JC",
+            "name": "Dr. Jorge Cantú",
+            "role": "Implantología",
+            "cred": "Esp. UANL · 15 años de práctica"
+          },
+          {
+            "ini": "AS",
+            "name": "Dra. Ana Sofía Vega",
+            "role": "Odontopediatría",
+            "cred": "Esp. UAG · 8 años de práctica"
+          }
+        ]
       }
     },
     {
@@ -128,14 +161,24 @@
       "copy": {
         "eyebrow": "Dudas frecuentes",
         "headline": "Antes de tu primera cita",
-        "q1": "¿La valoración inicial tiene costo?",
-        "a1": "No. La primera valoración con escaneo digital es gratuita y sin compromiso.",
-        "q2": "¿Cuánto dura un tratamiento de ortodoncia invisible?",
-        "a2": "Depende de cada caso; el rango típico va de 6 a 18 meses. Lo sabrás con exactitud tras el escaneo.",
-        "q3": "¿Manejan planes de pago?",
-        "a3": "Sí, planes quincenales o mensuales sin intereses en la mayoría de los tratamientos.",
-        "q4": "¿Atienden urgencias?",
-        "a4": "Sí, reservamos espacios diarios para urgencias con dolor."
+        "faqs": [
+          {
+            "q": "¿La valoración inicial tiene costo?",
+            "a": "No. La primera valoración con escaneo digital es gratuita y sin compromiso."
+          },
+          {
+            "q": "¿Cuánto dura un tratamiento de ortodoncia invisible?",
+            "a": "Depende de cada caso; el rango típico va de 6 a 18 meses. Lo sabrás con exactitud tras el escaneo."
+          },
+          {
+            "q": "¿Manejan planes de pago?",
+            "a": "Sí, planes quincenales o mensuales sin intereses en la mayoría de los tratamientos."
+          },
+          {
+            "q": "¿Atienden urgencias?",
+            "a": "Sí, reservamos espacios diarios para urgencias con dolor."
+          }
+        ]
       }
     },
     {

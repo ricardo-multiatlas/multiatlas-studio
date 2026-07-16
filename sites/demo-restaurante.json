@@ -61,26 +61,42 @@
         "headline": "Temporada de brasa y maíz",
         "sub": "Seis semanas, luego cambia.",
         "cat1": "Para empezar",
-        "c1i1_name": "Tetela de hoja santa",
-        "c1i1_desc": "Maíz azul, requesón de rancho, salsa macha.",
-        "c1i1_price": "$145",
-        "c1i2_name": "Aguachile de callo",
-        "c1i2_desc": "Chile serrano, limón de colima, pepino.",
-        "c1i2_price": "$210",
-        "c1i3_name": "Tuétano a la brasa",
-        "c1i3_desc": "Tortillas recién hechas, salsa tatemada.",
-        "c1i3_price": "$185",
         "cat2": "Del fuego",
-        "c2i1_name": "Costilla 12 horas",
-        "c2i1_desc": "Encino, puré de plátano macho, jugo de cocción.",
-        "c2i1_price": "$390",
-        "c2i2_name": "Pesca del día",
-        "c2i2_desc": "Al carbón, mantequilla de chintextle.",
-        "c2i2_price": "$340",
-        "c2i3_name": "Mole de la casa",
-        "c2i3_desc": "Guajolote, 28 ingredientes, receta de familia.",
-        "c2i3_price": "$310",
-        "nota": "Precios en MXN (demo). La carta real cambia por temporada."
+        "nota": "Precios en MXN (demo). La carta real cambia por temporada.",
+        "cat1items": [
+          {
+            "name": "Tetela de hoja santa",
+            "price": "$145",
+            "desc": "Maíz azul, requesón de rancho, salsa macha."
+          },
+          {
+            "name": "Aguachile de callo",
+            "price": "$210",
+            "desc": "Chile serrano, limón de colima, pepino."
+          },
+          {
+            "name": "Tuétano a la brasa",
+            "price": "$185",
+            "desc": "Tortillas recién hechas, salsa tatemada."
+          }
+        ],
+        "cat2items": [
+          {
+            "name": "Costilla 12 horas",
+            "price": "$390",
+            "desc": "Encino, puré de plátano macho, jugo de cocción."
+          },
+          {
+            "name": "Pesca del día",
+            "price": "$340",
+            "desc": "Al carbón, mantequilla de chintextle."
+          },
+          {
+            "name": "Mole de la casa",
+            "price": "$310",
+            "desc": "Guajolote, 28 ingredientes, receta de familia."
+          }
+        ]
       }
     },
     {
@@ -115,14 +131,24 @@
       "copy": {
         "eyebrow": "Reservas",
         "headline": "Antes de tu visita",
-        "q1": "¿Necesito reservar?",
-        "a1": "Recomendado, especialmente jueves a sábado. La mesa del chef es solo con reserva.",
-        "q2": "¿Tienen opciones vegetarianas?",
-        "a2": "Sí, cada temporada incluye un menú verde completo.",
-        "q3": "¿Aceptan grupos grandes?",
-        "a3": "Hasta 12 personas en salón; para más, cotizamos la casa completa.",
-        "q4": "¿Hay estacionamiento?",
-        "a4": "Valet parking de miércoles a domingo a partir de las 19:00."
+        "faqs": [
+          {
+            "q": "¿Necesito reservar?",
+            "a": "Recomendado, especialmente jueves a sábado. La mesa del chef es solo con reserva."
+          },
+          {
+            "q": "¿Tienen opciones vegetarianas?",
+            "a": "Sí, cada temporada incluye un menú verde completo."
+          },
+          {
+            "q": "¿Aceptan grupos grandes?",
+            "a": "Hasta 12 personas en salón; para más, cotizamos la casa completa."
+          },
+          {
+            "q": "¿Hay estacionamiento?",
+            "a": "Valet parking de miércoles a domingo a partir de las 19:00."
+          }
+        ]
       }
     },
     {

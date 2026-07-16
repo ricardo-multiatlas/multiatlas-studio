@@ -20,28 +20,28 @@
     "cta_href": "#contacto",
     "listings": [
       {
-        "img": "",
-        "zona": "Zona uno",
-        "precio": "$0.0 M",
-        "titulo": "Propiedad uno",
+        "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=60",
+        "zona": "Zona Norte",
+        "precio": "$4.2 M",
+        "titulo": "Casa con jardín privado",
         "rec": "3",
         "ban": "2",
         "m2": "180"
       },
       {
-        "img": "",
-        "zona": "Zona dos",
-        "precio": "$0.0 M",
-        "titulo": "Propiedad dos",
+        "img": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=60",
+        "zona": "Centro",
+        "precio": "$2.9 M",
+        "titulo": "Departamento remodelado",
         "rec": "2",
         "ban": "2",
         "m2": "120"
       },
       {
-        "img": "",
-        "zona": "Zona tres",
-        "precio": "$0.0 M",
-        "titulo": "Propiedad tres",
+        "img": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=60",
+        "zona": "Zona Sur",
+        "precio": "$6.8 M",
+        "titulo": "Residencia de dos plantas",
         "rec": "4",
         "ban": "3",
         "m2": "260"

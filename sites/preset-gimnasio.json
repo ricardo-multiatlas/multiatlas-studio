@@ -2,33 +2,190 @@
   "name": "gimnasio-forjabox",
   "lang": "es",
   "theme": "brutalista",
-  "meta": { "title": "ForjaBox — Entrena distinto", "description": "Gimnasio funcional y coaching. Site de ejemplo con Multiatlas Studio." },
+  "meta": {
+    "title": "ForjaBox — Entrena distinto",
+    "description": "Gimnasio funcional y coaching. Site de ejemplo con Multiatlas Studio."
+  },
   "sections": [
-    { "use": "nav-simple", "copy": { "brand": "ForjaBox", "link1": "Clases", "link1_href": "#servicios", "link2": "Planes", "link2_href": "#pricing", "link3": "Coaches", "link3_href": "#contacto", "cta": "Clase gratis", "cta_href": "#contacto" } },
-    { "use": "hero-split", "copy": {
-      "eyebrow": "✦ Fuerza · comunidad · resultados",
-      "headline_1": "No es un gym,",
-      "headline_em": "es tu",
-      "headline_2": "mejor versión",
-      "sub": "Entrenamiento funcional en grupos reducidos, con seguimiento real. Tu primera clase va por nuestra cuenta.",
-      "cta": "Reservar clase gratis", "cta_href": "#contacto", "cta2": "Ver planes", "cta2_href": "#pricing",
-      "img": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&q=60" } },
-    { "use": "stats-band", "copy": { "n1": "800", "n1_suf": "+", "n1_label": "miembros activos", "n2": "12", "n2_suf": "", "n2_label": "coaches certificados", "n3": "40", "n3_suf": "", "n3_label": "clases por semana", "n4": "4.9", "n4_suf": "★", "n4_label": "en reseñas" } },
-    { "use": "services-grid", "copy": { "eyebrow": "Clases", "headline": "Encuentra tu ritmo", "sub": "De cero a avanzado, hay lugar para ti.",
-      "s1_icon": "◎", "s1_title": "Funcional", "s1_desc": "Fuerza y movilidad en 45 min.", "s1_price": "Incluido",
-      "s2_icon": "✦", "s2_title": "HIIT", "s2_desc": "Quema alta, tiempo corto.", "s2_price": "Incluido",
-      "s3_icon": "◐", "s3_title": "Fuerza", "s3_desc": "Técnica con barra y progresión.", "s3_price": "Incluido",
-      "s4_icon": "✚", "s4_title": "Movilidad", "s4_desc": "Recupera y previene lesiones.", "s4_price": "Incluido",
-      "s5_icon": "▣", "s5_title": "Coaching 1:1", "s5_desc": "Plan y seguimiento personal.", "s5_price": "Plan Elite",
-      "s6_icon": "◈", "s6_title": "Nutrición", "s6_desc": "Acompañamiento con especialista.", "s6_price": "Plan Elite" } },
-    { "use": "pricing-trio", "copy": {
-      "eyebrow": "Membresías", "headline": "Elige cómo entrenar", "sub": "Sin permanencia forzada. Cancela cuando quieras.",
-      "p1_name": "Flex", "p1_price": "$690", "p1_period": "/mes · 8 clases", "p1_f1": "8 clases al mes", "p1_f2": "App de reservas", "p1_f3": "Acceso a comunidad", "p1_cta": "Empezar Flex",
-      "p2_name": "Ilimitado", "p2_badge": "Más popular", "p2_price": "$990", "p2_period": "/mes · sin límite", "p2_f1": "Clases ilimitadas", "p2_f2": "1 valoración física", "p2_f3": "Invita a un amigo/mes", "p2_f4": "Congelamiento gratis", "p2_cta": "Empezar Ilimitado",
-      "p3_name": "Elite", "p3_price": "$1,690", "p3_period": "/mes · con coach", "p3_f1": "Todo Ilimitado", "p3_f2": "Coaching 1:1 semanal", "p3_f3": "Plan de nutrición", "p3_cta": "Empezar Elite" } },
-    { "use": "testimonial-quote", "copy": { "quote": "Bajé 9 kilos en 4 meses y por primera vez no odio ir al gym. La comunidad es lo que engancha.", "ini": "DM", "name": "Diego Márquez", "role": "Miembro desde 2024" } },
-    { "use": "cta-banner", "copy": { "headline": "Tu primera clase es gratis", "sub": "Sin compromiso. Ven, pruébalo y decide.", "cta": "Reservar ahora", "cta_href": "#contacto", "cta2": "Ver clases", "cta2_href": "#servicios" } },
-    { "use": "contact-form", "copy": { "eyebrow": "Empieza", "headline": "Reserva tu clase gratis", "sub": "Te confirmamos por WhatsApp el mismo día.", "form_subject": "Lead DEMO ForjaBox — Multiatlas Studio", "email_directo": "hola@forjabox-demo.mx", "form_action": "#", "nota": "Formulario de demostración.", "opt1": "Clase gratis de prueba", "opt2": "Info de membresías", "opt3": "Coaching 1:1", "opt4": "Nutrición", "opt5": "Otro" } },
-    { "use": "footer-cta", "copy": { "headline": "Nos vemos en el box", "sub": "ForjaBox · Demo creada con Multiatlas Studio.", "brand": "ForjaBox", "tagline": "Entrenamiento funcional y comunidad. Sitio de demostración.", "legal": "Demo de Multiatlas Studio — negocio ficticio." } }
+    {
+      "use": "nav-simple",
+      "copy": {
+        "brand": "ForjaBox",
+        "link1": "Clases",
+        "link1_href": "#servicios",
+        "link2": "Planes",
+        "link2_href": "#pricing",
+        "link3": "Coaches",
+        "link3_href": "#contacto",
+        "cta": "Clase gratis",
+        "cta_href": "#contacto"
+      }
+    },
+    {
+      "use": "hero-split",
+      "copy": {
+        "eyebrow": "✦ Fuerza · comunidad · resultados",
+        "headline_1": "No es un gym,",
+        "headline_em": "es tu",
+        "headline_2": "mejor versión",
+        "sub": "Entrenamiento funcional en grupos reducidos, con seguimiento real. Tu primera clase va por nuestra cuenta.",
+        "cta": "Reservar clase gratis",
+        "cta_href": "#contacto",
+        "cta2": "Ver planes",
+        "cta2_href": "#pricing",
+        "img": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&q=60"
+      }
+    },
+    {
+      "use": "stats-band",
+      "copy": {
+        "stats": [
+          {
+            "n": "800",
+            "suf": "+",
+            "label": "miembros activos"
+          },
+          {
+            "n": "12",
+            "suf": "",
+            "label": "coaches certificados"
+          },
+          {
+            "n": "40",
+            "suf": "",
+            "label": "clases por semana"
+          },
+          {
+            "n": "4.9",
+            "suf": "★",
+            "label": "en reseñas"
+          }
+        ]
+      }
+    },
+    {
+      "use": "services-grid",
+      "copy": {
+        "eyebrow": "Clases",
+        "headline": "Encuentra tu ritmo",
+        "sub": "De cero a avanzado, hay lugar para ti.",
+        "services": [
+          {
+            "icon": "◎",
+            "title": "Funcional",
+            "desc": "Fuerza y movilidad en 45 min.",
+            "price": "Incluido"
+          },
+          {
+            "icon": "✦",
+            "title": "HIIT",
+            "desc": "Quema alta, tiempo corto.",
+            "price": "Incluido"
+          },
+          {
+            "icon": "◐",
+            "title": "Fuerza",
+            "desc": "Técnica con barra y progresión.",
+            "price": "Incluido"
+          },
+          {
+            "icon": "✚",
+            "title": "Movilidad",
+            "desc": "Recupera y previene lesiones.",
+            "price": "Incluido"
+          },
+          {
+            "icon": "▣",
+            "title": "Coaching 1:1",
+            "desc": "Plan y seguimiento personal.",
+            "price": "Plan Elite"
+          },
+          {
+            "icon": "◈",
+            "title": "Nutrición",
+            "desc": "Acompañamiento con especialista.",
+            "price": "Plan Elite"
+          }
+        ]
+      }
+    },
+    {
+      "use": "pricing-trio",
+      "copy": {
+        "eyebrow": "Membresías",
+        "headline": "Elige cómo entrenar",
+        "sub": "Sin permanencia forzada. Cancela cuando quieras.",
+        "p1_name": "Flex",
+        "p1_price": "$690",
+        "p1_period": "/mes · 8 clases",
+        "p1_f1": "8 clases al mes",
+        "p1_f2": "App de reservas",
+        "p1_f3": "Acceso a comunidad",
+        "p1_cta": "Empezar Flex",
+        "p2_name": "Ilimitado",
+        "p2_badge": "Más popular",
+        "p2_price": "$990",
+        "p2_period": "/mes · sin límite",
+        "p2_f1": "Clases ilimitadas",
+        "p2_f2": "1 valoración física",
+        "p2_f3": "Invita a un amigo/mes",
+        "p2_f4": "Congelamiento gratis",
+        "p2_cta": "Empezar Ilimitado",
+        "p3_name": "Elite",
+        "p3_price": "$1,690",
+        "p3_period": "/mes · con coach",
+        "p3_f1": "Todo Ilimitado",
+        "p3_f2": "Coaching 1:1 semanal",
+        "p3_f3": "Plan de nutrición",
+        "p3_cta": "Empezar Elite"
+      }
+    },
+    {
+      "use": "testimonial-quote",
+      "copy": {
+        "quote": "Bajé 9 kilos en 4 meses y por primera vez no odio ir al gym. La comunidad es lo que engancha.",
+        "ini": "DM",
+        "name": "Diego Márquez",
+        "role": "Miembro desde 2024"
+      }
+    },
+    {
+      "use": "cta-banner",
+      "copy": {
+        "headline": "Tu primera clase es gratis",
+        "sub": "Sin compromiso. Ven, pruébalo y decide.",
+        "cta": "Reservar ahora",
+        "cta_href": "#contacto",
+        "cta2": "Ver clases",
+        "cta2_href": "#servicios"
+      }
+    },
+    {
+      "use": "contact-form",
+      "copy": {
+        "eyebrow": "Empieza",
+        "headline": "Reserva tu clase gratis",
+        "sub": "Te confirmamos por WhatsApp el mismo día.",
+        "form_subject": "Lead DEMO ForjaBox — Multiatlas Studio",
+        "email_directo": "hola@forjabox-demo.mx",
+        "form_action": "#",
+        "nota": "Formulario de demostración.",
+        "opt1": "Clase gratis de prueba",
+        "opt2": "Info de membresías",
+        "opt3": "Coaching 1:1",
+        "opt4": "Nutrición",
+        "opt5": "Otro"
+      }
+    },
+    {
+      "use": "footer-cta",
+      "copy": {
+        "headline": "Nos vemos en el box",
+        "sub": "ForjaBox · Demo creada con Multiatlas Studio.",
+        "brand": "ForjaBox",
+        "tagline": "Entrenamiento funcional y comunidad. Sitio de demostración.",
+        "legal": "Demo de Multiatlas Studio — negocio ficticio."
+      }
+    }
   ]
 }

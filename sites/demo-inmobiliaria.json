@@ -61,10 +61,26 @@
       "anim": "zoom",
       "copy": {
         "stats": [
-          { "n": "20", "suf": " años", "label": "asesorando patrimonio" },
-          { "n": "450", "suf": "+", "label": "operaciones cerradas" },
-          { "n": "12", "suf": "", "label": "zonas premium cubiertas" },
-          { "n": "48", "suf": "h", "label": "para tu plan de venta" }
+          {
+            "n": "20",
+            "suf": " años",
+            "label": "asesorando patrimonio"
+          },
+          {
+            "n": "450",
+            "suf": "+",
+            "label": "operaciones cerradas"
+          },
+          {
+            "n": "12",
+            "suf": "",
+            "label": "zonas premium cubiertas"
+          },
+          {
+            "n": "48",
+            "suf": "h",
+            "label": "para tu plan de venta"
+          }
         ]
       }
     },
@@ -75,29 +91,37 @@
         "eyebrow": "Portafolio",
         "headline": "Propiedades seleccionadas este mes",
         "sub": "Cada una con due diligence legal completo.",
-        "l1_zona": "Polanco",
-        "l1_precio": "$12.4 M",
-        "l1_titulo": "Departamento con terraza",
-        "l1_rec": "3",
-        "l1_ban": "3.5",
-        "l1_m2": "210",
-        "l2_zona": "Del Valle",
-        "l2_precio": "$6.8 M",
-        "l2_titulo": "Piso remodelado con balcón",
-        "l2_rec": "2",
-        "l2_ban": "2",
-        "l2_m2": "115",
-        "l3_zona": "Lomas",
-        "l3_precio": "$28.9 M",
-        "l3_titulo": "Residencia con jardín",
-        "l3_rec": "4",
-        "l3_ban": "4.5",
-        "l3_m2": "420",
         "cta": "Solicitar el portafolio completo",
         "cta_href": "#contacto",
-        "l1_img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=60",
-        "l2_img": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=60",
-        "l3_img": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=60"
+        "listings": [
+          {
+            "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=60",
+            "zona": "Polanco",
+            "precio": "$12.4 M",
+            "titulo": "Departamento con terraza",
+            "rec": "3",
+            "ban": "3.5",
+            "m2": "210"
+          },
+          {
+            "img": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=60",
+            "zona": "Del Valle",
+            "precio": "$6.8 M",
+            "titulo": "Piso remodelado con balcón",
+            "rec": "2",
+            "ban": "2",
+            "m2": "115"
+          },
+          {
+            "img": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=60",
+            "zona": "Lomas",
+            "precio": "$28.9 M",
+            "titulo": "Residencia con jardín",
+            "rec": "4",
+            "ban": "4.5",
+            "m2": "420"
+          }
+        ]
       }
     },
     {
@@ -106,12 +130,23 @@
       "copy": {
         "eyebrow": "El método",
         "headline": "Comprar bien, paso a paso",
-        "p1_title": "Perfil y presupuesto",
-        "p1_desc": "Definimos zona, plusvalía esperada y esquema de pago.",
-        "p2_title": "Recorridos curados",
-        "p2_desc": "Solo propiedades que pasaron verificación legal y estructural.",
-        "p3_title": "Cierre acompañado",
-        "p3_desc": "Negociación, escrituración y entrega de llaves con nuestro equipo legal."
+        "steps": [
+          {
+            "title": "Perfil y presupuesto",
+            "desc": "Definimos zona, plusvalía esperada y esquema de pago.",
+            "num": "01"
+          },
+          {
+            "title": "Recorridos curados",
+            "desc": "Solo propiedades que pasaron verificación legal y estructural.",
+            "num": "02"
+          },
+          {
+            "title": "Cierre acompañado",
+            "desc": "Negociación, escrituración y entrega de llaves con nuestro equipo legal.",
+            "num": "03"
+          }
+        ]
       }
     },
     {
@@ -120,14 +155,24 @@
       "copy": {
         "eyebrow": "Preguntas",
         "headline": "Lo que todo comprador pregunta",
-        "q1": "¿Cobran comisión al comprador?",
-        "a1": "No. Nuestra comisión la cubre el vendedor; tu asesoría patrimonial no tiene costo.",
-        "q2": "¿Trabajan con crédito hipotecario?",
-        "a2": "Sí, gestionamos con los principales bancos y te comparamos condiciones reales.",
-        "q3": "¿Puedo vender mi propiedad con ustedes?",
-        "a3": "Sí, con valuación profesional y plan de comercialización en 48 horas.",
-        "q4": "¿Qué zonas cubren?",
-        "a4": "Las principales zonas premium de la ciudad y corredores de inversión emergentes."
+        "faqs": [
+          {
+            "q": "¿Cobran comisión al comprador?",
+            "a": "No. Nuestra comisión la cubre el vendedor; tu asesoría patrimonial no tiene costo."
+          },
+          {
+            "q": "¿Trabajan con crédito hipotecario?",
+            "a": "Sí, gestionamos con los principales bancos y te comparamos condiciones reales."
+          },
+          {
+            "q": "¿Puedo vender mi propiedad con ustedes?",
+            "a": "Sí, con valuación profesional y plan de comercialización en 48 horas."
+          },
+          {
+            "q": "¿Qué zonas cubren?",
+            "a": "Las principales zonas premium de la ciudad y corredores de inversión emergentes."
+          }
+        ]
       }
     },
     {
