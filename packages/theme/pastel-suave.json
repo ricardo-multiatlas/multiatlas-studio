@@ -1,0 +1,18 @@
+{
+  "name": "pastel-suave",
+  "comment": "Claro, suave y amable: lavanda + rosa, esquinas muy redondeadas. Para belleza, wellness, infantil, lifestyle.",
+  "tokens": {
+    "--ma-bg": "#FBF7FD",
+    "--ma-surface": "rgba(124,84,168,0.05)",
+    "--ma-border": "rgba(124,84,168,0.14)",
+    "--ma-text": "#3A2E44",
+    "--ma-muted": "rgba(58,46,68,0.56)",
+    "--ma-accent": "#B07CD6",
+    "--ma-accent-2": "#F19FC4",
+    "--ma-accent-3": "#8FB7F0",
+    "--ma-glow": "rgba(176,124,214,0.18)",
+    "--ma-radius": "1.6rem",
+    "--ma-font-display": "'Space Grotesk', sans-serif",
+    "--ma-font-body": "'Inter', sans-serif"
+  }
+}

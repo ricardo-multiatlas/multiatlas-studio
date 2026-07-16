@@ -1,0 +1,14 @@
+{
+  "slug": "testimonial-quote",
+  "title": "Testimonio destacado (cita)",
+  "category": "Testimonials",
+  "industry_tags": ["general", "servicios", "b2b"],
+  "variants": ["multiatlas", "noir-oro", "pastel-suave"],
+  "reference": "Una sola cita grande, alternativa al marquee",
+  "defaults": {
+    "quote": "Entendieron en una llamada lo que otros no captaron en meses. El site quedó impecable y empezó a generar contactos la primera semana.",
+    "ini": "LR",
+    "name": "Laura Reséndiz",
+    "role": "Fundadora · Estudio Aurora"
+  }
+}

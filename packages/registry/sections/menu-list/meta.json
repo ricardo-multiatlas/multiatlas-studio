@@ -4,18 +4,23 @@
   "category": "Menu",
   "industry_tags": ["gastronomía", "cafetería", "bar"],
   "variants": ["multiatlas", "multiatlas-noche"],
+  "repeat": "cat1items",
   "defaults": {
     "eyebrow": "La carta",
     "headline": "Menú de temporada",
     "sub": "Cambia cada seis semanas.",
     "cat1": "Entradas",
-    "c1i1_name": "Platillo uno", "c1i1_desc": "Descripción corta.", "c1i1_price": "$000",
-    "c1i2_name": "Platillo dos", "c1i2_desc": "Descripción corta.", "c1i2_price": "$000",
-    "c1i3_name": "Platillo tres", "c1i3_desc": "Descripción corta.", "c1i3_price": "$000",
+    "cat1items": [
+      { "name": "Platillo uno", "desc": "Descripción corta.", "price": "$000" },
+      { "name": "Platillo dos", "desc": "Descripción corta.", "price": "$000" },
+      { "name": "Platillo tres", "desc": "Descripción corta.", "price": "$000" }
+    ],
     "cat2": "Principales",
-    "c2i1_name": "Platillo cuatro", "c2i1_desc": "Descripción corta.", "c2i1_price": "$000",
-    "c2i2_name": "Platillo cinco", "c2i2_desc": "Descripción corta.", "c2i2_price": "$000",
-    "c2i3_name": "Platillo seis", "c2i3_desc": "Descripción corta.", "c2i3_price": "$000",
+    "cat2items": [
+      { "name": "Platillo cuatro", "desc": "Descripción corta.", "price": "$000" },
+      { "name": "Platillo cinco", "desc": "Descripción corta.", "price": "$000" },
+      { "name": "Platillo seis", "desc": "Descripción corta.", "price": "$000" }
+    ],
     "nota": "Precios en MXN. Menú sujeto a temporada."
   }
 }

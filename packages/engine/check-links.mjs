@@ -11,7 +11,9 @@ let fails = 0;
 for (const page of pages(DIST)) {
   const rel = page.slice(DIST.length + 1).split(sep).join("/");
   if (rel.startsWith("registry/previews/")) continue; // especímenes de sección, sin página alrededor
-  let html = readFileSync(page, "utf8").replace(/<template[\s\S]*?<\/template>/g, ""); // código copiable no cuenta
+  let html = readFileSync(page, "utf8")
+    .replace(/<template[\s\S]*?<\/template>/g, "")   // código copiable no cuenta
+    .replace(/<script>[\s\S]*?<\/script>/g, "");     // JS inline: rutas se arman en runtime, no son enlaces reales
   const ids = new Set([...html.matchAll(/id="([^"]+)"/g)].map(m => m[1]));
   for (const [, h] of html.matchAll(/href="#([^"]+)"/g))
     if (!ids.has(h)) { console.log(`🔴 ${rel}: ancla rota #${h}`); fails++; }
@@ -19,7 +21,9 @@ for (const page of pages(DIST)) {
   if (dead) { console.log(`🔴 ${rel}: href="#" muerto (${dead})`); fails++; }
   for (const [, url] of html.matchAll(/(?:href|src)="([^"#][^"]*)"/g)) {
     if (/^(https?:|mailto:|tel:|data:)/.test(url)) continue;
-    if (!existsSync(join(dirname(page), url.split("#")[0]))) { console.log(`🔴 ${rel}: ruta inexistente ${url}`); fails++; }
+    const clean = url.split("#")[0].split("?")[0];
+    const target = clean.startsWith("/") ? join(DIST, clean.slice(1)) : join(dirname(page), clean);
+    if (!existsSync(target)) { console.log(`🔴 ${rel}: ruta inexistente ${url}`); fails++; }
   }
   const ph = [...html.matchAll(/\{\{(\w+)\}\}/g)];
   if (ph.length) { console.log(`🔴 ${rel}: ${ph.length} placeholders sin resolver`); fails++; }

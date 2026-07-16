@@ -5,16 +5,15 @@
   "industry_tags": ["general"],
   "variants": ["dark-glow", "light-editorial"],
   "reference": "21st.dev marquees",
+  "repeat": "testis",
   "defaults": {
     "eyebrow": "Lo que dicen",
-    "headline": "Agencias que ya entregan más rápido",
-    "t1_quote": "Entregamos en 3 días lo que antes nos tomaba 3 semanas. El cliente no distingue que hay AI detrás — solo ve calidad.",
-    "t1_name": "Laura G.", "t1_role": "Directora, agencia boutique",
-    "t2_quote": "El nivel visual es de $2,000 USD. Nosotros lo revendemos a ese precio y el margen es nuestro.",
-    "t2_name": "Marco R.", "t2_role": "Founder, estudio de marketing",
-    "t3_quote": "Probé v0 y Lovable. Esto es otra liga: cada sección se siente diseñada, no generada.",
-    "t3_name": "Sofía M.", "t3_role": "Freelance senior",
-    "t4_quote": "El white-label nos salvó el Q2. Cinco sites entregados sin contratar a nadie.",
-    "t4_name": "Andrés P.", "t4_role": "CEO, agencia digital"
+    "headline": "Clientes que ya lo recomiendan",
+    "testis": [
+      { "quote": "El resultado superó lo que esperábamos. Rápido, claro y muy profesional.", "name": "Laura G.", "role": "Clienta" },
+      { "quote": "Atención impecable de principio a fin. Volvería sin dudarlo.", "name": "Marco R.", "role": "Cliente" },
+      { "quote": "Justo lo que necesitaba, sin complicaciones y con excelente trato.", "name": "Sofía M.", "role": "Clienta" },
+      { "quote": "Cumplieron todo lo prometido y más. Totalmente recomendados.", "name": "Andrés P.", "role": "Cliente" }
+    ]
   }
 }

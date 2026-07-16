@@ -1,0 +1,1154 @@
+[
+  {
+    "key": "saas-general",
+    "label_es": "Software SaaS",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "micro-saas",
+    "label_es": "Micro SaaS",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "e-commerce",
+    "label_es": "Ecommerce",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "e-commerce-luxury",
+    "label_es": "Ecommerce de lujo",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "b2b-service",
+    "label_es": "Servicios B2B",
+    "cat_es": "Empresas & B2B",
+    "arch": "b2b"
+  },
+  {
+    "key": "financial-dashboard",
+    "label_es": "Dashboard financiero",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "analytics-dashboard",
+    "label_es": "Dashboard de analítica",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "healthcare-app",
+    "label_es": "App de salud",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "educational-app",
+    "label_es": "App educativa",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "creative-agency",
+    "label_es": "Agencia creativa",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "b2b"
+  },
+  {
+    "key": "portfolio-personal",
+    "label_es": "Portafolio personal",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "portfolio"
+  },
+  {
+    "key": "gaming",
+    "label_es": "Videojuegos",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "government-public-service",
+    "label_es": "Gobierno y servicios públicos",
+    "cat_es": "Otros",
+    "arch": "b2b"
+  },
+  {
+    "key": "fintech-crypto",
+    "label_es": "Fintech / Cripto",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "social-media-app",
+    "label_es": "App de redes sociales",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "productivity-tool",
+    "label_es": "Herramienta de productividad",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "design-system-component-library",
+    "label_es": "Sistema de diseño",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "ai-chatbot-platform",
+    "label_es": "Plataforma de IA / Chatbot",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "nft-web3-platform",
+    "label_es": "Plataforma NFT / Web3",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "creator-economy-platform",
+    "label_es": "Economía de creadores",
+    "cat_es": "Creadores & Contenido",
+    "arch": "creator"
+  },
+  {
+    "key": "remote-work-collaboration-tool",
+    "label_es": "Trabajo remoto y colaboración",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "mental-health-app",
+    "label_es": "App de salud mental",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "pet-tech-app",
+    "label_es": "App para mascotas",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "smart-home-iot-dashboard",
+    "label_es": "Casa inteligente / IoT",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "ev-charging-ecosystem",
+    "label_es": "Carga de autos eléctricos",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "subscription-box-service",
+    "label_es": "Caja por suscripción",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "podcast-platform",
+    "label_es": "Plataforma de podcasts",
+    "cat_es": "Creadores & Contenido",
+    "arch": "creator"
+  },
+  {
+    "key": "dating-app",
+    "label_es": "App de citas",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "micro-credentials-badges-platform",
+    "label_es": "Credenciales e insignias",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "knowledge-base-documentation",
+    "label_es": "Base de conocimiento",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "hyperlocal-services",
+    "label_es": "Servicios hiperlocales",
+    "cat_es": "Empresas & B2B",
+    "arch": "local"
+  },
+  {
+    "key": "beauty-spa-wellness-service",
+    "label_es": "Belleza y spa",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "luxury-premium-brand",
+    "label_es": "Marca de lujo",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "restaurant-food-service",
+    "label_es": "Restaurante",
+    "cat_es": "Comida & Bebida",
+    "arch": "food"
+  },
+  {
+    "key": "fitness-gym-app",
+    "label_es": "App de fitness y gym",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "real-estate-property",
+    "label_es": "Bienes raíces",
+    "cat_es": "Inmobiliaria & Construcción",
+    "arch": "realestate"
+  },
+  {
+    "key": "travel-tourism-agency",
+    "label_es": "Agencia de viajes",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "hotel-hospitality",
+    "label_es": "Hoteles",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "wedding-event-planning",
+    "label_es": "Bodas y eventos",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "legal-services",
+    "label_es": "Servicios legales",
+    "cat_es": "Finanzas & Legal",
+    "arch": "b2b"
+  },
+  {
+    "key": "insurance-platform",
+    "label_es": "Seguros",
+    "cat_es": "Finanzas & Legal",
+    "arch": "b2b"
+  },
+  {
+    "key": "banking-traditional-finance",
+    "label_es": "Banca tradicional",
+    "cat_es": "Finanzas & Legal",
+    "arch": "b2b"
+  },
+  {
+    "key": "online-course-e-learning",
+    "label_es": "Cursos en línea",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "non-profit-charity",
+    "label_es": "ONG y caridad",
+    "cat_es": "Comunidad & Social",
+    "arch": "b2b"
+  },
+  {
+    "key": "music-streaming",
+    "label_es": "Streaming de música",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "video-streaming-ott",
+    "label_es": "Streaming de video / OTT",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "job-board-recruitment",
+    "label_es": "Bolsa de trabajo",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "marketplace-p2p",
+    "label_es": "Marketplace (P2P)",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "logistics-delivery",
+    "label_es": "Logística y entregas",
+    "cat_es": "Empresas & B2B",
+    "arch": "b2b"
+  },
+  {
+    "key": "agriculture-farm-tech",
+    "label_es": "Agrotecnología",
+    "cat_es": "Empresas & B2B",
+    "arch": "b2b"
+  },
+  {
+    "key": "construction-architecture",
+    "label_es": "Construcción y arquitectura",
+    "cat_es": "Inmobiliaria & Construcción",
+    "arch": "b2b"
+  },
+  {
+    "key": "automotive-car-dealership",
+    "label_es": "Concesionario de autos",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "photography-studio",
+    "label_es": "Estudio de fotografía",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "portfolio"
+  },
+  {
+    "key": "coworking-space",
+    "label_es": "Espacio de coworking",
+    "cat_es": "Empresas & B2B",
+    "arch": "local"
+  },
+  {
+    "key": "home-services-plumber-electrician",
+    "label_es": "Servicios para el hogar",
+    "cat_es": "Inmobiliaria & Construcción",
+    "arch": "local"
+  },
+  {
+    "key": "childcare-daycare",
+    "label_es": "Guardería infantil",
+    "cat_es": "Educación",
+    "arch": "local"
+  },
+  {
+    "key": "senior-care-elderly",
+    "label_es": "Cuidado de adultos mayores",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "medical-clinic",
+    "label_es": "Clínica médica",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "pharmacy-drug-store",
+    "label_es": "Farmacia",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "dental-practice",
+    "label_es": "Clínica dental",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "veterinary-clinic",
+    "label_es": "Clínica veterinaria",
+    "cat_es": "Salud & Bienestar",
+    "arch": "local"
+  },
+  {
+    "key": "florist-plant-shop",
+    "label_es": "Florería y vivero",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "bakery-cafe",
+    "label_es": "Panadería y café",
+    "cat_es": "Comida & Bebida",
+    "arch": "food"
+  },
+  {
+    "key": "brewery-winery",
+    "label_es": "Cervecería y viñedo",
+    "cat_es": "Comida & Bebida",
+    "arch": "food"
+  },
+  {
+    "key": "airline",
+    "label_es": "Aerolínea",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "news-media-platform",
+    "label_es": "Portal de noticias",
+    "cat_es": "Creadores & Contenido",
+    "arch": "creator"
+  },
+  {
+    "key": "magazine-blog",
+    "label_es": "Revista y blog",
+    "cat_es": "Creadores & Contenido",
+    "arch": "creator"
+  },
+  {
+    "key": "freelancer-platform",
+    "label_es": "Plataforma de freelancers",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "marketing-agency",
+    "label_es": "Agencia de marketing",
+    "cat_es": "Marketing & Ventas",
+    "arch": "b2b"
+  },
+  {
+    "key": "event-management",
+    "label_es": "Gestión de eventos",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "membership-community",
+    "label_es": "Membresía y comunidad",
+    "cat_es": "Comunidad & Social",
+    "arch": "creator"
+  },
+  {
+    "key": "newsletter-platform",
+    "label_es": "Plataforma de newsletters",
+    "cat_es": "Creadores & Contenido",
+    "arch": "creator"
+  },
+  {
+    "key": "digital-products-downloads",
+    "label_es": "Productos digitales",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "church-religious-organization",
+    "label_es": "Iglesia y organización religiosa",
+    "cat_es": "Comunidad & Social",
+    "arch": "local"
+  },
+  {
+    "key": "sports-team-club",
+    "label_es": "Equipo y club deportivo",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "local"
+  },
+  {
+    "key": "museum-gallery",
+    "label_es": "Museo y galería",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "portfolio"
+  },
+  {
+    "key": "theater-cinema",
+    "label_es": "Teatro y cine",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "hospitality"
+  },
+  {
+    "key": "language-learning-app",
+    "label_es": "App de idiomas",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "coding-bootcamp",
+    "label_es": "Bootcamp de programación",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "cybersecurity-platform",
+    "label_es": "Ciberseguridad",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "developer-tool-ide",
+    "label_es": "Herramienta de desarrollo / IDE",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "biotech-life-sciences",
+    "label_es": "Biotecnología y ciencias de la vida",
+    "cat_es": "Tecnología",
+    "arch": "b2b"
+  },
+  {
+    "key": "space-tech-aerospace",
+    "label_es": "Tecnología espacial y aeroespacial",
+    "cat_es": "Tecnología",
+    "arch": "b2b"
+  },
+  {
+    "key": "architecture-interior",
+    "label_es": "Arquitectura e interiores",
+    "cat_es": "Inmobiliaria & Construcción",
+    "arch": "portfolio"
+  },
+  {
+    "key": "quantum-computing-interface",
+    "label_es": "Computación cuántica",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "biohacking-longevity-app",
+    "label_es": "Biohacking y longevidad",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "autonomous-drone-fleet-manager",
+    "label_es": "Gestión de flotas de drones",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "generative-art-platform",
+    "label_es": "Plataforma de arte generativo",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "spatial-computing-os-app",
+    "label_es": "Computación espacial (OS / App)",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "sustainable-energy-climate-tech",
+    "label_es": "Energía sostenible / Climate Tech",
+    "cat_es": "Tecnología",
+    "arch": "b2b"
+  },
+  {
+    "key": "personal-finance-tracker",
+    "label_es": "Finanzas personales",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "chat-messaging-app",
+    "label_es": "App de mensajería",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "notes-writing-app",
+    "label_es": "App de notas",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "habit-tracker",
+    "label_es": "Seguimiento de hábitos",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "food-delivery-on-demand",
+    "label_es": "Entrega de comida",
+    "cat_es": "Comida & Bebida",
+    "arch": "food"
+  },
+  {
+    "key": "ride-hailing-transportation",
+    "label_es": "Transporte y ride hailing",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "recipe-cooking-app",
+    "label_es": "App de recetas",
+    "cat_es": "Comida & Bebida",
+    "arch": "saas"
+  },
+  {
+    "key": "meditation-mindfulness",
+    "label_es": "Meditación y mindfulness",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "weather-app",
+    "label_es": "App del clima",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "diary-journal-app",
+    "label_es": "Diario personal",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "crm-client-management",
+    "label_es": "CRM y gestión de clientes",
+    "cat_es": "Marketing & Ventas",
+    "arch": "saas"
+  },
+  {
+    "key": "inventory-stock-management",
+    "label_es": "Gestión de inventario",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "flashcard-study-tool",
+    "label_es": "Tarjetas de estudio",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "booking-appointment-app",
+    "label_es": "Reservas y citas",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "invoice-billing-tool",
+    "label_es": "Facturación",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "grocery-shopping-list",
+    "label_es": "Lista de compras",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "timer-pomodoro",
+    "label_es": "Temporizador Pomodoro",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "parenting-baby-tracker",
+    "label_es": "Crianza y bebé",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "scanner-document-manager",
+    "label_es": "Escáner de documentos",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "calendar-scheduling-app",
+    "label_es": "Calendario y agenda",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "password-manager",
+    "label_es": "Gestor de contraseñas",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "expense-splitter-bill-split",
+    "label_es": "Dividir gastos",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "voice-recorder-memo",
+    "label_es": "Grabadora de voz",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "bookmark-read-later",
+    "label_es": "Guardar para después",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "translator-app",
+    "label_es": "App de traducción",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "calculator-unit-converter",
+    "label_es": "Calculadora y conversor",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "alarm-world-clock",
+    "label_es": "Alarma y reloj mundial",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "file-manager-transfer",
+    "label_es": "Gestor de archivos",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "email-client",
+    "label_es": "Cliente de correo",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "casual-puzzle-game",
+    "label_es": "Juego de rompecabezas",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "trivia-quiz-game",
+    "label_es": "Juego de trivia",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "card-board-game",
+    "label_es": "Juego de cartas y mesa",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "idle-clicker-game",
+    "label_es": "Juego idle / clicker",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "word-crossword-game",
+    "label_es": "Juego de palabras",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "arcade-retro-game",
+    "label_es": "Juego arcade / retro",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "saas"
+  },
+  {
+    "key": "photo-editor-filters",
+    "label_es": "Editor de fotos",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "short-video-editor",
+    "label_es": "Editor de video",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "drawing-sketching-canvas",
+    "label_es": "Dibujo y bocetos",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "music-creation-beat-maker",
+    "label_es": "Creación musical y beats",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "meme-sticker-maker",
+    "label_es": "Memes y stickers",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "ai-photo-avatar-generator",
+    "label_es": "Generador de avatares con IA",
+    "cat_es": "Creativos & Portafolio",
+    "arch": "saas"
+  },
+  {
+    "key": "link-in-bio-page-builder",
+    "label_es": "Link-in-bio",
+    "cat_es": "Creadores & Contenido",
+    "arch": "creator"
+  },
+  {
+    "key": "wardrobe-outfit-planner",
+    "label_es": "Armario y outfits",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "plant-care-tracker",
+    "label_es": "Cuidado de plantas",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "book-reading-tracker",
+    "label_es": "Seguimiento de lectura",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "couple-relationship-app",
+    "label_es": "App para parejas",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "family-calendar-chores",
+    "label_es": "Calendario familiar",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "mood-tracker",
+    "label_es": "Seguimiento de ánimo",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "gift-wishlist",
+    "label_es": "Listas de regalos",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "saas"
+  },
+  {
+    "key": "running-cycling-gps",
+    "label_es": "Running y ciclismo GPS",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "yoga-stretching-guide",
+    "label_es": "Yoga y estiramientos",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "sleep-tracker",
+    "label_es": "Seguimiento del sueño",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "calorie-nutrition-counter",
+    "label_es": "Contador de calorías",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "period-cycle-tracker",
+    "label_es": "Ciclo menstrual",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "medication-pill-reminder",
+    "label_es": "Recordatorio de medicinas",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "water-hydration-reminder",
+    "label_es": "Recordatorio de hidratación",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "fasting-intermittent-timer",
+    "label_es": "Ayuno intermitente",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "anonymous-community-confession",
+    "label_es": "Comunidad anónima",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "local-events-discovery",
+    "label_es": "Eventos locales",
+    "cat_es": "Comunidad & Social",
+    "arch": "local"
+  },
+  {
+    "key": "study-together-virtual-coworking",
+    "label_es": "Estudiar juntos / Coworking virtual",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "coding-challenge-practice",
+    "label_es": "Retos de programación",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "kids-learning-abc-math",
+    "label_es": "Aprendizaje infantil (ABC y matemáticas)",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "music-instrument-learning",
+    "label_es": "Aprender instrumentos",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "parking-finder",
+    "label_es": "Buscador de estacionamiento",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "public-transit-guide",
+    "label_es": "Guía de transporte público",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "road-trip-planner",
+    "label_es": "Planificador de viajes por carretera",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "vpn-privacy-tool",
+    "label_es": "VPN y privacidad",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "emergency-sos-safety",
+    "label_es": "SOS y seguridad",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "wallpaper-theme-app",
+    "label_es": "Fondos y temas",
+    "cat_es": "Otros",
+    "arch": "saas"
+  },
+  {
+    "key": "white-noise-ambient-sound",
+    "label_es": "Ruido blanco y sonido ambiental",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "home-decoration-interior-design",
+    "label_es": "Decoración e interiorismo",
+    "cat_es": "Inmobiliaria & Construcción",
+    "arch": "portfolio"
+  },
+  {
+    "key": "academic-journal-scholarly-publishing",
+    "label_es": "Revista académica",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "api-developer-portal",
+    "label_es": "Portal de desarrolladores / API",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "forum-discussion-board",
+    "label_es": "Foro y discusión",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "directory-listing-site",
+    "label_es": "Directorio y listados",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "status-page-incident-management",
+    "label_es": "Página de estado / Incidentes",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "wiki-encyclopedia",
+    "label_es": "Wiki y enciclopedia",
+    "cat_es": "Educación",
+    "arch": "saas"
+  },
+  {
+    "key": "auction-platform",
+    "label_es": "Plataforma de subastas",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "changelog-release-notes",
+    "label_es": "Changelog / Notas de versión",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "citizen-science-platform",
+    "label_es": "Ciencia ciudadana",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "classifieds-buy-sell",
+    "label_es": "Clasificados / Compra-venta",
+    "cat_es": "Ecommerce & Tienda",
+    "arch": "store"
+  },
+  {
+    "key": "conference-symposium-landing-page",
+    "label_es": "Conferencia y simposio",
+    "cat_es": "Hospitalidad & Viajes",
+    "arch": "hospitality"
+  },
+  {
+    "key": "crowdfunding-platform",
+    "label_es": "Crowdfunding",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "digital-signage-kiosk",
+    "label_es": "Señalización digital / Kiosco",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "e-signature-document-workflow",
+    "label_es": "Firma electrónica",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "feature-flag-config-management",
+    "label_es": "Feature flags y configuración",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "government-portal-civic-services",
+    "label_es": "Portal de gobierno y servicios cívicos",
+    "cat_es": "Otros",
+    "arch": "b2b"
+  },
+  {
+    "key": "grant-funding-portal",
+    "label_es": "Portal de subvenciones",
+    "cat_es": "Finanzas & Legal",
+    "arch": "b2b"
+  },
+  {
+    "key": "lms-learning-management-system",
+    "label_es": "LMS (sistema de gestión de aprendizaje)",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "no-code-low-code-builder",
+    "label_es": "Constructor No-code / Low-code",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "open-source-project-landing",
+    "label_es": "Proyecto Open Source",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "patient-portal-health-records",
+    "label_es": "Portal del paciente y expediente",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "patent-ip-database",
+    "label_es": "Base de datos de patentes y PI",
+    "cat_es": "Finanzas & Legal",
+    "arch": "saas"
+  },
+  {
+    "key": "q-a-community-platform",
+    "label_es": "Comunidad de preguntas y respuestas",
+    "cat_es": "Comunidad & Social",
+    "arch": "saas"
+  },
+  {
+    "key": "research-lab-university-department",
+    "label_es": "Laboratorio y departamento universitario",
+    "cat_es": "Educación",
+    "arch": "edu"
+  },
+  {
+    "key": "resume-cv-builder",
+    "label_es": "Constructor de CV",
+    "cat_es": "Empresas & B2B",
+    "arch": "saas"
+  },
+  {
+    "key": "review-platform",
+    "label_es": "Plataforma de reseñas",
+    "cat_es": "Marketing & Ventas",
+    "arch": "saas"
+  },
+  {
+    "key": "rpa-automation-dashboard",
+    "label_es": "RPA y automatización",
+    "cat_es": "Tecnología",
+    "arch": "saas"
+  },
+  {
+    "key": "survey-form-builder",
+    "label_es": "Encuestas y formularios",
+    "cat_es": "Marketing & Ventas",
+    "arch": "saas"
+  },
+  {
+    "key": "telemedicine-platform",
+    "label_es": "Telemedicina",
+    "cat_es": "Salud & Bienestar",
+    "arch": "saas"
+  },
+  {
+    "key": "testimonial-social-proof-widget",
+    "label_es": "Testimonios y prueba social",
+    "cat_es": "Marketing & Ventas",
+    "arch": "saas"
+  },
+  {
+    "key": "ticketing-box-office",
+    "label_es": "Boletería y taquilla",
+    "cat_es": "Entretenimiento & Juegos",
+    "arch": "hospitality"
+  }
+]

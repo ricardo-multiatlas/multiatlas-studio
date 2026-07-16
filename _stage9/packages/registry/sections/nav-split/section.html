@@ -1,0 +1,24 @@
+<!-- nav-split -->
+<nav class="sticky top-0 z-50 backdrop-blur-xl" style="background: color-mix(in srgb, var(--ma-bg) 82%, transparent); border-bottom: 1px solid var(--ma-border);">
+  <input type="checkbox" id="nsplit-toggle" class="ma-mnav-cb" />
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between relative">
+    <a href="index.html" class="ma-display font-bold text-lg">{{brand}}</a>
+    <div class="hidden md:flex items-center gap-8 text-sm absolute left-1/2 -translate-x-1/2">
+      <a href="{{link1_href}}" class="ma-muted hover:opacity-70 transition-opacity">{{link1}}</a>
+      <a href="{{link2_href}}" class="ma-muted hover:opacity-70 transition-opacity">{{link2}}</a>
+      <a href="{{link3_href}}" class="ma-muted hover:opacity-70 transition-opacity">{{link3}}</a>
+      <a href="{{link4_href}}" class="ma-muted hover:opacity-70 transition-opacity">{{link4}}</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="{{cta_href}}" class="ma-btn ma-btn-gradient text-sm !px-5 !py-2.5 hidden md:inline-flex">{{cta}}</a>
+      <label for="nsplit-toggle" class="ma-mnav-burger md:hidden" aria-label="Menú"><span></span><span></span><span></span></label>
+    </div>
+  </div>
+  <div class="ma-mnav-panel md:hidden">
+    <a href="{{link1_href}}" class="ma-mnav-link">{{link1}}</a>
+    <a href="{{link2_href}}" class="ma-mnav-link">{{link2}}</a>
+    <a href="{{link3_href}}" class="ma-mnav-link">{{link3}}</a>
+    <a href="{{link4_href}}" class="ma-mnav-link">{{link4}}</a>
+    <a href="{{cta_href}}" class="ma-btn ma-btn-gradient" style="margin-top:.9rem;justify-content:center;">{{cta}}</a>
+  </div>
+</nav>

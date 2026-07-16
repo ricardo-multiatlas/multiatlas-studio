@@ -4,10 +4,13 @@
   "category": "Stats",
   "industry_tags": ["general"],
   "variants": ["multiatlas", "multiatlas-noche"],
+  "repeat": "stats",
   "defaults": {
-    "n1": "20", "n1_suf": "años", "n1_label": "de trayectoria",
-    "n2": "450", "n2_suf": "+", "n2_label": "proyectos entregados",
-    "n3": "12", "n3_suf": "", "n3_label": "zonas cubiertas",
-    "n4": "98", "n4_suf": "%", "n4_label": "clientes satisfechos"
+    "stats": [
+      { "n": "20", "suf": "años", "label": "de trayectoria" },
+      { "n": "450", "suf": "+", "label": "proyectos entregados" },
+      { "n": "12", "suf": "", "label": "zonas cubiertas" },
+      { "n": "98", "suf": "%", "label": "clientes satisfechos" }
+    ]
   }
 }

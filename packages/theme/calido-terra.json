@@ -1,0 +1,18 @@
+{
+  "name": "calido-terra",
+  "comment": "Cálido y orgánico: terracota + olivo sobre crema, serif editorial. Para gastronomía, artesanal, café, campo.",
+  "tokens": {
+    "--ma-bg": "#FBF3EA",
+    "--ma-surface": "rgba(120,60,30,0.045)",
+    "--ma-border": "rgba(120,60,30,0.14)",
+    "--ma-text": "#35251A",
+    "--ma-muted": "rgba(53,37,26,0.60)",
+    "--ma-accent": "#C25A2E",
+    "--ma-accent-2": "#7A7A34",
+    "--ma-accent-3": "#C25A2E",
+    "--ma-glow": "rgba(194,90,46,0.11)",
+    "--ma-radius": "0.9rem",
+    "--ma-font-display": "'Playfair Display', serif",
+    "--ma-font-body": "'Inter', sans-serif"
+  }
+}

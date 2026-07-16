@@ -9,42 +9,20 @@
       <p class="ma-muted ma-reveal max-w-xs text-sm">{{sub}}</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+<!--@each listings-->
       <div class="ma-card ma-reveal overflow-hidden">
-        <div class="relative h-52 flex items-end p-5" style="background: linear-gradient(160deg, color-mix(in srgb, var(--ma-accent) 22%, var(--ma-bg)), color-mix(in srgb, var(--ma-accent) 55%, var(--ma-text)));">
-          <img src="{{l1_img}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display=\'none\'" />
+        <div class="relative h-52 flex items-end p-5" style="background: linear-gradient(160deg, color-mix(in srgb, var(--ma-accent) 28%, var(--ma-bg)), color-mix(in srgb, var(--ma-accent) 48%, var(--ma-text)));">
+          <img src="{{img}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55));"></div>
-          <span class="text-xs font-semibold px-3 py-1 rounded-full text-white absolute top-4 left-4 z-10" style="background: rgba(0,0,0,0.35);">{{l1_zona}}</span>
-          <p class="ma-display text-2xl font-bold text-white relative z-10">{{l1_precio}}</p>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full text-white absolute top-4 left-4 z-10" style="background: rgba(0,0,0,0.35);">{{zona}}</span>
+          <p class="ma-display text-2xl font-bold text-white relative z-10">{{precio}}</p>
         </div>
         <div class="p-5">
-          <p class="font-semibold">{{l1_titulo}}</p>
-          <p class="ma-muted text-sm mt-2">{{l1_rec}} rec · {{l1_ban}} baños · {{l1_m2}} m²</p>
+          <p class="font-semibold">{{titulo}}</p>
+          <p class="ma-muted text-sm mt-2">{{rec}} rec · {{ban}} baños · {{m2}} m²</p>
         </div>
       </div>
-      <div class="ma-card ma-reveal overflow-hidden">
-        <div class="relative h-52 flex items-end p-5" style="background: linear-gradient(160deg, color-mix(in srgb, var(--ma-accent) 35%, var(--ma-bg)), color-mix(in srgb, var(--ma-accent) 40%, var(--ma-text)));">
-          <img src="{{l2_img}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display=\'none\'" />
-          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55));"></div>
-          <span class="text-xs font-semibold px-3 py-1 rounded-full text-white absolute top-4 left-4 z-10" style="background: rgba(0,0,0,0.35);">{{l2_zona}}</span>
-          <p class="ma-display text-2xl font-bold text-white relative z-10">{{l2_precio}}</p>
-        </div>
-        <div class="p-5">
-          <p class="font-semibold">{{l2_titulo}}</p>
-          <p class="ma-muted text-sm mt-2">{{l2_rec}} rec · {{l2_ban}} baños · {{l2_m2}} m²</p>
-        </div>
-      </div>
-      <div class="ma-card ma-reveal overflow-hidden">
-        <div class="relative h-52 flex items-end p-5" style="background: linear-gradient(160deg, color-mix(in srgb, var(--ma-accent) 15%, var(--ma-text)), color-mix(in srgb, var(--ma-accent) 45%, var(--ma-bg)));">
-          <img src="{{l3_img}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display=\'none\'" />
-          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55));"></div>
-          <span class="text-xs font-semibold px-3 py-1 rounded-full text-white absolute top-4 left-4 z-10" style="background: rgba(0,0,0,0.35);">{{l3_zona}}</span>
-          <p class="ma-display text-2xl font-bold text-white relative z-10">{{l3_precio}}</p>
-        </div>
-        <div class="p-5">
-          <p class="font-semibold">{{l3_titulo}}</p>
-          <p class="ma-muted text-sm mt-2">{{l3_rec}} rec · {{l3_ban}} baños · {{l3_m2}} m²</p>
-        </div>
-      </div>
+<!--@end-->
     </div>
     <div class="text-center mt-12 ma-reveal"><a href="{{cta_href}}" class="ma-btn ma-btn-ghost">{{cta}} →</a></div>
   </div>

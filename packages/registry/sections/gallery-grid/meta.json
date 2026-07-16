@@ -1,0 +1,19 @@
+{
+  "slug": "gallery-grid",
+  "title": "Galería de imágenes",
+  "category": "Galleries",
+  "industry_tags": ["portfolio", "store", "creator", "hospitality"],
+  "variants": ["hover-zoom"],
+  "reference": "Rejilla de imágenes con zoom al hover",
+  "repeat": "items",
+  "defaults": {
+    "eyebrow": "Galería",
+    "headline": "Nuestro trabajo",
+    "sub": "Una muestra de lo que hacemos.",
+    "items": [
+      { "img": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1400&q=60", "title": "Proyecto 01", "tag": "Trabajo reciente" },
+      { "img": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1400&q=60", "title": "Proyecto 02", "tag": "Trabajo reciente" },
+      { "img": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=60", "title": "Proyecto 03", "tag": "Trabajo reciente" }
+    ]
+  }
+}

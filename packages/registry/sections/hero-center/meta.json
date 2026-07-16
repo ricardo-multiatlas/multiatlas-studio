@@ -1,0 +1,17 @@
+{
+  "slug": "hero-center",
+  "title": "Hero centrado (sin imagen)",
+  "category": "Heroes",
+  "industry_tags": ["saas", "creator", "b2b", "general"],
+  "variants": ["centered-glow"],
+  "reference": "Hero editorial centrado a una columna",
+  "defaults": {
+    "eyebrow": "Bienvenido",
+    "headline_1": "Algo grande",
+    "headline_em": "empieza",
+    "headline_2": "aquí",
+    "sub": "Una propuesta clara, directa y hecha para tu público. Da el primer paso hoy.",
+    "cta": "Empezar", "cta_href": "#contacto",
+    "cta2": "Conocer más", "cta2_href": "#features"
+  }
+}

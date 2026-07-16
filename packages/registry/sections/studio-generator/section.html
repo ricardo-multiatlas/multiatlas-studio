@@ -1,0 +1,216 @@
+<!-- studio-generator -->
+<style>
+  .gen-dev{border:1px solid var(--ma-border);background:transparent;color:var(--ma-muted);border-radius:999px;padding:.45rem 1rem;font-size:.8rem;cursor:pointer;transition:.15s}
+  .gen-dev.is-on{background:var(--ma-accent);color:#fff;border-color:var(--ma-accent)}
+  .gen-stage{max-width:100%;margin:0 auto;transition:max-width .4s cubic-bezier(.2,.7,.2,1)}
+  .gen-stage.is-mobile{max-width:390px}
+  .gen-chrome{position:relative;border:1px solid var(--ma-border);border-radius:16px;overflow:hidden;background:var(--ma-surface);box-shadow:0 30px 70px -18px rgba(0,0,0,.35)}
+  .gen-stage.is-mobile .gen-chrome{border-radius:46px;border:11px solid #111;box-shadow:0 30px 70px -18px rgba(0,0,0,.5)}
+  .gen-bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--ma-border);background:color-mix(in srgb, var(--ma-text) 5%, transparent)}
+  .gen-stage.is-mobile .gen-bar{display:none}
+  .gen-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+  .gen-urlbar{flex:1;min-width:0;text-align:center;font-family:ui-monospace,monospace;font-size:11px;color:var(--ma-muted);background:var(--ma-bg);border:1px solid var(--ma-border);border-radius:6px;padding:3px 10px;max-width:62%;margin:0 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .gen-notch{display:none}
+  .gen-stage.is-mobile .gen-notch{display:block;position:absolute;top:14px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:#000;border-radius:999px;z-index:6}
+  .gen-screen{position:relative;width:100%;height:520px;overflow:hidden;background:#fff}
+  .gen-stage.is-mobile .gen-screen{height:660px}
+  .gen-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+<section id="generador" class="relative overflow-hidden py-24 md:py-32 px-6">
+  <div class="ma-glow-orb ma-pulse w-[520px] h-[520px] -top-40 left-1/2 -translate-x-1/2" style="background: var(--ma-glow);"></div>
+  <div class="relative z-10 max-w-3xl mx-auto text-center">
+    <span class="ma-eyebrow ma-reveal">✦ {{eyebrow}}</span>
+    <h2 class="ma-display ma-reveal text-3xl md:text-5xl font-semibold mt-7 leading-[1.1]">
+      {{headline_1}} <em class="italic" style="color: var(--ma-accent-2);">{{headline_em}}</em> {{headline_2}}
+    </h2>
+    <p class="ma-muted ma-reveal text-base md:text-lg mt-6 max-w-xl mx-auto">{{sub}}</p>
+  </div>
+
+  <form id="gen-form" class="ma-card ma-reveal relative z-10 max-w-2xl mx-auto mt-12 p-6 md:p-8 text-left" data-lead="{{lead_endpoint}}">
+    <label class="text-sm font-semibold block mb-2">{{label_desc}}</label>
+    <textarea id="gen-desc" name="negocio" rows="2" required
+      class="w-full rounded-xl px-4 py-3 text-sm md:text-base outline-none resize-none"
+      style="background: var(--ma-surface); border: 1px solid var(--ma-border); color: var(--ma-text);"
+      placeholder="{{desc_placeholder}}"></textarea>
+    <div id="gen-chips" class="flex flex-wrap gap-2 mt-3"></div>
+    <div class="grid sm:grid-cols-[1fr_auto] gap-3 mt-5 items-end">
+      <div>
+        <label class="text-sm font-semibold block mb-2">{{label_email}}</label>
+        <input id="gen-email" name="email" type="email" required
+          class="w-full rounded-xl px-4 py-3 text-sm outline-none"
+          style="background: var(--ma-surface); border: 1px solid var(--ma-border); color: var(--ma-text);"
+          placeholder="{{email_placeholder}}" />
+      </div>
+      <button type="submit" class="ma-btn ma-btn-gradient justify-center h-[46px]">{{cta}} →</button>
+    </div>
+    <p id="gen-error" class="text-xs mt-3" style="color: #d64545; display: none;">{{error_text}}</p>
+    <p class="ma-muted text-xs mt-3">{{privacy_note}}</p>
+  </form>
+
+  <div id="gen-loading" class="ma-card relative z-10 max-w-2xl mx-auto mt-8 p-8" style="display: none;">
+    <div class="flex items-center gap-2 px-1 pb-4" style="border-bottom: 1px solid var(--ma-border);">
+      <span class="w-3 h-3 rounded-full bg-red-400/70"></span>
+      <span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
+      <span class="w-3 h-3 rounded-full bg-green-400/70"></span>
+      <span id="gen-loadtitle" class="ma-muted text-xs ml-3 font-mono">studio.multiatlas · construyendo…</span>
+    </div>
+    <ul id="gen-steps" class="mt-5 space-y-3 font-mono text-sm"></ul>
+    <div class="h-2 rounded-full overflow-hidden mt-6" style="background: var(--ma-surface);">
+      <div id="gen-bar" class="h-full rounded-full transition-all duration-300" style="width: 3%; background: var(--ma-accent);"></div>
+    </div>
+  </div>
+
+  <div id="gen-result" class="relative z-10 max-w-5xl mx-auto mt-8" style="display: none;">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <button type="button" id="gen-dev-d" class="gen-dev is-on">🖥 Escritorio</button>
+      <button type="button" id="gen-dev-m" class="gen-dev">📱 Móvil</button>
+    </div>
+    <div id="gen-stage" class="gen-stage">
+      <div class="gen-chrome">
+        <div class="gen-notch"></div>
+        <div class="gen-bar">
+          <span class="gen-dot" style="background:#ff5f57"></span>
+          <span class="gen-dot" style="background:#febc2e"></span>
+          <span class="gen-dot" style="background:#28c840"></span>
+          <span id="gen-url" class="gen-urlbar">preview.multiatlas.site</span>
+        </div>
+        <div class="gen-screen"><iframe id="gen-frame" title="Preview" style="border:0;"></iframe></div>
+      </div>
+    </div>
+    <div class="text-center mt-6">
+      <p class="ma-eyebrow mb-4" id="gen-badge">{{result_badge}}</p>
+      <h3 class="ma-display text-xl md:text-2xl font-semibold">{{result_headline}}</h3>
+      <p class="ma-muted mt-3 max-w-lg mx-auto text-sm">{{result_sub}}</p>
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-7">
+        <a id="gen-cta-agencia" href="{{cta2_href}}" class="ma-btn ma-btn-gradient">{{cta2}} →</a>
+        <a id="gen-cta-studio" href="{{cta3_href}}" class="ma-btn ma-btn-ghost">{{cta3}}</a>
+        <button id="gen-cta-full" class="ma-btn ma-btn-ghost">{{cta4}}</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/app/registry-data.js"></script>
+<script>
+(function () {
+  var form = document.getElementById("gen-form");
+  if (!form || form.dataset.wired) return;
+  form.dataset.wired = "1";
+  var $ = function (id) { return document.getElementById(id); };
+  var desc = $("gen-desc"), email = $("gen-email"), err = $("gen-error"),
+      loading = $("gen-loading"), result = $("gen-result"), frame = $("gen-frame"),
+      urlEl = $("gen-url"), badge = $("gen-badge"), bar = $("gen-bar"), stepsEl = $("gen-steps");
+  var D = window.MA_DATA;
+  var lastHtml = "";
+
+  // Chips de ejemplo (textos que detectan bien contra la taxonomía)
+  var chipDefs = ["Restaurante de mariscos", "App de salud para clínicas", "Agencia creativa de branding", "Tienda de moda online", "Fintech de pagos"];
+  var chipHost = $("gen-chips");
+  chipDefs.forEach(function (t) {
+    var b = document.createElement("button"); b.type = "button";
+    b.className = "ma-btn-ghost text-xs"; b.style.cssText = "border:1px solid var(--ma-border);border-radius:8px;padding:.4rem .7rem;cursor:pointer;background:transparent;color:var(--ma-text)";
+    b.textContent = t;
+    b.addEventListener("click", function () { desc.value = t; desc.focus(); });
+    chipHost.appendChild(b);
+  });
+
+  // ---- Motor de composición en el navegador (idéntico a compose.mjs) ----
+  function renderSection(slug, copy){ var s=D.sections[slug]; if(!s) return ""; var d=Object.assign({},s.meta.defaults,copy||{}); return s.html.replace(/\{\{(\w+)\}\}/g,function(_,k){return d[k]!=null?d[k]:"";}); }
+  function theme(t){ if(t&&typeof t==="object"&&t.tokens) return t.tokens; return D.themes[typeof t==="string"?t:"multiatlas"]||D.themes.multiatlas; }
+  function famName(t){ var m=(t||"").match(/'([^']+)'|"([^"]+)"/); return m?(m[1]||m[2]):null; }
+  function fontsLink(tk){ var f=new Set(["Inter"]); [tk["--ma-font-display"],tk["--ma-font-body"]].forEach(function(t){ var n=famName(t); if(n)f.add(n); }); return "https://fonts.googleapis.com/css2?"+Array.from(f).map(function(x){ return "family="+encodeURIComponent(x).replace(/%20/g,"+")+":wght@400;500;600;700"; }).join("&")+"&display=swap"; }
+  var MSHELL='\n<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"><\/script>\n<script>(function(){var M=window.Motion;if(M&&M.inView&&M.animate){document.body.classList.add("motion-on");M.inView(".ma-reveal",function(info){M.animate(info.target,{opacity:[0,1],transform:["translateY(26px)","translateY(0px)"]},{duration:.7,easing:[.2,.7,.2,1]});},{margin:"0px 0px -10% 0px"});document.querySelectorAll(".ma-btn").forEach(function(b){b.addEventListener("pointerenter",function(){M.animate(b,{transform:"translateY(-2px) scale(1.02)"},{duration:.25});});b.addEventListener("pointerleave",function(){M.animate(b,{transform:"none"},{duration:.3});});});}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&e.target.classList.add("ma-in");});},{threshold:.12});document.querySelectorAll(".ma-reveal").forEach(function(el){io.observe(el);});}document.querySelectorAll(".ma-tilt").forEach(function(card){card.addEventListener("mousemove",function(ev){var r=card.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width-0.5,y=(ev.clientY-r.top)/r.height-0.5;card.style.transform="perspective(900px) rotateY("+(x*6)+"deg) rotateX("+(-y*6)+"deg)";});card.addEventListener("mouseleave",function(){card.style.transform="";});});})();<\/script>';
+  function compose(cfg){ var tk=theme(cfg.theme); var body=(cfg.sections||[]).map(function(s){return renderSection(s.use,s.copy);}).join("\n"); var vars=Object.keys(tk).map(function(k){return k+": "+tk[k]+";";}).join(" ");
+    var html='<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>'+(cfg.meta&&cfg.meta.title||"")+'</title><script src="https://cdn.tailwindcss.com"><\/script><link href="'+fontsLink(tk)+'" rel="stylesheet"/><style>:root{'+vars+'}'+D.themeCss+'</style></head><body class="ma-noise'+(cfg.fx?' '+cfg.fx:'')+'"><script>document.body.classList.add("js")<\/script>'+body+MSHELL+'</body></html>';
+    Object.keys(D.logos).forEach(function(p){ if(D.logos[p]) html=html.split(p).join(D.logos[p]); }); return html; }
+
+  // ---- Detección de industria: keywords (inglés) + label (español) de las 192 ----
+  function norm(s){ return (" "+(s||"").toLowerCase()+" ").normalize("NFD").replace(/[̀-ͯ]/g,""); }
+  function detect(text){
+    if (!D || !D.industries) return null;
+    var t = norm(text);
+    var best=null, score=0;
+    D.industries.forEach(function(i){
+      var s=0;
+      (i.keywords||[]).forEach(function(k){ k=norm(k).trim(); if(k.length>2 && t.indexOf(k)>-1) s+=2; });
+      i.label.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").split(/\s+/).forEach(function(w){ if(w.length>3 && t.indexOf(w)>-1) s+=3; });
+      if(s>score){ score=s; best=i; }
+    });
+    if (best) return best;
+    // fallback: algo razonable según pistas en español
+    var hint = /rest|comida|cocina|taco|pizza|cafe|bar/.test(t) ? "food" : /salud|clinic|dent|medic|hospital|spa|belleza/.test(t) ? "salud" : /tienda|ropa|moda|joy|ecommerce|venta/.test(t) ? "tienda" : /software|app|saas|plataforma|tech|ia|cripto/.test(t) ? "saas" : null;
+    if (hint) { var f=D.industries.find(function(i){ return (i.config&&i.config.name||"").indexOf(hint)>-1; }); if(f) return f; }
+    return D.industries[0];
+  }
+
+  var STEPS = [];
+  var stepsUl = stepsEl;
+  function buildSteps(){
+    STEPS = {{steps_json}};
+    stepsUl.innerHTML = "";
+    STEPS.forEach(function (s) { var li=document.createElement("li"); li.innerHTML='<span class="gen-tick ma-muted">◦</span> '+s; stepsUl.appendChild(li); });
+    return stepsUl.querySelectorAll(".gen-tick");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var dtext = desc.value.trim(), m = email.value.trim();
+    if (dtext.length < 4 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)) { err.style.display = "block"; return; }
+    err.style.display = "none";
+    try { fetch(form.dataset.lead, { method:"POST", headers:{ "Content-Type":"application/json","Accept":"application/json" }, body: JSON.stringify({ _subject:"Generador landing — nuevo lead", email:m, negocio:dtext, origen:"Generador de la landing" }) }).catch(function(){}); } catch(_){}
+
+    var ind = detect(dtext);
+    if (D && ind) { try { lastHtml = compose(ind.config); } catch (_) { lastHtml = ""; } }
+
+    form.style.display = "none";
+    loading.style.display = "block";
+    loading.scrollIntoView({ behavior:"smooth", block:"center" });
+    var ticks = buildSteps();
+    var i = 0;
+    var tick = setInterval(function () {
+      if (i < ticks.length) {
+        ticks[i].textContent = "✓"; ticks[i].classList.remove("ma-muted"); ticks[i].style.color = "var(--ma-accent)";
+        bar.style.width = Math.round(((i+1)/ticks.length)*100) + "%";
+        i++;
+      } else { clearInterval(tick); reveal(dtext, m, ind); }
+    }, 460);
+  });
+
+  function slug(t){ return (t||"negocio").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,22)||"negocio"; }
+
+  function reveal(dtext, m, ind) {
+    if (D && ind && lastHtml) {
+      frame.removeAttribute("src"); frame.srcdoc = lastHtml;
+      urlEl.textContent = slug(dtext) + ".multiatlas.site";
+      badge.textContent = "Página real generada · " + ind.label + " · tema " + ind.theme;
+      var studio = document.getElementById("gen-cta-studio");
+      if (studio) studio.href = "/app/index.html?industry=" + ind.key;
+    } else {
+      // Fallback sin datos: demo estático de clínica
+      frame.removeAttribute("srcdoc"); frame.src = "/demos/clinica-novadent/index.html";
+      urlEl.textContent = slug(dtext) + ".multiatlas.site";
+      badge.textContent = "Ejemplo del nivel Multiatlas · tu página se diseña a la medida";
+    }
+    // Prellenar contacto
+    var msg = document.querySelector("#contacto textarea[name='mensaje']");
+    if (msg) msg.value = "Mi negocio: " + dtext + "\n(Generado desde la landing · email: " + m + (ind ? " · industria detectada: " + ind.label : "") + ")";
+    var mail = document.querySelector("#contacto input[name='email']");
+    if (mail && !mail.value) mail.value = m;
+    loading.style.display = "none";
+    result.style.display = "block";
+    result.scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+
+  var stage = $("gen-stage"), devD = $("gen-dev-d"), devM = $("gen-dev-m");
+  if (stage && devD && devM) {
+    devD.addEventListener("click", function () { stage.classList.remove("is-mobile"); devD.classList.add("is-on"); devM.classList.remove("is-on"); });
+    devM.addEventListener("click", function () { stage.classList.add("is-mobile"); devM.classList.add("is-on"); devD.classList.remove("is-on"); });
+  }
+
+  var full = document.getElementById("gen-cta-full");
+  if (full) full.addEventListener("click", function () {
+    if (!lastHtml) { window.open("/demos/clinica-novadent/index.html", "_blank"); return; }
+    var blob = new Blob([lastHtml], { type:"text/html" });
+    window.open(URL.createObjectURL(blob), "_blank");
+  });
+})();
+</script>

@@ -2,40 +2,19 @@
   "slug": "listings-grid",
   "title": "Listado de propiedades",
   "category": "Listings",
-  "industry_tags": [
-    "inmobiliaria",
-    "real estate"
-  ],
-  "variants": [
-    "multiatlas",
-    "multiatlas-noche"
-  ],
+  "industry_tags": ["inmobiliaria", "real estate"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "repeat": "listings",
   "defaults": {
     "eyebrow": "Portafolio",
     "headline": "Propiedades seleccionadas",
     "sub": "Verificadas legal y estructuralmente.",
-    "l1_zona": "Zona uno",
-    "l1_precio": "$0.0 M",
-    "l1_titulo": "Propiedad uno",
-    "l1_rec": "3",
-    "l1_ban": "2",
-    "l1_m2": "180",
-    "l2_zona": "Zona dos",
-    "l2_precio": "$0.0 M",
-    "l2_titulo": "Propiedad dos",
-    "l2_rec": "2",
-    "l2_ban": "2",
-    "l2_m2": "120",
-    "l3_zona": "Zona tres",
-    "l3_precio": "$0.0 M",
-    "l3_titulo": "Propiedad tres",
-    "l3_rec": "4",
-    "l3_ban": "3",
-    "l3_m2": "260",
     "cta": "Ver todo el portafolio",
     "cta_href": "#contacto",
-    "l1_img": "",
-    "l2_img": "",
-    "l3_img": ""
+    "listings": [
+      { "img": "", "zona": "Zona uno", "precio": "$0.0 M", "titulo": "Propiedad uno", "rec": "3", "ban": "2", "m2": "180" },
+      { "img": "", "zona": "Zona dos", "precio": "$0.0 M", "titulo": "Propiedad dos", "rec": "2", "ban": "2", "m2": "120" },
+      { "img": "", "zona": "Zona tres", "precio": "$0.0 M", "titulo": "Propiedad tres", "rec": "4", "ban": "3", "m2": "260" }
+    ]
   }
 }

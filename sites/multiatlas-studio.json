@@ -10,14 +10,16 @@
     {
       "use": "nav-header",
       "copy": {
+        "logo_src": "/assets/logo.png",
+        "logo_alt": "Multiatlas Studio",
         "cta": "Solicitar propuesta",
         "cta_href": "#contacto",
-        "link1": "Registry",
-        "link1_href": "registry/index.html",
-        "link2": "Cómo funciona",
-        "link2_href": "#features",
-        "link3": "Demos",
-        "link3_href": "#gallery"
+        "link1": "Explora",
+        "link1_href": "/explore/index.html",
+        "link2": "Generador",
+        "link2_href": "#generador",
+        "link3": "Registry",
+        "link3_href": "/registry/index.html"
       }
     },
     {
@@ -28,10 +30,10 @@
         "headline_em": "criterio",
         "headline_2": "de tres décadas",
         "sub": "La AI genera. Nosotros curamos. Cada site se compone sobre diseño aprobado por una agencia con más de 30 años de oficio.",
-        "cta": "Solicitar propuesta",
-        "cta2": "Ver el registry",
-        "cta_href": "#contacto",
-        "cta2_href": "registry/index.html"
+        "cta": "Crear mi página gratis",
+        "cta2": "Explorar por industria",
+        "cta_href": "#generador",
+        "cta2_href": "/explore/index.html"
       }
     },
     {
@@ -43,17 +45,13 @@
       }
     },
     {
-      "use": "hero-product",
+      "use": "studio-generator",
       "copy": {
-        "eyebrow": "El motor",
-        "headline": "De brief a site desplegado",
-        "sub": "Describe tu negocio. El pipeline selecciona secciones, define dirección de arte, escribe el copy y hace QA. Tú apruebas.",
-        "cta": "Ver cómo funciona",
-        "cta_href": "#features",
-        "mock_title": "studio.multiatlas.site",
-        "mock_line1": "▸ Brief recibido: clínica dental, CDMX…",
-        "mock_line2": "▸ Componiendo 8 secciones del registry…",
-        "mock_line3": "✓ QA 9/10 — preview desplegado en 42s"
+        "eyebrow": "Pruébalo ahora · sin costo",
+        "headline_1": "Describe tu negocio.",
+        "headline_em": "Mira",
+        "headline_2": "tu página en segundos.",
+        "sub": "Escribe a qué te dedicas y verás al instante una página del nivel Multiatlas. Después la afinamos contigo, con tu marca y tus textos, y la publicamos."
       }
     },
     {
@@ -69,8 +67,10 @@
       "copy": {
         "sub": "Para freelancers y agencias. El servicio white-label se cotiza aparte.",
         "bar_text": "Founding Members — 100 plazas · el precio sube al cerrar la beta",
-        "p1_cta": "Empezar — hablemos",
+        "p1_cta": "Entrar al Studio",
+        "p1_href": "/app/index.html?plan=pro",
         "p2_cta": "Reservar plaza founding",
+        "p2_href": "/app/index.html?plan=founding",
         "countdown_hours": ""
       }
     },
@@ -97,7 +97,7 @@
         "cta": "Solicitar propuesta",
         "cta_href": "#contacto",
         "col1_l1": "Biblioteca",
-        "col1_l1_href": "registry/index.html",
+        "col1_l1_href": "/registry/index.html",
         "col1_l2": "Cómo funciona",
         "col1_l2_href": "#features",
         "col1_l3": "Precios",

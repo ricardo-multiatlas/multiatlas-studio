@@ -1,0 +1,19 @@
+<!-- nav-sidebar -->
+<nav class="sticky top-0 z-50 backdrop-blur-xl" style="background: color-mix(in srgb, var(--ma-bg) 82%, transparent); border-bottom: 1px solid var(--ma-border);">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="ma-display font-bold text-lg">{{brand}}</a>
+    <input type="checkbox" id="ma-side-toggle" class="ma-side-cb" />
+    <label for="ma-side-toggle" class="ma-side-burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </label>
+    <label for="ma-side-toggle" class="ma-side-overlay" aria-hidden="true"></label>
+    <aside class="ma-side-drawer">
+      <a href="index.html" class="ma-display font-bold text-lg" style="display:block;margin-bottom:1.6rem;">{{brand}}</a>
+      <a href="{{link1_href}}" class="ma-side-link">{{link1}}</a>
+      <a href="{{link2_href}}" class="ma-side-link">{{link2}}</a>
+      <a href="{{link3_href}}" class="ma-side-link">{{link3}}</a>
+      <a href="{{link4_href}}" class="ma-side-link">{{link4}}</a>
+      <a href="{{cta_href}}" class="ma-btn ma-btn-gradient" style="margin-top:1.8rem;justify-content:center;">{{cta}}</a>
+    </aside>
+  </div>
+</nav>

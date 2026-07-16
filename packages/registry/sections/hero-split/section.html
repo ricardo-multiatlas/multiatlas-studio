@@ -1,0 +1,21 @@
+<!-- hero-split -->
+<section class="relative overflow-hidden py-20 md:py-28 px-6">
+  <div class="ma-glow-orb w-[420px] h-[420px] -top-32 -left-32 opacity-60" style="background: var(--ma-glow);"></div>
+  <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
+      <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.05]">{{headline_1}} <em class="italic" style="color: var(--ma-accent-2);">{{headline_em}}</em> {{headline_2}}</h1>
+      <p class="ma-muted ma-reveal text-base md:text-lg mt-6 max-w-md">{{sub}}</p>
+      <div class="ma-reveal flex flex-wrap gap-4 mt-9">
+        <a href="{{cta_href}}" class="ma-btn ma-btn-gradient">{{cta}} →</a>
+        <a href="{{cta2_href}}" class="ma-btn ma-btn-ghost">{{cta2}}</a>
+      </div>
+    </div>
+    <div class="ma-reveal relative">
+      <div class="ma-glow-orb w-64 h-64 -bottom-16 -right-10 opacity-50" style="background: var(--ma-glow);"></div>
+      <div class="ma-card ma-tilt overflow-hidden relative" style="aspect-ratio: 4/5;">
+        <img src="{{img}}" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+</section>

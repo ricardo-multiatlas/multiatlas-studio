@@ -1,0 +1,16 @@
+{
+  "slug": "nav-sidebar",
+  "title": "Nav con menú lateral (off-canvas)",
+  "category": "Navigation",
+  "industry_tags": ["portfolio", "creator", "saas", "store"],
+  "variants": ["drawer-left"],
+  "reference": "Off-canvas drawer con checkbox-hack (sin JS)",
+  "defaults": {
+    "brand": "Mi Negocio",
+    "link1": "Servicios", "link1_href": "#servicios",
+    "link2": "Galería", "link2_href": "#gallery",
+    "link3": "Preguntas", "link3_href": "#faq",
+    "link4": "Contacto", "link4_href": "#contacto",
+    "cta": "Contacto", "cta_href": "#contacto"
+  }
+}

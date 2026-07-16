@@ -1,0 +1,16 @@
+{
+  "slug": "logos-strip",
+  "title": "Tira de logos / confían en",
+  "category": "Social Proof",
+  "industry_tags": ["general", "agencia", "saas", "b2b"],
+  "variants": ["multiatlas", "indigo-tech", "noir-oro"],
+  "reference": "Franja de prueba social con marcas/clientes",
+  "repeat": "logos",
+  "defaults": {
+    "label": "Confían en nosotros",
+    "logos": [
+      { "name": "Aurora" }, { "name": "Vértice" }, { "name": "Nodo" },
+      { "name": "Kairós" }, { "name": "Ébano" }, { "name": "Prisma" }
+    ]
+  }
+}

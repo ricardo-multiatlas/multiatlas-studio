@@ -1,0 +1,20 @@
+{
+  "slug": "hero-split",
+  "title": "Hero partido con imagen",
+  "category": "Heroes",
+  "industry_tags": ["general", "servicios", "producto", "portfolio"],
+  "variants": ["multiatlas", "noir-oro", "indigo-tech", "calido-terra"],
+  "reference": "Hero 50/50 texto + imagen, alternativa al hero centrado",
+  "defaults": {
+    "eyebrow": "✦ Tu propuesta en una línea",
+    "headline_1": "Lo que haces,",
+    "headline_em": "contado",
+    "headline_2": "como se merece",
+    "sub": "Una frase clara de lo que ofreces y por qué eres la mejor opción. Directo, sin humo.",
+    "cta": "Empezar",
+    "cta_href": "#contacto",
+    "cta2": "Ver más",
+    "cta2_href": "#servicios",
+    "img": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&q=60"
+  }
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Generador — describe y previsualiza — Multiatlas Studio Registry</title>
+<meta name="description" content="" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+    :root {
+      --ma-bg: #FBFBF9;
+      --ma-surface: rgba(18,28,60,0.03);
+      --ma-border: rgba(18,28,60,0.12);
+      --ma-text: #14192B;
+      --ma-muted: rgba(20,25,43,0.58);
+      --ma-accent: #1743D6;
+      --ma-accent-2: #E8380D;
+      --ma-accent-3: #1743D6;
+      --ma-glow: rgba(23,67,214,0.07);
+      --ma-radius: 0.75rem;
+      --ma-font-display: 'Archivo', sans-serif;
+      --ma-font-body: 'Inter', sans-serif;
+    }
+/* Multiatlas Studio — estilos compartidos. Colores/tipos SIEMPRE vía var(--ma-*) */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ma-bg);
+  color: var(--ma-text);
+  font-family: var(--ma-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+.ma-display { font-family: var(--ma-font-display); letter-spacing: -0.03em; }
+.ma-muted { color: var(--ma-muted); }
+.ma-card {
+  background: var(--ma-surface);
+  border: 1px solid var(--ma-border);
+  border-radius: var(--ma-radius);
+  backdrop-filter: blur(12px);
+}
+.ma-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  border-radius: 999px; padding: .8rem 1.6rem; font-weight: 600;
+  background: var(--ma-text); color: var(--ma-bg);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.ma-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px -8px var(--ma-glow); }
+.ma-btn-gradient { background: var(--ma-accent); color: #fff; }
+.ma-btn-ghost { background: transparent; color: var(--ma-text); border: 1px solid var(--ma-border); }
+.ma-gradient-text {
+  background: linear-gradient(100deg, var(--ma-accent), var(--ma-accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ma-eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ma-muted); border: 1px solid var(--ma-border);
+  border-radius: 999px; padding: .35rem 1rem;
+}
+.ma-glow-orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
+
+/* Animaciones */
+@keyframes ma-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+@keyframes ma-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+@keyframes ma-gradient-shift { 0%,100% { background-position: 0% 50% } 50% { background-position: 100% 50% } }
+@keyframes ma-pulse-glow { 0%,100% { opacity: .5 } 50% { opacity: 1 } }
+.ma-float { animation: ma-float 7s ease-in-out infinite; }
+.ma-marquee-track { display: flex; width: max-content; animation: ma-marquee 36s linear infinite; }
+.ma-marquee:hover .ma-marquee-track { animation-play-state: paused; }
+.ma-animated-gradient {
+  background-size: 180% 180%;
+  animation: ma-gradient-shift 22s ease infinite;
+}
+.ma-pulse { animation: ma-pulse-glow 4.5s ease-in-out infinite; }
+
+/* Reveal on scroll — SOLO si hay JS (clase .js en body); sin JS todo es visible */
+.ma-reveal { transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease; }
+.js .ma-reveal { opacity: 0; transform: translateY(28px); }
+.js .ma-reveal.ma-in { opacity: 1; transform: none; filter: none; }
+
+/* Animación POR SECCIÓN — data-anim en el envoltorio .ma-sec varía el gesto de entrada */
+.js [data-anim="rise"]  .ma-reveal { transform: translateY(54px); }
+.js [data-anim="left"]  .ma-reveal { transform: translateX(-46px); }
+.js [data-anim="right"] .ma-reveal { transform: translateX(46px); }
+.js [data-anim="zoom"]  .ma-reveal { transform: scale(.9); }
+.js [data-anim="blur"]  .ma-reveal { transform: translateY(12px); filter: blur(12px); }
+.js [data-anim="stagger"] .ma-reveal { transform: translateY(30px); }
+.js [data-anim="stagger"] .ma-reveal:nth-child(2) { transition-delay: .07s; }
+.js [data-anim="stagger"] .ma-reveal:nth-child(3) { transition-delay: .14s; }
+.js [data-anim="stagger"] .ma-reveal:nth-child(4) { transition-delay: .21s; }
+.js [data-anim="stagger"] .ma-reveal:nth-child(5) { transition-delay: .28s; }
+.js [data-anim="stagger"] .ma-reveal:nth-child(6) { transition-delay: .35s; }
+.js [data-anim] .ma-reveal.ma-in { transform: none; filter: none; }
+
+/* Scroll con snap suave (algunos blueprints) */
+html:has(.ma-snap) { scroll-snap-type: y proximity; }
+.ma-snap .ma-sec { scroll-snap-align: start; scroll-margin-top: 5rem; }
+
+/* Enlaces de nav vacíos (nº de enlaces variable por blueprint) → ocultos */
+nav a:empty { display: none !important; }
+
+/* ── Menú lateral off-canvas (nav-sidebar), checkbox-hack sin JS ── */
+.ma-side-cb { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.ma-side-burger { cursor: pointer; display: inline-flex; flex-direction: column; gap: 5px; padding: 8px; }
+.ma-side-burger > span { width: 24px; height: 2px; background: var(--ma-text); border-radius: 2px; transition: transform .3s, opacity .3s; }
+.ma-side-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); opacity: 0; pointer-events: none; transition: opacity .32s ease; z-index: 55; }
+.ma-side-drawer { position: fixed; top: 0; left: 0; height: 100vh; width: min(82vw, 300px); background: var(--ma-bg); border-right: 1px solid var(--ma-border); padding: 1.6rem; transform: translateX(-105%); transition: transform .34s cubic-bezier(.4,0,.2,1); z-index: 60; display: flex; flex-direction: column; overflow-y: auto; }
+.ma-side-link { display: block; padding: .65rem 0; color: var(--ma-text); text-decoration: none; border-bottom: 1px solid var(--ma-border); }
+.ma-side-link:hover { opacity: .7; }
+.ma-side-cb:checked ~ .ma-side-overlay { opacity: 1; pointer-events: auto; }
+.ma-side-cb:checked ~ .ma-side-drawer { transform: none; }
+.ma-side-cb:checked ~ .ma-side-burger > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ma-side-cb:checked ~ .ma-side-burger > span:nth-child(2) { opacity: 0; }
+.ma-side-cb:checked ~ .ma-side-burger > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Menú móvil desplegable para nav-header/simple/center/split (checkbox-hack, sin JS) ── */
+.ma-mnav-cb { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.ma-mnav-burger { cursor: pointer; display: inline-flex; flex-direction: column; gap: 5px; padding: 8px; }
+.ma-mnav-burger > span { width: 22px; height: 2px; background: var(--ma-text); border-radius: 2px; transition: transform .3s, opacity .3s; }
+.ma-mnav-panel { max-height: 0; overflow: hidden; transition: max-height .32s ease; display: flex; flex-direction: column;
+  padding: 0 1.5rem; background: color-mix(in srgb, var(--ma-bg) 96%, transparent); border-bottom: 1px solid transparent; }
+.ma-mnav-cb:checked ~ .ma-mnav-panel { max-height: 85vh; padding-top: 1rem; padding-bottom: 1.2rem; border-bottom-color: var(--ma-border); }
+.ma-mnav-link { padding: .7rem 0; color: var(--ma-text); text-decoration: none; border-bottom: 1px solid var(--ma-border); }
+.ma-mnav-link:hover { opacity: .7; }
+.ma-mnav-link:empty { display: none; }
+.ma-mnav-cb:checked ~ div .ma-mnav-burger > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ma-mnav-cb:checked ~ div .ma-mnav-burger > span:nth-child(2) { opacity: 0; }
+.ma-mnav-cb:checked ~ div .ma-mnav-burger > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Tilt sutil en cards marcadas */
+.ma-tilt { transition: transform .25s ease; transform-style: preserve-3d; }
+
+/* Noise overlay premium */
+.ma-noise::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .022; z-index: 60;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+details.ma-faq > summary { list-style: none; cursor: pointer; }
+details.ma-faq > summary::-webkit-details-marker { display: none; }
+details.ma-faq[open] .ma-faq-icon { transform: rotate(45deg); }
+.ma-faq-icon { transition: transform .25s ease; }
+
+section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
+
+/* ── Efectos por industria (styles.csv de UI UX Pro Max) — clase en <body>, usan los tokens del tema ── */
+.fx-glass .ma-card {
+  background: color-mix(in srgb, var(--ma-surface) 55%, transparent);
+  backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 1px solid color-mix(in srgb, var(--ma-text) 12%, transparent);
+}
+.fx-clay .ma-card {
+  border: none; border-radius: 1.9rem; background: var(--ma-surface);
+  box-shadow: 10px 10px 26px color-mix(in srgb, var(--ma-text) 12%, transparent),
+              -8px -8px 20px color-mix(in srgb, var(--ma-bg) 82%, #fff);
+}
+.fx-clay .ma-btn { box-shadow: 5px 5px 14px color-mix(in srgb, var(--ma-text) 20%, transparent); }
+.fx-neu .ma-card {
+  border: none; background: var(--ma-bg);
+  box-shadow: 7px 7px 16px color-mix(in srgb, var(--ma-text) 14%, transparent),
+              -7px -7px 16px color-mix(in srgb, var(--ma-bg) 78%, #fff);
+}
+.fx-brutal .ma-card { border: 2px solid var(--ma-text); border-radius: 0; box-shadow: 7px 7px 0 var(--ma-text); backdrop-filter: none; }
+.fx-brutal .ma-btn { border-radius: 0; border: 2px solid var(--ma-text); box-shadow: 4px 4px 0 var(--ma-text); }
+.fx-brutal .ma-eyebrow, .fx-brutal .ma-card { border-radius: 0; }
+
+</style>
+</head>
+<body class="ma-noise">
+<script>document.body.classList.add("js")</script>
+<!-- studio-generator -->
+<style>
+  .gen-dev{border:1px solid var(--ma-border);background:transparent;color:var(--ma-muted);border-radius:999px;padding:.45rem 1rem;font-size:.8rem;cursor:pointer;transition:.15s}
+  .gen-dev.is-on{background:var(--ma-accent);color:#fff;border-color:var(--ma-accent)}
+  .gen-stage{max-width:100%;margin:0 auto;transition:max-width .4s cubic-bezier(.2,.7,.2,1)}
+  .gen-stage.is-mobile{max-width:390px}
+  .gen-chrome{position:relative;border:1px solid var(--ma-border);border-radius:16px;overflow:hidden;background:var(--ma-surface);box-shadow:0 30px 70px -18px rgba(0,0,0,.35)}
+  .gen-stage.is-mobile .gen-chrome{border-radius:46px;border:11px solid #111;box-shadow:0 30px 70px -18px rgba(0,0,0,.5)}
+  .gen-bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--ma-border);background:color-mix(in srgb, var(--ma-text) 5%, transparent)}
+  .gen-stage.is-mobile .gen-bar{display:none}
+  .gen-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+  .gen-urlbar{flex:1;min-width:0;text-align:center;font-family:ui-monospace,monospace;font-size:11px;color:var(--ma-muted);background:var(--ma-bg);border:1px solid var(--ma-border);border-radius:6px;padding:3px 10px;max-width:62%;margin:0 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .gen-notch{display:none}
+  .gen-stage.is-mobile .gen-notch{display:block;position:absolute;top:14px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:#000;border-radius:999px;z-index:6}
+  .gen-screen{position:relative;width:100%;height:520px;overflow:hidden;background:#fff}
+  .gen-stage.is-mobile .gen-screen{height:660px}
+  .gen-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+<section id="generador" class="relative overflow-hidden py-24 md:py-32 px-6">
+  <div class="ma-glow-orb ma-pulse w-[520px] h-[520px] -top-40 left-1/2 -translate-x-1/2" style="background: var(--ma-glow);"></div>
+  <div class="relative z-10 max-w-3xl mx-auto text-center">
+    <span class="ma-eyebrow ma-reveal">✦ Pruébalo ahora · sin costo</span>
+    <h2 class="ma-display ma-reveal text-3xl md:text-5xl font-semibold mt-7 leading-[1.1]">
+      Describe tu negocio. <em class="italic" style="color: var(--ma-accent-2);">Mira</em> tu página real en segundos.
+    </h2>
+    <p class="ma-muted ma-reveal text-base md:text-lg mt-6 max-w-xl mx-auto">No son 7 plantillas: son miles de combinaciones. Escribe tu giro y verás una página real —navegable, con scroll, hover y animaciones— vestida para tu industria.</p>
+  </div>
+
+  <form id="gen-form" class="ma-card ma-reveal relative z-10 max-w-2xl mx-auto mt-12 p-6 md:p-8 text-left" data-lead="https://formsubmit.co/ajax/rubentoledano@multiatlas.net">
+    <label class="text-sm font-semibold block mb-2">¿A qué se dedica tu negocio?</label>
+    <textarea id="gen-desc" name="negocio" rows="2" required
+      class="w-full rounded-xl px-4 py-3 text-sm md:text-base outline-none resize-none"
+      style="background: var(--ma-surface); border: 1px solid var(--ma-border); color: var(--ma-text);"
+      placeholder="Ej. Veterinaria en Monterrey especializada en perros y gatos…"></textarea>
+    <div id="gen-chips" class="flex flex-wrap gap-2 mt-3"></div>
+    <div class="grid sm:grid-cols-[1fr_auto] gap-3 mt-5 items-end">
+      <div>
+        <label class="text-sm font-semibold block mb-2">¿A dónde te enviamos tu página?</label>
+        <input id="gen-email" name="email" type="email" required
+          class="w-full rounded-xl px-4 py-3 text-sm outline-none"
+          style="background: var(--ma-surface); border: 1px solid var(--ma-border); color: var(--ma-text);"
+          placeholder="tu@correo.com" />
+      </div>
+      <button type="submit" class="ma-btn ma-btn-gradient justify-center h-[46px]">Crear mi página →</button>
+    </div>
+    <p id="gen-error" class="text-xs mt-3" style="color: #d64545; display: none;">Escribe tu giro (aunque sea una palabra) y un email válido.</p>
+    <p class="ma-muted text-xs mt-3">Sin spam. Guardamos tu email solo para enviarte la propuesta.</p>
+  </form>
+
+  <div id="gen-loading" class="ma-card relative z-10 max-w-2xl mx-auto mt-8 p-8" style="display: none;">
+    <div class="flex items-center gap-2 px-1 pb-4" style="border-bottom: 1px solid var(--ma-border);">
+      <span class="w-3 h-3 rounded-full bg-red-400/70"></span>
+      <span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
+      <span class="w-3 h-3 rounded-full bg-green-400/70"></span>
+      <span id="gen-loadtitle" class="ma-muted text-xs ml-3 font-mono">studio.multiatlas · construyendo…</span>
+    </div>
+    <ul id="gen-steps" class="mt-5 space-y-3 font-mono text-sm"></ul>
+    <div class="h-2 rounded-full overflow-hidden mt-6" style="background: var(--ma-surface);">
+      <div id="gen-bar" class="h-full rounded-full transition-all duration-300" style="width: 3%; background: var(--ma-accent);"></div>
+    </div>
+  </div>
+
+  <div id="gen-result" class="relative z-10 max-w-5xl mx-auto mt-8" style="display: none;">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <button type="button" id="gen-dev-d" class="gen-dev is-on">🖥 Escritorio</button>
+      <button type="button" id="gen-dev-m" class="gen-dev">📱 Móvil</button>
+    </div>
+    <div id="gen-stage" class="gen-stage">
+      <div class="gen-chrome">
+        <div class="gen-notch"></div>
+        <div class="gen-bar">
+          <span class="gen-dot" style="background:#ff5f57"></span>
+          <span class="gen-dot" style="background:#febc2e"></span>
+          <span class="gen-dot" style="background:#28c840"></span>
+          <span id="gen-url" class="gen-urlbar">preview.multiatlas.site</span>
+        </div>
+        <div class="gen-screen"><iframe id="gen-frame" title="Preview" style="border:0;"></iframe></div>
+      </div>
+    </div>
+    <div class="text-center mt-6">
+      <p class="ma-eyebrow mb-4" id="gen-badge">Página real generada</p>
+      <h3 class="ma-display text-xl md:text-2xl font-semibold">Esto es una página real, no una imagen</h3>
+      <p class="ma-muted mt-3 max-w-lg mx-auto text-sm">Navégala: hace scroll, tiene hover y animaciones. En el Studio la editas a tu medida; o la afinamos contigo y la publicamos.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-7">
+        <a id="gen-cta-agencia" href="#contacto" class="ma-btn ma-btn-gradient">Afinar con la agencia →</a>
+        <a id="gen-cta-studio" href="app/index.html" class="ma-btn ma-btn-ghost">Editar en el Studio</a>
+        <button id="gen-cta-full" class="ma-btn ma-btn-ghost">Abrir a pantalla completa</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/app/registry-data.js"></script>
+<script>
+(function () {
+  var form = document.getElementById("gen-form");
+  if (!form || form.dataset.wired) return;
+  form.dataset.wired = "1";
+  var $ = function (id) { return document.getElementById(id); };
+  var desc = $("gen-desc"), email = $("gen-email"), err = $("gen-error"),
+      loading = $("gen-loading"), result = $("gen-result"), frame = $("gen-frame"),
+      urlEl = $("gen-url"), badge = $("gen-badge"), bar = $("gen-bar"), stepsEl = $("gen-steps");
+  var D = window.MA_DATA;
+  var lastHtml = "";
+
+  // Chips de ejemplo (textos que detectan bien contra la taxonomía)
+  var chipDefs = ["Restaurante de mariscos", "App de salud para clínicas", "Agencia creativa de branding", "Tienda de moda online", "Fintech de pagos"];
+  var chipHost = $("gen-chips");
+  chipDefs.forEach(function (t) {
+    var b = document.createElement("button"); b.type = "button";
+    b.className = "ma-btn-ghost text-xs"; b.style.cssText = "border:1px solid var(--ma-border);border-radius:8px;padding:.4rem .7rem;cursor:pointer;background:transparent;color:var(--ma-text)";
+    b.textContent = t;
+    b.addEventListener("click", function () { desc.value = t; desc.focus(); });
+    chipHost.appendChild(b);
+  });
+
+  // ---- Motor de composición en el navegador (idéntico a compose.mjs) ----
+  function renderSection(slug, copy){ var s=D.sections[slug]; if(!s) return ""; var d=Object.assign({},s.meta.defaults,copy||{}); return s.html.replace(/\{\{(\w+)\}\}/g,function(_,k){return d[k]!=null?d[k]:"";}); }
+  function theme(t){ if(t&&typeof t==="object"&&t.tokens) return t.tokens; return D.themes[typeof t==="string"?t:"multiatlas"]||D.themes.multiatlas; }
+  function famName(t){ var m=(t||"").match(/'([^']+)'|"([^"]+)"/); return m?(m[1]||m[2]):null; }
+  function fontsLink(tk){ var f=new Set(["Inter"]); [tk["--ma-font-display"],tk["--ma-font-body"]].forEach(function(t){ var n=famName(t); if(n)f.add(n); }); return "https://fonts.googleapis.com/css2?"+Array.from(f).map(function(x){ return "family="+encodeURIComponent(x).replace(/%20/g,"+")+":wght@400;500;600;700"; }).join("&")+"&display=swap"; }
+  var MSHELL='\n<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"><\/script>\n<script>(function(){var M=window.Motion;if(M&&M.inView&&M.animate){document.body.classList.add("motion-on");M.inView(".ma-reveal",function(info){M.animate(info.target,{opacity:[0,1],transform:["translateY(26px)","translateY(0px)"]},{duration:.7,easing:[.2,.7,.2,1]});},{margin:"0px 0px -10% 0px"});document.querySelectorAll(".ma-btn").forEach(function(b){b.addEventListener("pointerenter",function(){M.animate(b,{transform:"translateY(-2px) scale(1.02)"},{duration:.25});});b.addEventListener("pointerleave",function(){M.animate(b,{transform:"none"},{duration:.3});});});}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&e.target.classList.add("ma-in");});},{threshold:.12});document.querySelectorAll(".ma-reveal").forEach(function(el){io.observe(el);});}document.querySelectorAll(".ma-tilt").forEach(function(card){card.addEventListener("mousemove",function(ev){var r=card.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width-0.5,y=(ev.clientY-r.top)/r.height-0.5;card.style.transform="perspective(900px) rotateY("+(x*6)+"deg) rotateX("+(-y*6)+"deg)";});card.addEventListener("mouseleave",function(){card.style.transform="";});});})();<\/script>';
+  function compose(cfg){ var tk=theme(cfg.theme); var body=(cfg.sections||[]).map(function(s){return renderSection(s.use,s.copy);}).join("\n"); var vars=Object.keys(tk).map(function(k){return k+": "+tk[k]+";";}).join(" ");
+    var html='<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>'+(cfg.meta&&cfg.meta.title||"")+'</title><script src="https://cdn.tailwindcss.com"><\/script><link href="'+fontsLink(tk)+'" rel="stylesheet"/><style>:root{'+vars+'}'+D.themeCss+'</style></head><body class="ma-noise'+(cfg.fx?' '+cfg.fx:'')+'"><script>document.body.classList.add("js")<\/script>'+body+MSHELL+'</body></html>';
+    Object.keys(D.logos).forEach(function(p){ if(D.logos[p]) html=html.split(p).join(D.logos[p]); }); return html; }
+
+  // ---- Detección de industria: keywords (inglés) + label (español) de las 192 ----
+  function norm(s){ return (" "+(s||"").toLowerCase()+" ").normalize("NFD").replace(/[̀-ͯ]/g,""); }
+  function detect(text){
+    if (!D || !D.industries) return null;
+    var t = norm(text);
+    var best=null, score=0;
+    D.industries.forEach(function(i){
+      var s=0;
+      (i.keywords||[]).forEach(function(k){ k=norm(k).trim(); if(k.length>2 && t.indexOf(k)>-1) s+=2; });
+      i.label.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").split(/\s+/).forEach(function(w){ if(w.length>3 && t.indexOf(w)>-1) s+=3; });
+      if(s>score){ score=s; best=i; }
+    });
+    if (best) return best;
+    // fallback: algo razonable según pistas en español
+    var hint = /rest|comida|cocina|taco|pizza|cafe|bar/.test(t) ? "food" : /salud|clinic|dent|medic|hospital|spa|belleza/.test(t) ? "salud" : /tienda|ropa|moda|joy|ecommerce|venta/.test(t) ? "tienda" : /software|app|saas|plataforma|tech|ia|cripto/.test(t) ? "saas" : null;
+    if (hint) { var f=D.industries.find(function(i){ return (i.config&&i.config.name||"").indexOf(hint)>-1; }); if(f) return f; }
+    return D.industries[0];
+  }
+
+  var STEPS = [];
+  var stepsUl = stepsEl;
+  function buildSteps(){
+    STEPS = ["Analizando tu negocio…","Eligiendo el estilo y la paleta…","Buscando referencias visuales…","Generando la identidad…","Seleccionando secciones del registry…","Escribiendo el contenido…","Construyendo el sitio…","Optimización SEO y QA visual…"];
+    stepsUl.innerHTML = "";
+    STEPS.forEach(function (s) { var li=document.createElement("li"); li.innerHTML='<span class="gen-tick ma-muted">◦</span> '+s; stepsUl.appendChild(li); });
+    return stepsUl.querySelectorAll(".gen-tick");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var dtext = desc.value.trim(), m = email.value.trim();
+    if (dtext.length < 4 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)) { err.style.display = "block"; return; }
+    err.style.display = "none";
+    try { fetch(form.dataset.lead, { method:"POST", headers:{ "Content-Type":"application/json","Accept":"application/json" }, body: JSON.stringify({ _subject:"Generador landing — nuevo lead", email:m, negocio:dtext, origen:"Generador de la landing" }) }).catch(function(){}); } catch(_){}
+
+    var ind = detect(dtext);
+    if (D && ind) { try { lastHtml = compose(ind.config); } catch (_) { lastHtml = ""; } }
+
+    form.style.display = "none";
+    loading.style.display = "block";
+    loading.scrollIntoView({ behavior:"smooth", block:"center" });
+    var ticks = buildSteps();
+    var i = 0;
+    var tick = setInterval(function () {
+      if (i < ticks.length) {
+        ticks[i].textContent = "✓"; ticks[i].classList.remove("ma-muted"); ticks[i].style.color = "var(--ma-accent)";
+        bar.style.width = Math.round(((i+1)/ticks.length)*100) + "%";
+        i++;
+      } else { clearInterval(tick); reveal(dtext, m, ind); }
+    }, 460);
+  });
+
+  function slug(t){ return (t||"negocio").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,22)||"negocio"; }
+
+  function reveal(dtext, m, ind) {
+    if (D && ind && lastHtml) {
+      frame.removeAttribute("src"); frame.srcdoc = lastHtml;
+      urlEl.textContent = slug(dtext) + ".multiatlas.site";
+      badge.textContent = "Página real generada · " + ind.label + " · tema " + ind.theme;
+      var studio = document.getElementById("gen-cta-studio");
+      if (studio) studio.href = "/app/index.html?industry=" + ind.key;
+    } else {
+      // Fallback sin datos: demo estático de clínica
+      frame.removeAttribute("srcdoc"); frame.src = "/demos/clinica-novadent/index.html";
+      urlEl.textContent = slug(dtext) + ".multiatlas.site";
+      badge.textContent = "Ejemplo del nivel Multiatlas · tu página se diseña a la medida";
+    }
+    // Prellenar contacto
+    var msg = document.querySelector("#contacto textarea[name='mensaje']");
+    if (msg) msg.value = "Mi negocio: " + dtext + "\n(Generado desde la landing · email: " + m + (ind ? " · industria detectada: " + ind.label : "") + ")";
+    var mail = document.querySelector("#contacto input[name='email']");
+    if (mail && !mail.value) mail.value = m;
+    loading.style.display = "none";
+    result.style.display = "block";
+    result.scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+
+  var stage = $("gen-stage"), devD = $("gen-dev-d"), devM = $("gen-dev-m");
+  if (stage && devD && devM) {
+    devD.addEventListener("click", function () { stage.classList.remove("is-mobile"); devD.classList.add("is-on"); devM.classList.remove("is-on"); });
+    devM.addEventListener("click", function () { stage.classList.add("is-mobile"); devM.classList.add("is-on"); devD.classList.remove("is-on"); });
+  }
+
+  var full = document.getElementById("gen-cta-full");
+  if (full) full.addEventListener("click", function () {
+    if (!lastHtml) { window.open("/demos/clinica-novadent/index.html", "_blank"); return; }
+    var blob = new Blob([lastHtml], { type:"text/html" });
+    window.open(URL.createObjectURL(blob), "_blank");
+  });
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"></script>
+<script>
+(function(){
+  // Reveal por IntersectionObserver (la variación de gesto la da el CSS de [data-anim]).
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("ma-in"); io.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".ma-reveal").forEach(function(el){ io.observe(el); });
+  var M = window.Motion;
+  if (M && M.animate) {
+    document.body.classList.add("motion-on");
+    document.querySelectorAll(".ma-btn").forEach(function(b){
+      b.addEventListener("pointerenter", function(){ M.animate(b, { transform:"translateY(-2px) scale(1.02)" }, { duration:.25, easing:"ease-out" }); });
+      b.addEventListener("pointerleave", function(){ M.animate(b, { transform:"none" }, { duration:.3, easing:"ease-out" }); });
+    });
+  }
+  document.querySelectorAll(".ma-tilt").forEach(function(card){
+    card.addEventListener("mousemove", function(ev){
+      var r = card.getBoundingClientRect();
+      var x = (ev.clientX - r.left) / r.width - 0.5, y = (ev.clientY - r.top) / r.height - 0.5;
+      card.style.transform = "perspective(900px) rotateY(" + (x*6) + "deg) rotateX(" + (-y*6) + "deg)";
+    });
+    card.addEventListener("mouseleave", function(){ card.style.transform = ""; });
+  });
+  document.querySelectorAll("[data-countdown-hours]").forEach(function(el){
+    var s = parseFloat(el.dataset.countdownHours) * 3600;
+    if (!isFinite(s) || s <= 0) { el.style.display = "none"; return; }
+    setInterval(function(){ s = Math.max(0, s - 1);
+      var h = String(Math.floor(s/3600)).padStart(2,"0"), m = String(Math.floor(s%3600/60)).padStart(2,"0"), x = String(Math.floor(s%60)).padStart(2,"0");
+      el.textContent = h + ":" + m + ":" + x; }, 1000);
+  });
+})();
+</script>
+</body>
+</html>

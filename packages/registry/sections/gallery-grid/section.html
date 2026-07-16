@@ -1,0 +1,23 @@
+<!-- gallery-grid -->
+<section id="gallery" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
+        <h2 class="ma-display ma-reveal text-2xl md:text-4xl font-semibold mt-6">{{headline}}</h2>
+      </div>
+      <p class="ma-muted ma-reveal max-w-xs text-sm">{{sub}}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+<!--@each items-->
+      <div class="ma-card ma-reveal group overflow-hidden">
+        <div class="relative h-60 overflow-hidden" style="border-bottom: 1px solid var(--ma-border); background: color-mix(in srgb, var(--ma-accent) 12%, var(--ma-surface));">
+          <img src="{{img}}" alt="{{title}}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.opacity='0'" />
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(180deg, transparent 55%, color-mix(in srgb, var(--ma-accent) 40%, transparent));"></div>
+        </div>
+        <div class="p-5"><p class="font-semibold">{{title}}</p><p class="ma-muted text-xs mt-1">{{tag}}</p></div>
+      </div>
+<!--@end-->
+    </div>
+  </div>
+</section>

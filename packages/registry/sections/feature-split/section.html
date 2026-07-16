@@ -1,0 +1,33 @@
+<!-- feature-split -->
+<section id="features" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto space-y-20 md:space-y-28">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="ma-reveal">
+        <span class="ma-eyebrow">{{r1_eyebrow}}</span>
+        <h3 class="ma-display text-2xl md:text-3xl font-semibold mt-5">{{r1_title}}</h3>
+        <p class="ma-muted mt-4 max-w-md">{{r1_desc}}</p>
+        <ul class="mt-6 space-y-2.5 text-sm">
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{r1_b1}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{r1_b2}}</li>
+        </ul>
+      </div>
+      <div class="ma-reveal ma-card ma-tilt overflow-hidden" style="aspect-ratio: 4/3;">
+        <img src="{{r1_img}}" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="ma-reveal ma-card ma-tilt overflow-hidden order-2 md:order-1" style="aspect-ratio: 4/3;">
+        <img src="{{r2_img}}" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+      </div>
+      <div class="ma-reveal order-1 md:order-2">
+        <span class="ma-eyebrow">{{r2_eyebrow}}</span>
+        <h3 class="ma-display text-2xl md:text-3xl font-semibold mt-5">{{r2_title}}</h3>
+        <p class="ma-muted mt-4 max-w-md">{{r2_desc}}</p>
+        <ul class="mt-6 space-y-2.5 text-sm">
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{r2_b1}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{r2_b2}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

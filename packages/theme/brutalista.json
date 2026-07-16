@@ -1,0 +1,18 @@
+{
+  "name": "brutalista",
+  "comment": "Alto contraste, esquinas duras, un acento eléctrico. Para moda, música, agencias creativas, startups atrevidas.",
+  "tokens": {
+    "--ma-bg": "#F5F4EF",
+    "--ma-surface": "rgba(17,17,17,0.03)",
+    "--ma-border": "rgba(17,17,17,0.85)",
+    "--ma-text": "#111111",
+    "--ma-muted": "rgba(17,17,17,0.62)",
+    "--ma-accent": "#FF3B00",
+    "--ma-accent-2": "#111111",
+    "--ma-accent-3": "#2B2BFF",
+    "--ma-glow": "rgba(255,59,0,0.10)",
+    "--ma-radius": "0rem",
+    "--ma-font-display": "'Archivo', sans-serif",
+    "--ma-font-body": "'Inter', sans-serif"
+  }
+}

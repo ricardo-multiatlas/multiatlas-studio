@@ -1,0 +1,32 @@
+{
+  "slug": "studio-generator",
+  "title": "Generador — describe y previsualiza",
+  "category": "Generator",
+  "industry_tags": ["general", "agencia", "saas"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "reference": "Describe-to-preview: compone una página real navegable en el navegador",
+  "defaults": {
+    "eyebrow": "Pruébalo ahora · sin costo",
+    "headline_1": "Describe tu negocio.",
+    "headline_em": "Mira",
+    "headline_2": "tu página real en segundos.",
+    "sub": "No son 7 plantillas: son miles de combinaciones. Escribe tu giro y verás una página real —navegable, con scroll, hover y animaciones— vestida para tu industria.",
+    "lead_endpoint": "https://formsubmit.co/ajax/rubentoledano@multiatlas.net",
+    "label_desc": "¿A qué se dedica tu negocio?",
+    "desc_placeholder": "Ej. Veterinaria en Monterrey especializada en perros y gatos…",
+    "label_email": "¿A dónde te enviamos tu página?",
+    "email_placeholder": "tu@correo.com",
+    "cta": "Crear mi página",
+    "error_text": "Escribe tu giro (aunque sea una palabra) y un email válido.",
+    "privacy_note": "Sin spam. Guardamos tu email solo para enviarte la propuesta.",
+    "steps_json": "[\"Analizando tu negocio…\",\"Eligiendo el estilo y la paleta…\",\"Buscando referencias visuales…\",\"Generando la identidad…\",\"Seleccionando secciones del registry…\",\"Escribiendo el contenido…\",\"Construyendo el sitio…\",\"Optimización SEO y QA visual…\"]",
+    "result_badge": "Página real generada",
+    "result_headline": "Esto es una página real, no una imagen",
+    "result_sub": "Navégala: hace scroll, tiene hover y animaciones. En el Studio la editas a tu medida; o la afinamos contigo y la publicamos.",
+    "cta2": "Afinar con la agencia",
+    "cta2_href": "#contacto",
+    "cta3": "Editar en el Studio",
+    "cta3_href": "app/index.html",
+    "cta4": "Abrir a pantalla completa"
+  }
+}

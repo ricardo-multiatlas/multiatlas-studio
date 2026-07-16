@@ -1,0 +1,22 @@
+{
+  "slug": "feature-split",
+  "title": "Features alternados (imagen + texto)",
+  "category": "Features",
+  "industry_tags": ["general", "producto", "servicios", "saas"],
+  "variants": ["multiatlas", "indigo-tech", "calido-terra", "pastel-suave"],
+  "reference": "Filas alternadas imagen/texto, estilo editorial de producto",
+  "defaults": {
+    "r1_eyebrow": "Cómo trabajamos",
+    "r1_title": "Todo empieza por entender tu negocio",
+    "r1_desc": "Antes de proponer, escuchamos. Cada decisión de diseño responde a un objetivo tuyo.",
+    "r1_b1": "Diagnóstico sin costo",
+    "r1_b2": "Propuesta a la medida",
+    "r1_img": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=60",
+    "r2_eyebrow": "Qué obtienes",
+    "r2_title": "Un resultado premium, no una plantilla más",
+    "r2_desc": "Diseño curado, textos que venden y una entrega rápida. Listo para publicar.",
+    "r2_b1": "Entrega en días, no semanas",
+    "r2_b2": "Tu marca, tu voz",
+    "r2_img": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=60"
+  }
+}

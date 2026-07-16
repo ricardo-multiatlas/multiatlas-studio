@@ -1,0 +1,16 @@
+{
+  "slug": "cta-banner",
+  "title": "Banner CTA de color",
+  "category": "CTA",
+  "industry_tags": ["general"],
+  "variants": ["multiatlas", "indigo-tech", "calido-terra", "brutalista"],
+  "reference": "Bloque de conversión de ancho completo con fondo de acento",
+  "defaults": {
+    "headline": "¿Listo para empezar?",
+    "sub": "Da el primer paso hoy. Te respondemos en menos de 24 horas con una propuesta concreta.",
+    "cta": "Solicitar propuesta",
+    "cta_href": "#contacto",
+    "cta2": "Ver ejemplos",
+    "cta2_href": "#gallery"
+  }
+}

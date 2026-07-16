@@ -4,12 +4,15 @@
   "category": "Team",
   "industry_tags": ["salud", "legal", "servicios profesionales", "general"],
   "variants": ["multiatlas", "multiatlas-noche"],
+  "repeat": "members",
   "defaults": {
     "eyebrow": "Equipo",
     "headline": "Quiénes te atienden",
     "sub": "Especialistas certificados.",
-    "t1_ini": "AB", "t1_name": "Nombre Apellido", "t1_role": "Especialidad", "t1_cred": "Cédula profesional 0000000",
-    "t2_ini": "CD", "t2_name": "Nombre Apellido", "t2_role": "Especialidad", "t2_cred": "Cédula profesional 0000000",
-    "t3_ini": "EF", "t3_name": "Nombre Apellido", "t3_role": "Especialidad", "t3_cred": "Cédula profesional 0000000"
+    "members": [
+      { "ini": "AB", "name": "Nombre Apellido", "role": "Especialidad", "cred": "Cédula profesional 0000000" },
+      { "ini": "CD", "name": "Nombre Apellido", "role": "Especialidad", "cred": "Cédula profesional 0000000" },
+      { "ini": "EF", "name": "Nombre Apellido", "role": "Especialidad", "cred": "Cédula profesional 0000000" }
+    ]
   }
 }

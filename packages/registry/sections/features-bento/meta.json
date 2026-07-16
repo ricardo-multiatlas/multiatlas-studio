@@ -5,14 +5,17 @@
   "industry_tags": ["saas", "agencia", "general"],
   "variants": ["dark-glow", "light-editorial"],
   "reference": "Glow Features / bento moderno",
+  "repeat": "features",
   "defaults": {
     "eyebrow": "Por qué funciona",
-    "headline": "Todo lo que un site premium necesita",
-    "sub": "Sin plantillas genéricas. Sin AI slop.",
-    "f1_icon": "◈", "f1_title": "Registry curado", "f1_desc": "Cada sección pasó curación manual. El modelo compone sobre diseño probado, nunca inventa desde cero.",
-    "f2_icon": "⚡", "f2_title": "Listo en minutos", "f2_desc": "De brief a preview desplegado en menos de una hora.",
-    "f3_icon": "◐", "f3_title": "Tu marca, no la nuestra", "f3_desc": "Dirección de arte por AI: paleta, tipografía y motion coherentes con tu negocio.",
-    "f4_icon": "▣", "f4_title": "Código exportable", "f4_desc": "HTML/React limpio, tuyo. Sin lock-in.",
-    "f5_icon": "✦", "f5_title": "Calidad consistente", "f5_desc": "QA automático de contraste, jerarquía y copy antes de cada entrega."
+    "headline": "Todo lo que necesitas, bien hecho",
+    "sub": "Sin plantillas genéricas.",
+    "features": [
+      { "span": "4", "icon": "◈", "title": "Hecho a tu medida", "desc": "Cada detalle pensado para tu negocio, no una plantilla genérica." },
+      { "span": "2", "icon": "⚡", "title": "Rápido", "desc": "Resultados en tiempo récord." },
+      { "span": "2", "icon": "◐", "title": "Tu marca", "desc": "Colores, tono y estilo coherentes contigo." },
+      { "span": "2", "icon": "▣", "title": "Sin sorpresas", "desc": "Precios y tiempos claros desde el inicio." },
+      { "span": "2", "icon": "✦", "title": "Calidad constante", "desc": "Revisado con cuidado antes de cada entrega." }
+    ]
   }
 }

@@ -20,8 +20,8 @@ const cards = metas.map(m => {
   return `
   <div class="ma-card ma-reveal overflow-hidden flex flex-col">
     <div class="relative h-64 overflow-hidden" style="border-bottom: 1px solid var(--ma-border);">
-      <iframe src="previews/${m.slug}.html" loading="lazy" class="absolute top-0 left-0 origin-top-left pointer-events-none" style="width: 300%; height: 300%; transform: scale(0.3333); border: 0;"></iframe>
-      <a href="previews/${m.slug}.html" target="_blank" class="absolute inset-0" aria-label="Abrir preview de ${m.title}"></a>
+      <iframe src="/registry/previews/${m.slug}.html" loading="lazy" class="absolute top-0 left-0 origin-top-left pointer-events-none" style="width: 300%; height: 300%; transform: scale(0.3333); border: 0;"></iframe>
+      <a href="/registry/previews/${m.slug}.html" target="_blank" class="absolute inset-0" aria-label="Abrir preview de ${m.title}"></a>
     </div>
     <div class="p-5 flex items-center justify-between gap-3">
       <div><p class="font-semibold text-sm">${m.title}</p><p class="ma-muted text-xs mt-1">${m.category}</p></div>
@@ -33,7 +33,7 @@ const cards = metas.map(m => {
 
 const body = `
 <header class="max-w-6xl mx-auto px-6 pt-10 flex items-center justify-between">
-  <a href="../index.html" class="ma-display font-bold text-lg">◈ Multiatlas <span class="italic" style="color: var(--ma-accent-2);">Studio</span></a>
+  <a href="/index.html" class="ma-display font-bold text-lg">◈ Multiatlas <span class="italic" style="color: var(--ma-accent-2);">Studio</span></a>
   <span class="ma-eyebrow">Registry v0.1 — ${metas.length} secciones</span>
 </header>
 <section class="text-center px-6 pt-20 pb-14 relative overflow-hidden">

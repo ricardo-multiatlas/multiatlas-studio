@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Multiatlas Studio — Tu panel</title>
+<meta name="description" content="Panel self-serve de Multiatlas Studio: arma, edita y descarga tu site premium." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/checkout/auth.js"></script>
+<script src="/checkout/stripe.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --bg:#0E1014; --panel:#151922; --panel2:#1B212C; --line:rgba(255,255,255,.09);
+         --txt:#EAECEF; --muted:rgba(234,236,239,.56); --accent:#5B8CFF; --accent2:#C9A96A; --ok:#37C892; }
+  *{box-sizing:border-box}
+  .hidden{display:none !important}  /* robusto: no depende de que Tailwind cargue */
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  .muted{color:var(--muted)}
+  .panel{background:var(--panel);border:1px solid var(--line)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:10px;padding:.6rem 1rem;font-weight:600;font-size:.85rem;cursor:pointer;border:1px solid transparent;transition:.15s}
+  .btn-primary{background:var(--accent);color:#0b1020}
+  .btn-primary:hover{filter:brightness(1.08)}
+  .btn-gold{background:var(--accent2);color:#22160a}
+  .btn-ghost{background:transparent;color:var(--txt);border-color:var(--line)}
+  .btn-ghost:hover{background:var(--panel2)}
+  .field{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:9px;color:var(--txt);padding:.55rem .7rem;font-size:.82rem;outline:none}
+  .field:focus{border-color:var(--accent)}
+  .chip{border:1px solid var(--line);border-radius:8px;padding:.4rem .7rem;font-size:.78rem;cursor:pointer;background:var(--panel2)}
+  .chip.active{border-color:var(--accent);color:#fff;background:rgba(91,140,255,.14)}
+  .seclabel{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .secrow{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border:1px solid var(--line);border-radius:9px;background:var(--panel2);margin-bottom:.4rem;cursor:pointer}
+  .secrow.sel{border-color:var(--accent)}
+  .ic{width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;border:1px solid var(--line);background:var(--panel);font-size:.8rem;line-height:1}
+  .scroll{overflow-y:auto}
+  .scroll::-webkit-scrollbar{width:8px}.scroll::-webkit-scrollbar-thumb{background:#2a3240;border-radius:8px}
+  select.field option{background:var(--panel2)}
+</style>
+</head>
+<body>
+
+<!-- ============ GATE ============ -->
+<div id="gate" class="min-h-screen flex flex-col items-center justify-center px-6 py-16">
+  <div class="text-center max-w-xl">
+    <p class="seclabel mb-4">Multiatlas Studio</p>
+    <h1 class="disp text-3xl md:text-4xl font-bold">Tu panel de creación</h1>
+    <p class="muted mt-4">Elige tu plan y entra al Studio. Arma tu site sobre secciones curadas, edítalo en vivo y descárgalo listo para publicar.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-5 mt-12 w-full max-w-4xl">
+    <div class="panel rounded-2xl p-6 flex flex-col">
+      <p class="disp text-lg font-semibold">Free</p>
+      <p class="muted text-sm mt-1">Prueba el Studio</p>
+      <p class="disp text-3xl font-bold mt-5">$0</p>
+      <ul class="text-sm muted mt-4 space-y-2 flex-1">
+        <li>· 1 site</li><li>· Marca de agua Multiatlas</li><li>· Export HTML</li>
+      </ul>
+      <button class="btn btn-ghost justify-center mt-5" data-plan="Free">Entrar gratis</button>
+    </div>
+    <div class="panel rounded-2xl p-6 flex flex-col" style="border-color:var(--accent)">
+      <p class="disp text-lg font-semibold" style="color:var(--accent)">Pro · $19/mes</p>
+      <p class="muted text-sm mt-1">Para freelancers</p>
+      <p class="disp text-3xl font-bold mt-5">$19</p>
+      <ul class="text-sm muted mt-4 space-y-2 flex-1">
+        <li>· Sites ilimitados</li><li>· Sin marca de agua</li><li>· Todos los temas</li>
+      </ul>
+      <button class="btn btn-primary justify-center mt-5" data-plan="Pro" data-checkout="1">Suscribirme</button>
+    </div>
+    <div class="panel rounded-2xl p-6 flex flex-col" style="border-color:var(--accent2)">
+      <p class="disp text-lg font-semibold" style="color:var(--accent2)">Founding · $249</p>
+      <p class="muted text-sm mt-1">Pago único · 100 plazas</p>
+      <p class="disp text-3xl font-bold mt-5">$249</p>
+      <ul class="text-sm muted mt-4 space-y-2 flex-1">
+        <li>· Todo Pro, de por vida</li><li>· White-label</li><li>· Soporte del piloto</li>
+      </ul>
+      <button class="btn btn-gold justify-center mt-5" data-plan="Founding" data-checkout="1">Reservar plaza</button>
+    </div>
+  </div>
+  <p class="muted text-xs mt-8 text-center max-w-md">El cobro con Stripe se activa editando <code>checkout/stripe.js</code> (ver <code>STRIPE.md</code>). Sin configurar, cualquier plan te deja entrar al Studio para probarlo.</p>
+</div>
+
+<!-- ============ STUDIO ============ -->
+<div id="studio" class="hidden h-screen flex flex-col">
+  <!-- topbar -->
+  <header class="flex items-center justify-between px-4 h-14 panel" style="border-width:0 0 1px 0">
+    <div class="flex items-center gap-3">
+      <span class="disp font-bold">◈ Multiatlas <span style="color:var(--accent2)">Studio</span></span>
+      <span id="plan-badge" class="text-xs px-2 py-1 rounded-full" style="border:1px solid var(--line);color:var(--muted)"></span>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="btn-reset" class="btn btn-ghost">↺ Reiniciar</button>
+      <button id="btn-publish" class="btn btn-ghost">✦ Publicar con la agencia</button>
+      <button id="btn-download" class="btn btn-primary">⬇ Descargar mi site</button>
+    </div>
+  </header>
+
+  <div class="flex-1 flex min-h-0">
+    <!-- sidebar -->
+    <aside class="w-[340px] shrink-0 panel scroll p-4" style="border-width:0 1px 0 0">
+      <p class="seclabel">Empieza con una plantilla</p>
+      <div id="presets" class="flex flex-wrap gap-2 mt-3"></div>
+
+      <p class="seclabel mt-6">Datos del site</p>
+      <label class="text-xs muted block mt-3 mb-1">Título (pestaña / SEO)</label>
+      <input id="meta-title" class="field" />
+      <label class="text-xs muted block mt-3 mb-1">Descripción (SEO)</label>
+      <textarea id="meta-desc" rows="2" class="field"></textarea>
+
+      <p class="seclabel mt-6">Tema visual</p>
+      <div id="themes" class="flex flex-wrap gap-2 mt-3"></div>
+
+      <div class="flex items-center justify-between mt-6">
+        <p class="seclabel">Secciones</p>
+        <select id="add-section" class="field" style="width:auto;font-size:.75rem;padding:.35rem .5rem">
+          <option value="">＋ Añadir…</option>
+        </select>
+      </div>
+      <div id="sections" class="mt-3"></div>
+    </aside>
+
+    <!-- editor of selected section -->
+    <aside id="editor" class="w-[320px] shrink-0 panel scroll p-4 hidden" style="border-width:0 1px 0 0">
+      <div class="flex items-center justify-between">
+        <p class="seclabel">Editar sección</p>
+        <button id="editor-close" class="btn btn-ghost" style="padding:.3rem .6rem">✕</button>
+      </div>
+      <p id="editor-title" class="disp font-semibold mt-2"></p>
+      <p id="editor-cat" class="muted text-xs"></p>
+      <div id="editor-fields" class="mt-4 space-y-3"></div>
+    </aside>
+
+    <!-- preview -->
+    <main class="flex-1 min-w-0 flex flex-col" style="background:#0a0c10">
+      <div class="flex items-center justify-between px-4 h-11 panel" style="border-width:0 0 1px 0">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full" style="background:#f87171cc"></span>
+          <span class="w-2.5 h-2.5 rounded-full" style="background:#fbbf24cc"></span>
+          <span class="w-2.5 h-2.5 rounded-full" style="background:#4ade80cc"></span>
+          <span id="prev-url" class="muted text-xs ml-2 font-mono">mi-site.multiatlas.site</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="chip active" data-vw="full">🖥 Escritorio</button>
+          <button class="chip" data-vw="mobile">📱 Móvil</button>
+        </div>
+      </div>
+      <div class="flex-1 flex items-start justify-center p-5 scroll">
+        <iframe id="preview" class="bg-white rounded-lg shadow-2xl" style="width:100%;height:100%;border:0;transition:width .2s"></iframe>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="/app/registry-data.js"></script>
+<script>
+(function () {
+  var D = window.MA_DATA;
+  if (!D) { document.body.innerHTML = "<p style='padding:2rem'>No se cargó registry-data.js</p>"; return; }
+  var AGENCY = "rubentoledano@multiatlas.net";
+
+  // ---------- MOTOR (portado de compose.mjs, mismo resultado) ----------
+  function fillTemplate(tpl, d) {
+    var ex = tpl.replace(/<!--@each\s+(\w+)-->([\s\S]*?)<!--@end-->/g, function (_, key, inner) {
+      var arr = Array.isArray(d[key]) ? d[key] : [];
+      return arr.map(function (item) { return inner.replace(/\{\{(\w+)\}\}/g, function (_, k) { return item[k] != null ? item[k] : ""; }); }).join("");
+    });
+    return ex.replace(/\{\{(\w+)\}\}/g, function (_, k) { return d[k] != null ? d[k] : ""; });
+  }
+  function renderSection(slug, copy) {
+    var sec = D.sections[slug]; if (!sec) return "";
+    var data = Object.assign({}, sec.meta.defaults, copy || {});
+    return fillTemplate(sec.html, data);
+  }
+  function resolveTheme(theme) {
+    if (theme && typeof theme === "object" && theme.tokens) return theme.tokens;
+    var name = typeof theme === "string" ? theme : "multiatlas";
+    return D.themes[name] || (D.brands && D.brands[name] && D.brands[name].tokens) || D.themes.multiatlas;
+  }
+  function famName(t){ var m=(t||"").match(/'([^']+)'|"([^"]+)"/); return m?(m[1]||m[2]):null; }
+  var INTER_LINK = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
+  function fontsLink(tk){ var f=new Set(); [tk["--ma-font-display"],tk["--ma-font-body"]].forEach(function(t){ var n=famName(t); if(n&&n!=="Inter")f.add(n); }); if(!f.size)return ""; return "https://fonts.googleapis.com/css2?"+Array.from(f).map(function(x){ return "family="+encodeURIComponent(x).replace(/%20/g,"+")+":wght@400;500;600;700"; }).join("&")+"&display=swap"; }
+  var SHELL = '\n<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"><\/script>\n<script>(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("ma-in");io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -8% 0px"});document.querySelectorAll(".ma-reveal").forEach(function(el){io.observe(el);});var M=window.Motion;if(M&&M.animate){document.body.classList.add("motion-on");document.querySelectorAll(".ma-btn").forEach(function(b){b.addEventListener("pointerenter",function(){M.animate(b,{transform:"translateY(-2px) scale(1.02)"},{duration:.25});});b.addEventListener("pointerleave",function(){M.animate(b,{transform:"none"},{duration:.3});});});}document.querySelectorAll(".ma-tilt").forEach(function(card){card.addEventListener("mousemove",function(ev){var r=card.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width-0.5,y=(ev.clientY-r.top)/r.height-0.5;card.style.transform="perspective(900px) rotateY("+(x*6)+"deg) rotateX("+(-y*6)+"deg)";});card.addEventListener("mouseleave",function(){card.style.transform="";});});document.querySelectorAll("[data-countdown-hours]").forEach(function(el){var s=parseFloat(el.dataset.countdownHours)*3600;if(!isFinite(s)||s<=0){el.style.display="none";return;}setInterval(function(){s=Math.max(0,s-1);var h=String(Math.floor(s/3600)).padStart(2,"0"),m=String(Math.floor(s%3600/60)).padStart(2,"0"),x=String(Math.floor(s%60)).padStart(2,"0");el.textContent=h+":"+m+":"+x;},1000);});})();<\/script>';
+  var SHELL_SCRIPT = "\n<script>\nconst io = new IntersectionObserver((es) => es.forEach(e => e.isIntersecting && e.target.classList.add(\"ma-in\")), { threshold: 0.12 });\ndocument.querySelectorAll(\".ma-reveal\").forEach(el => io.observe(el));\ndocument.querySelectorAll(\".ma-tilt\").forEach(card => {\n  card.addEventListener(\"mousemove\", (ev) => {\n    const r = card.getBoundingClientRect();\n    const x = (ev.clientX - r.left) / r.width - 0.5, y = (ev.clientY - r.top) / r.height - 0.5;\n    card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;\n  });\n  card.addEventListener(\"mouseleave\", () => card.style.transform = \"\");\n});\ndocument.querySelectorAll(\"[data-countdown-hours]\").forEach(el => {\n  let s = parseFloat(el.dataset.countdownHours) * 3600;\n  if (!isFinite(s) || s <= 0) { el.style.display = \"none\"; return; }\n  setInterval(() => { s = Math.max(0, s - 1);\n    const h = String(Math.floor(s/3600)).padStart(2,\"0\"), m = String(Math.floor(s%3600/60)).padStart(2,\"0\"), x = String(Math.floor(s%60)).padStart(2,\"0\");\n    el.textContent = `${h}:${m}:${x}`; }, 1000);\n});\n<\/script>";
+  function wrapSec(slug, html, anim) { if (/^nav/.test(slug) || slug === "background-animated") return html; return '<div class="ma-sec" data-anim="' + (anim || "up") + '">' + html + '</div>'; }
+  function compose(config) {
+    var tokens = resolveTheme(config.theme);
+    var body = (config.sections || []).map(function (s) { return wrapSec(s.use, renderSection(s.use, s.copy), s.anim); }).join("\n\n");
+    var vars = Object.keys(tokens).map(function (k) { return k + ": " + tokens[k] + ";"; }).join("\n      ");
+    var html = '<!DOCTYPE html>\n<html lang="' + (config.lang || "es") + '">\n<head>\n<meta charset="UTF-8" />\n' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n' +
+      '<title>' + (config.meta && config.meta.title || config.name || "") + '</title>\n' +
+      '<meta name="description" content="' + (config.meta && config.meta.description || "") + '" />\n' +
+      '<script src="https://cdn.tailwindcss.com"><\/script>\n' +
+      '<link rel="preconnect" href="https://fonts.googleapis.com" />\n' +
+      '<link href="' + INTER_LINK + '" rel="stylesheet" />\n' +
+      (fontsLink(tokens) ? '<link href="' + fontsLink(tokens) + '" rel="stylesheet" />\n' : '') +
+      '<style>\n    :root {\n      ' + vars + '\n    }\n' + D.themeCss + '\n</style>\n</head>\n' +
+      '<body class="ma-noise' + (config.fx ? ' ' + config.fx : '') + (config.scroll === "snap" ? " ma-snap" : "") + '">\n<script>document.body.classList.add("js")<\/script>\n' + body + SHELL + '\n</body>\n</html>';
+    // Logos → data URI (site autocontenido)
+    Object.keys(D.logos).forEach(function (p) {
+      if (D.logos[p]) html = html.split(p).join(D.logos[p]);
+    });
+    return html;
+  }
+
+  // ---------- ESTADO ----------
+  var state = null;
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function loadPreset(key) {
+    state = { key: key, config: clone(D.presets[key].config), sel: null };
+    state.config.name = state.config.name || "mi-site";
+    syncAll();
+  }
+  function loadIndustry(key) {
+    var ind = (D.industries || []).find(function (x) { return x.key === key; });
+    if (!ind) return false;
+    state = { key: "industria:" + key, config: clone(ind.config), sel: null };
+    syncAll();
+    return true;
+  }
+  var __wantIndustry = new URLSearchParams(location.search).get("industry");
+
+  // ---------- RENDER UI ----------
+  var $ = function (id) { return document.getElementById(id); };
+  var prevTimer = null;
+  function renderPreview() {
+    clearTimeout(prevTimer);
+    prevTimer = setTimeout(function () {
+      $("preview").srcdoc = compose(state.config);
+      $("prev-url").textContent = (state.config.name || "mi-site").toLowerCase().replace(/[^a-z0-9]+/g, "-") + ".multiatlas.site";
+    }, 180);
+  }
+  function longKey(k, v) { return String(v || "").length > 46 || /sub|desc|tagline|legal|nota|headline|racional|mensaje/.test(k); }
+  function syncEditor() {
+    var ed = $("editor");
+    if (state.sel == null || !state.config.sections[state.sel]) { ed.classList.add("hidden"); return; }
+    ed.classList.remove("hidden");
+    var s = state.config.sections[state.sel];
+    var meta = D.sections[s.use].meta;
+    $("editor-title").textContent = meta.title;
+    $("editor-cat").textContent = meta.category + " · " + s.use;
+    var wrap = $("editor-fields"); wrap.innerHTML = "";
+    Object.keys(meta.defaults).forEach(function (k) {
+      var val = s.copy[k] != null ? s.copy[k] : meta.defaults[k];
+      var lab = document.createElement("label"); lab.className = "text-xs muted block mb-1"; lab.textContent = k;
+      var inp = longKey(k, meta.defaults[k]) ? document.createElement("textarea") : document.createElement("input");
+      if (inp.tagName === "TEXTAREA") inp.rows = 2;
+      inp.className = "field"; inp.value = val;
+      inp.addEventListener("input", function () { s.copy[k] = inp.value; renderPreview(); });
+      var box = document.createElement("div"); box.appendChild(lab); box.appendChild(inp); wrap.appendChild(box);
+    });
+  }
+  function syncSections() {
+    var host = $("sections"); host.innerHTML = "";
+    state.config.sections.forEach(function (s, i) {
+      var meta = D.sections[s.use] ? D.sections[s.use].meta : { title: s.use, category: "" };
+      var row = document.createElement("div");
+      row.className = "secrow" + (state.sel === i ? " sel" : "");
+      row.innerHTML =
+        '<span class="ic">' + (i + 1) + '</span>' +
+        '<span style="flex:1;min-width:0"><span style="font-size:.82rem;font-weight:600">' + meta.title + '</span><br><span class="muted" style="font-size:.68rem">' + meta.category + '</span></span>' +
+        '<span class="ic" data-up title="Subir">↑</span>' +
+        '<span class="ic" data-down title="Bajar">↓</span>' +
+        '<span class="ic" data-del title="Quitar">✕</span>';
+      row.addEventListener("click", function (e) {
+        var t = e.target;
+        if (t.hasAttribute("data-up")) { if (i > 0) { swap(i, i - 1); } return; }
+        if (t.hasAttribute("data-down")) { if (i < state.config.sections.length - 1) { swap(i, i + 1); } return; }
+        if (t.hasAttribute("data-del")) { state.config.sections.splice(i, 1); if (state.sel === i) state.sel = null; syncSections(); syncEditor(); renderPreview(); return; }
+        state.sel = i; syncSections(); syncEditor();
+      });
+      host.appendChild(row);
+    });
+  }
+  function swap(a, b) {
+    var arr = state.config.sections; var t = arr[a]; arr[a] = arr[b]; arr[b] = t;
+    if (state.sel === a) state.sel = b; else if (state.sel === b) state.sel = a;
+    syncSections(); renderPreview();
+  }
+  function syncThemes() {
+    var host = $("themes"); host.innerHTML = "";
+    Object.keys(D.themes).forEach(function (name) {
+      var active = (typeof state.config.theme === "string" && state.config.theme === name);
+      var c = document.createElement("button");
+      c.className = "chip" + (active ? " active" : ""); c.textContent = name;
+      c.addEventListener("click", function () { state.config.theme = name; syncThemes(); renderPreview(); });
+      host.appendChild(c);
+    });
+    // Si el preset trae tokens propios (objeto), lo mostramos como opción activa
+    if (state.config.theme && typeof state.config.theme === "object") {
+      var c = document.createElement("button");
+      c.className = "chip active"; c.textContent = "del preset";
+      host.appendChild(c);
+    }
+    // Temas de marca (Linear, Stripe, Notion…) — sección buscable
+    if (D.brands && Object.keys(D.brands).length) {
+      var lab = document.createElement("p"); lab.className = "seclabel"; lab.style.margin = "12px 0 6px"; lab.textContent = "Marcas y estilos"; host.appendChild(lab);
+      var search = document.createElement("input"); search.className = "field"; search.placeholder = "Buscar (Linear, Stripe, Notion…)"; search.style.marginBottom = "6px"; host.appendChild(search);
+      var wrap = document.createElement("div"); wrap.style.cssText = "display:flex;flex-wrap:wrap;gap:.4rem;max-height:190px;overflow-y:auto"; host.appendChild(wrap);
+      var keys = Object.keys(D.brands).sort(function (a, b) { return D.brands[a].label.localeCompare(D.brands[b].label); });
+      function renderBrands(q) {
+        wrap.innerHTML = "";
+        keys.filter(function (k) { return !q || D.brands[k].label.toLowerCase().indexOf(q) > -1; }).forEach(function (k) {
+          var active = state.config.theme === k;
+          var c = document.createElement("button"); c.className = "chip" + (active ? " active" : ""); c.textContent = D.brands[k].label;
+          c.addEventListener("click", function () { state.config.theme = k; syncThemes(); renderPreview(); });
+          wrap.appendChild(c);
+        });
+      }
+      search.addEventListener("input", function () { renderBrands(this.value.toLowerCase()); });
+      renderBrands("");
+    }
+  }
+  function syncPresets() {
+    var host = $("presets"); host.innerHTML = "";
+    Object.keys(D.presets).forEach(function (key) {
+      var c = document.createElement("button");
+      c.className = "chip" + (state.key === key ? " active" : ""); c.textContent = D.presets[key].label;
+      c.addEventListener("click", function () { if (confirm("Cargar la plantilla \"" + D.presets[key].label + "\"? Se reemplaza el contenido actual.")) loadPreset(key); });
+      host.appendChild(c);
+    });
+  }
+  function syncAddOptions() {
+    var sel = $("add-section");
+    sel.innerHTML = '<option value="">＋ Añadir…</option>';
+    D.order.forEach(function (slug) {
+      var o = document.createElement("option"); o.value = slug;
+      o.textContent = D.sections[slug].meta.title + " (" + D.sections[slug].meta.category + ")";
+      sel.appendChild(o);
+    });
+  }
+  function syncMeta() {
+    $("meta-title").value = state.config.meta && state.config.meta.title || "";
+    $("meta-desc").value = state.config.meta && state.config.meta.description || "";
+  }
+  function syncAll() { syncPresets(); syncThemes(); syncSections(); syncEditor(); syncMeta(); syncAddOptions(); renderPreview(); }
+
+  // ---------- EVENTOS ----------
+  $("add-section").addEventListener("change", function () {
+    if (!this.value) return;
+    state.config.sections.push({ use: this.value, copy: {} });
+    state.sel = state.config.sections.length - 1;
+    this.value = ""; syncSections(); syncEditor(); renderPreview();
+  });
+  $("meta-title").addEventListener("input", function () { state.config.meta = state.config.meta || {}; state.config.meta.title = this.value; renderPreview(); });
+  $("meta-desc").addEventListener("input", function () { state.config.meta = state.config.meta || {}; state.config.meta.description = this.value; renderPreview(); });
+  $("editor-close").addEventListener("click", function () { state.sel = null; syncSections(); syncEditor(); });
+  $("btn-reset").addEventListener("click", function () { if (confirm("¿Reiniciar con la plantilla actual?")) loadPreset(state.key); });
+  function fileName() { return (state.config.name || "mi-site").toLowerCase().replace(/[^a-z0-9]+/g, "-") + ".html"; }
+  function downloadHtml(html) {
+    var blob = new Blob([html], { type: "text/html" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = fileName(); document.body.appendChild(a); a.click(); a.remove();
+  }
+  function toast(msg) {
+    var el = document.getElementById("ma-toast");
+    if (!el) { el = document.createElement("div"); el.id = "ma-toast";
+      el.style.cssText = "position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--panel2);color:var(--txt);border:1px solid var(--line);padding:.8rem 1.2rem;border-radius:10px;z-index:9999;font-size:.85rem;max-width:90vw;text-align:center;transition:opacity .3s;box-shadow:0 12px 40px rgba(0,0,0,.4)";
+      document.body.appendChild(el); }
+    el.textContent = msg; el.style.opacity = "1"; clearTimeout(el._t); el._t = setTimeout(function () { el.style.opacity = "0"; }, 4500);
+  }
+  $("btn-download").addEventListener("click", async function () {
+    // Modo demo (Clerk sin configurar): descarga directa en el navegador, como hoy.
+    if (!(window.MA_AUTH && window.MA_AUTH.isEnabled())) { downloadHtml(compose(state.config)); return; }
+    // Con login: el SERVIDOR entrega el código solo si hay suscripción activa (escenario B).
+    if (!window.MA_AUTH.isSignedIn()) { window.MA_AUTH.openSignIn(); return; }
+    try {
+      var t = await window.MA_AUTH.token();
+      var r = await fetch("/api/export", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + t }, body: JSON.stringify({ config: state.config }) });
+      if (r.status === 401) { window.MA_AUTH.openSignIn(); return; }
+      if (r.status === 403) { toast("Necesitas una suscripción activa para copiar o descargar. Elige un plan para desbloquear."); return; }
+      var d = await r.json();
+      if (d && d.html) downloadHtml(d.html); else toast("No se pudo generar el archivo. Intenta de nuevo.");
+    } catch (e) { console.error("[export]", e); toast("No se pudo conectar. Intenta de nuevo."); }
+  });
+  $("btn-publish").addEventListener("click", function () {
+    var secs = state.config.sections.map(function (s) { return s.use; }).join(", ");
+    var body = "Hola Multiatlas, armé un site en el Studio y quiero publicarlo con ustedes.%0D%0A%0D%0A"
+      + "Título: " + encodeURIComponent(state.config.meta.title || "") + "%0D%0A"
+      + "Tema: " + encodeURIComponent(typeof state.config.theme === "string" ? state.config.theme : "personalizado") + "%0D%0A"
+      + "Secciones: " + encodeURIComponent(secs) + "%0D%0A%0D%0AMi plan: " + encodeURIComponent(window.__plan || "");
+    window.location.href = "mailto:" + AGENCY + "?subject=" + encodeURIComponent("Publicar mi site — Studio") + "&body=" + body;
+  });
+  document.querySelectorAll("[data-vw]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll("[data-vw]").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      $("preview").style.width = b.dataset.vw === "mobile" ? "390px" : "100%";
+    });
+  });
+
+  // Gate → studio (con Stripe si está configurado; si no, entra en modo demo)
+  function enterStudio(plan) {
+    $("plan-badge").textContent = "Plan: " + plan;
+    $("gate").classList.add("hidden");
+    $("studio").classList.remove("hidden");
+    if (!(__wantIndustry && loadIndustry(__wantIndustry))) loadPreset("clinica");
+  }
+  document.querySelectorAll("#gate [data-plan]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      window.__plan = b.dataset.plan;
+      if (b.dataset.checkout) {
+        // Escenario A: para PAGAR hay que estar logueado (si Clerk está activo).
+        if (window.MA_AUTH && window.MA_AUTH.isEnabled() && !window.MA_AUTH.isSignedIn()) { window.MA_AUTH.openSignIn(); return; }
+        // Si hay cobro configurado, redirige a Stripe y NO entra a la demo.
+        if (window.MA_STRIPE && window.MA_STRIPE.checkout(b.dataset.plan)) return;
+      }
+      enterStudio(b.dataset.plan);
+    });
+  });
+  // Si la landing manda ?plan=pro|founding, dispara ese plan al llegar.
+  function autoPlanFromUrl() {
+    var p = new URLSearchParams(location.search).get("plan");
+    if (!p) return;
+    var map = { pro: "Pro", founding: "Founding" };
+    var sel = map[String(p).toLowerCase()];
+    var btn = sel && document.querySelector('#gate [data-plan="' + sel + '"]');
+    if (btn) btn.click();
+  }
+
+  // ── Auth (Clerk) — barra de sesión arriba a la derecha; solo si hay publishableKey ──
+  (async function initAuth() {
+    if (!(window.MA_AUTH && window.MA_AUTH.isEnabled())) { autoPlanFromUrl(); return; }
+    var bar = document.createElement("div");
+    bar.style.cssText = "position:fixed;top:14px;right:16px;z-index:9998;display:flex;align-items:center;gap:.5rem";
+    document.body.appendChild(bar);
+    function render() {
+      bar.innerHTML = "";
+      if (window.MA_AUTH.isSignedIn()) {
+        var slot = document.createElement("div"); bar.appendChild(slot); window.MA_AUTH.mountUserButton(slot);
+      } else {
+        var s = document.createElement("button"); s.className = "btn btn-ghost"; s.textContent = "Iniciar sesión";
+        s.addEventListener("click", function () { window.MA_AUTH.openSignIn(); });
+        bar.appendChild(s);
+      }
+    }
+    try { await window.MA_AUTH.load(); } catch (e) { console.error("[auth] Clerk no cargó:", e); autoPlanFromUrl(); return; }
+    render();
+    window.MA_AUTH.onChange(render);
+    autoPlanFromUrl();
+  })();
+})();
+</script>
+</body>
+</html>

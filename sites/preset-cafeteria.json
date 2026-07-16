@@ -1,0 +1,29 @@
+{
+  "name": "cafeteria-almacen",
+  "lang": "es",
+  "theme": "calido-terra",
+  "meta": { "title": "Almacén de Café — Tostado de origen", "description": "Cafetería de especialidad. Site de ejemplo con Multiatlas Studio." },
+  "sections": [
+    { "use": "nav-simple", "copy": { "brand": "Almacén de Café", "link1": "Carta", "link1_href": "#menu", "link2": "Dónde estamos", "link2_href": "#ubicacion", "link3": "Nosotros", "link3_href": "#features", "cta": "Visítanos", "cta_href": "#contacto" } },
+    { "use": "hero-glow", "copy": {
+      "eyebrow": "Tostado en casa · grano de origen",
+      "headline_1": "El café que",
+      "headline_em": "despierta",
+      "headline_2": "tu día",
+      "sub": "Especialidad tostada en pequeños lotes y repostería recién horneada, en el corazón del barrio.",
+      "cta": "Ver la carta", "cta_href": "#menu", "cta2": "Cómo llegar", "cta2_href": "#ubicacion",
+      "bg_img": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=60" } },
+    { "use": "feature-split", "copy": {
+      "r1_eyebrow": "Nuestro grano", "r1_title": "De la finca a tu taza", "r1_desc": "Compramos directo a productores y tostamos cada semana. Frescura que se nota.", "r1_b1": "Comercio directo", "r1_b2": "Tueste semanal", "r1_img": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900&q=60",
+      "r2_eyebrow": "La casa", "r2_title": "Un lugar para quedarse", "r2_desc": "Wifi, buena luz y música baja. Ven a trabajar, leer o simplemente estar.", "r2_b1": "Espacio para laptop", "r2_b2": "Repostería propia", "r2_img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=60" } },
+    { "use": "menu-list", "copy": { "eyebrow": "La carta", "headline": "Para tomar aquí o llevar", "sub": "Precios en MXN.",
+      "cat1": "Cafés", "c1i1_name": "Espresso", "c1i1_desc": "Doble, de origen.", "c1i1_price": "$42", "c1i2_name": "Flat white", "c1i2_desc": "Leche sedosa, arte latte.", "c1i2_price": "$58", "c1i3_name": "Cold brew", "c1i3_desc": "16 h de infusión en frío.", "c1i3_price": "$62",
+      "cat2": "De la vitrina", "c2i1_name": "Concha de masa madre", "c2i1_desc": "Vainilla de Papantla.", "c2i1_price": "$48", "c2i2_name": "Roll de canela", "c2i2_desc": "Tibio, glaseado.", "c2i2_price": "$55", "c2i3_name": "Pay de temporada", "c2i3_desc": "Pregunta por el del día.", "c2i3_price": "$60",
+      "nota": "Carta de demostración; cambia por temporada." } },
+    { "use": "location-hours", "copy": { "eyebrow": "Visítanos", "headline": "Estamos a la vuelta", "direccion": "Calle Almacén 8, Col. Roma, CDMX (demo)", "telefono": "(55) 5555 0300 (demo)", "h1_dias": "Lunes a viernes", "h1_horas": "7:00 – 21:00", "h2_dias": "Sábado y domingo", "h2_horas": "8:00 – 22:00", "h3_dias": "Días festivos", "h3_horas": "9:00 – 18:00" } },
+    { "use": "testimonial-quote", "copy": { "quote": "El mejor flat white del barrio, sin discusión. Y la concha de masa madre es peligrosa.", "ini": "PA", "name": "Paola Arriaga", "role": "Vecina y clienta fiel" } },
+    { "use": "cta-banner", "copy": { "headline": "Tu mesa te espera", "sub": "Ven por tu café de la mañana o reserva para un grupo.", "cta": "Escríbenos", "cta_href": "#contacto", "cta2": "Ver la carta", "cta2_href": "#menu" } },
+    { "use": "contact-form", "copy": { "eyebrow": "Contacto", "headline": "Reservas y pedidos", "sub": "Para grupos, eventos o café por mayoreo.", "form_subject": "Lead DEMO Almacén de Café — Multiatlas Studio", "email_directo": "hola@almacendecafe-demo.mx", "form_action": "#", "nota": "Formulario de demostración.", "opt1": "Reservar mesa", "opt2": "Evento privado", "opt3": "Café por mayoreo", "opt4": "Trabajar con ustedes", "opt5": "Otro" } },
+    { "use": "footer-cta", "copy": { "headline": "Huele a café recién tostado", "sub": "Almacén de Café · Demo creada con Multiatlas Studio.", "brand": "Almacén de Café", "tagline": "Cafetería de especialidad. Sitio de demostración.", "legal": "Demo de Multiatlas Studio — negocio ficticio." } }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "indigo-tech",
+  "comment": "Navy profundo + azul-violeta con glow. Sobrio y tecnológico. Para SaaS, apps, fintech, agencias digitales.",
+  "tokens": {
+    "--ma-bg": "#0B1020",
+    "--ma-surface": "rgba(130,150,225,0.06)",
+    "--ma-border": "rgba(150,170,230,0.13)",
+    "--ma-text": "#E7EBF7",
+    "--ma-muted": "rgba(231,235,247,0.56)",
+    "--ma-accent": "#6D8BFF",
+    "--ma-accent-2": "#8B7CFF",
+    "--ma-accent-3": "#35D0C0",
+    "--ma-glow": "rgba(109,139,255,0.30)",
+    "--ma-radius": "0.9rem",
+    "--ma-font-display": "'Space Grotesk', sans-serif",
+    "--ma-font-body": "'Inter', sans-serif"
+  }
+}

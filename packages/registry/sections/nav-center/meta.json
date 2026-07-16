@@ -1,0 +1,16 @@
+{
+  "slug": "nav-center",
+  "title": "Nav centrado (marca arriba, enlaces debajo)",
+  "category": "Navigation",
+  "industry_tags": ["food", "hospitality", "portfolio", "local"],
+  "variants": ["stacked-center"],
+  "reference": "Marca centrada con fila de enlaces",
+  "defaults": {
+    "brand": "Mi Negocio",
+    "link1": "Servicios", "link1_href": "#servicios",
+    "link2": "Galería", "link2_href": "#gallery",
+    "link3": "Ubicación", "link3_href": "#ubicacion",
+    "link4": "Contacto", "link4_href": "#contacto",
+    "cta": "Contacto", "cta_href": "#contacto"
+  }
+}

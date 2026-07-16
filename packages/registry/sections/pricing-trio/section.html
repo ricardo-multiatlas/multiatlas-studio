@@ -1,0 +1,50 @@
+<!-- pricing-trio -->
+<section id="pricing" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
+      <h2 class="ma-display ma-reveal text-2xl md:text-4xl font-semibold mt-6">{{headline}}</h2>
+      <p class="ma-muted ma-reveal mt-4">{{sub}}</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-14 items-stretch">
+      <div class="ma-card ma-reveal p-8 flex flex-col">
+        <h3 class="ma-display text-lg font-semibold">{{p1_name}}</h3>
+        <div class="mt-5 flex items-end gap-1"><span class="ma-display text-4xl font-semibold">{{p1_price}}</span></div>
+        <p class="ma-muted text-sm mt-2">{{p1_period}}</p>
+        <ul class="mt-7 space-y-3 text-sm flex-1">
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{p1_f1}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{p1_f2}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{p1_f3}}</li>
+        </ul>
+        <a href="{{p1_href}}" class="ma-btn ma-btn-ghost w-full justify-center mt-8">{{p1_cta}}</a>
+      </div>
+      <div class="ma-card ma-reveal p-8 flex flex-col relative overflow-hidden" style="border-color: color-mix(in srgb, var(--ma-accent) 55%, transparent);">
+        <div class="ma-glow-orb w-72 h-72 -top-24 -right-24 opacity-60" style="background: var(--ma-glow);"></div>
+        <div class="flex items-center justify-between relative">
+          <h3 class="ma-display text-lg font-semibold">{{p2_name}}</h3>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full text-white" style="background: var(--ma-accent);">{{p2_badge}}</span>
+        </div>
+        <div class="mt-5 flex items-end gap-1 relative"><span class="ma-display text-5xl font-semibold" style="color: var(--ma-accent);">{{p2_price}}</span></div>
+        <p class="ma-muted text-sm mt-2 relative">{{p2_period}}</p>
+        <ul class="mt-7 space-y-3 text-sm flex-1 relative">
+          <li class="flex gap-3"><span style="color: var(--ma-accent-2);">✓</span>{{p2_f1}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent-2);">✓</span>{{p2_f2}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent-2);">✓</span>{{p2_f3}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent-2);">✓</span>{{p2_f4}}</li>
+        </ul>
+        <a href="{{p2_href}}" class="ma-btn ma-btn-gradient w-full justify-center mt-8 relative">{{p2_cta}}</a>
+      </div>
+      <div class="ma-card ma-reveal p-8 flex flex-col">
+        <h3 class="ma-display text-lg font-semibold">{{p3_name}}</h3>
+        <div class="mt-5 flex items-end gap-1"><span class="ma-display text-4xl font-semibold">{{p3_price}}</span></div>
+        <p class="ma-muted text-sm mt-2">{{p3_period}}</p>
+        <ul class="mt-7 space-y-3 text-sm flex-1">
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{p3_f1}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{p3_f2}}</li>
+          <li class="flex gap-3"><span style="color: var(--ma-accent);">✓</span>{{p3_f3}}</li>
+        </ul>
+        <a href="{{p3_href}}" class="ma-btn ma-btn-ghost w-full justify-center mt-8">{{p3_cta}}</a>
+      </div>
+    </div>
+  </div>
+</section>

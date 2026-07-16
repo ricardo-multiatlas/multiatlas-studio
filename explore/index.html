@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explora — Multiatlas Studio</title>
+<meta name="description" content="Miles de combinaciones. Explora sitios premium por industria, generados con el motor de Multiatlas Studio." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --bg:#0B0D12; --panel:#141822; --line:rgba(255,255,255,.09); --txt:#EAECEF; --muted:rgba(234,236,239,.55); --accent:#5B8CFF; --gold:#C9A24B; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  .muted{color:var(--muted)}
+  .chip{border:1px solid var(--line);border-radius:999px;padding:.45rem .95rem;font-size:.8rem;cursor:pointer;background:transparent;color:var(--txt);white-space:nowrap;transition:.15s}
+  .chip:hover{background:rgba(255,255,255,.05)}
+  .chip.active{background:var(--accent);color:#0b1020;border-color:var(--accent);font-weight:600}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s, border-color .2s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(91,140,255,.5)}
+  .thumb{position:relative;height:230px;overflow:hidden;border-bottom:1px solid var(--line);background:#fff}
+  .thumb iframe{position:absolute;top:24px;left:0;width:400%;height:400%;transform:scale(.25);transform-origin:top left;border:0;pointer-events:none}
+  .thumbbar{position:absolute;top:0;left:0;right:0;height:24px;display:flex;align-items:center;gap:5px;padding:0 10px;background:#171a21;border-bottom:1px solid var(--line);z-index:2}
+  .td{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+  .thumb .spin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.8rem;background:var(--panel)}
+  .btn{border-radius:9px;padding:.5rem .8rem;font-size:.78rem;font-weight:600;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--txt)}
+  .btn-p{background:var(--accent);color:#0b1020;border-color:var(--accent)}
+  .badge{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.2rem .5rem}
+  .scrollx{overflow-x:auto;scrollbar-width:thin;padding-bottom:12px}
+  .scrollx::-webkit-scrollbar{height:6px}
+  .scrollx::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:6px}
+  .scrollx::-webkit-scrollbar-track{background:transparent}
+  @media(min-width:1024px){ #filters{flex-wrap:wrap;width:auto !important} .scrollx{overflow-x:visible;padding-bottom:0} }
+</style>
+</head>
+<body>
+<header class="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
+  <a href="/index.html" class="flex items-center"><img src="/assets/logo-light.png" alt="Multiatlas Studio" class="h-9 w-auto" /></a>
+  <div class="flex items-center gap-3 text-sm">
+    <a href="/index.html" class="muted hover:opacity-80">Inicio</a>
+    <a href="/app/index.html" class="btn btn-p">Abrir el Studio →</a>
+  </div>
+</header>
+
+<section class="max-w-4xl mx-auto text-center px-6 pt-16 pb-10">
+  <p class="badge inline-block mb-5">Explora</p>
+  <h1 class="disp text-4xl md:text-6xl font-bold leading-[1.05]">Miles de combinaciones.<br><span style="color:var(--accent)">Una para tu industria.</span></h1>
+  <p class="muted mt-6 max-w-2xl mx-auto">El mismo motor curado, <em>vestido</em> para cada giro: <span id="stat-count">—</span> industrias × 9 temas × decenas de secciones. Elige la tuya y ábrela como página real — con scroll, hover y animaciones.</p>
+</section>
+
+<div class="sticky top-0 z-30 py-3" style="background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+  <div class="max-w-7xl mx-auto px-6 scrollx"><div id="filters" class="flex gap-2 w-max"></div></div>
+</div>
+
+<main id="grid" class="max-w-7xl mx-auto px-6 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></main>
+<footer class="text-center muted text-xs pb-16 px-6">Cada preview es una página real generada en tu navegador con el motor de Multiatlas Studio. Las imágenes se cargan de Unsplash.</footer>
+
+<script src="/app/registry-data.js"></script>
+<script>
+(function () {
+  var D = window.MA_DATA;
+  if (!D || !D.industries) { document.body.innerHTML = "<p style='padding:2rem'>No se cargó registry-data.js</p>"; return; }
+  var SHELL = '\n<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"><\/script>\n<script>(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("ma-in");io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -8% 0px"});document.querySelectorAll(".ma-reveal").forEach(function(el){io.observe(el);});var M=window.Motion;if(M&&M.animate){document.body.classList.add("motion-on");document.querySelectorAll(".ma-btn").forEach(function(b){b.addEventListener("pointerenter",function(){M.animate(b,{transform:"translateY(-2px) scale(1.02)"},{duration:.25});});b.addEventListener("pointerleave",function(){M.animate(b,{transform:"none"},{duration:.3});});});}document.querySelectorAll(".ma-tilt").forEach(function(card){card.addEventListener("mousemove",function(ev){var r=card.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width-0.5,y=(ev.clientY-r.top)/r.height-0.5;card.style.transform="perspective(900px) rotateY("+(x*6)+"deg) rotateX("+(-y*6)+"deg)";});card.addEventListener("mouseleave",function(){card.style.transform="";});});})();<\/script>';
+  function wrapSec(slug, html, anim){ if(/^nav/.test(slug)||slug==="background-animated") return html; return '<div class="ma-sec" data-anim="'+(anim||"up")+'">'+html+'</div>'; }
+  function famName(t){ var m=(t||"").match(/'([^']+)'|"([^"]+)"/); return m?(m[1]||m[2]):null; }
+  function fontsLink(tk){ var f=new Set(["Inter"]); [tk["--ma-font-display"],tk["--ma-font-body"]].forEach(function(t){ var n=famName(t); if(n)f.add(n); }); return "https://fonts.googleapis.com/css2?"+Array.from(f).map(function(x){ return "family="+encodeURIComponent(x).replace(/%20/g,"+")+":wght@400;500;600;700"; }).join("&")+"&display=swap"; }
+  function fillTemplate(tpl, d){ var ex=tpl.replace(/<!--@each\s+(\w+)-->([\s\S]*?)<!--@end-->/g,function(_,key,inner){ var arr=Array.isArray(d[key])?d[key]:[]; return arr.map(function(item){ return inner.replace(/\{\{(\w+)\}\}/g,function(_,k){return item[k]!=null?item[k]:"";}); }).join(""); }); return ex.replace(/\{\{(\w+)\}\}/g,function(_,k){return d[k]!=null?d[k]:"";}); }
+  function renderSection(slug, copy){ var s=D.sections[slug]; if(!s) return ""; var d=Object.assign({},s.meta.defaults,copy||{}); return fillTemplate(s.html,d); }
+  function theme(t){ if(t&&typeof t==="object"&&t.tokens) return t.tokens; return D.themes[typeof t==="string"?t:"multiatlas"]||D.themes.multiatlas; }
+  function compose(cfg){ var tk=theme(cfg.theme); var body=(cfg.sections||[]).map(function(s){return wrapSec(s.use,renderSection(s.use,s.copy),s.anim);}).join("\n"); var vars=Object.keys(tk).map(function(k){return k+": "+tk[k]+";";}).join(" ");
+    var html='<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>'+(cfg.meta&&cfg.meta.title||"")+'</title><script src="https://cdn.tailwindcss.com"><\/script><link href="'+fontsLink(tk)+'" rel="stylesheet"/><style>:root{'+vars+'}'+D.themeCss+'</style></head><body class="ma-noise'+(cfg.fx?' '+cfg.fx:'')+(cfg.scroll==="snap"?" ma-snap":"")+'"><script>document.body.classList.add("js")<\/script>'+body+SHELL+'</body></html>';
+    Object.keys(D.logos).forEach(function(p){ if(D.logos[p]) html=html.split(p).join(D.logos[p]); }); return html; }
+
+  document.getElementById("stat-count").textContent = D.industries.length;
+  var cats = ["Todas"].concat(D.categories);
+  var active = "Todas";
+  var filters = document.getElementById("filters");
+  var grid = document.getElementById("grid");
+
+  cats.forEach(function(c){ var b=document.createElement("button"); b.className="chip"+(c==="Todas"?" active":""); b.textContent=c;
+    b.addEventListener("click", function(){ active=c; filters.querySelectorAll(".chip").forEach(function(x){x.classList.remove("active");}); b.classList.add("active"); render(); }); filters.appendChild(b); });
+
+  // Lazy: solo compone el iframe cuando la card entra en viewport
+  var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ var f=e.target; if(!f.dataset.done){ f.dataset.done="1"; var ind=list[+f.dataset.idx]; f.srcdoc=compose(ind.config); var sp=f.parentElement.querySelector(".spin"); if(sp) sp.remove(); } io.unobserve(f); } }); }, { rootMargin:"300px" });
+
+  var list = [];
+  function openFull(cfg){ var blob=new Blob([compose(cfg)],{type:"text/html"}); window.open(URL.createObjectURL(blob),"_blank"); }
+
+  function render(){
+    grid.innerHTML=""; list = D.industries.filter(function(i){ return active==="Todas"||i.cat===active; });
+    list.forEach(function(ind, idx){
+      var card=document.createElement("div"); card.className="card";
+      card.innerHTML =
+        '<div class="thumb"><div class="thumbbar"><span class="td" style="background:#ff5f57"></span><span class="td" style="background:#febc2e"></span><span class="td" style="background:#28c840"></span></div><div class="spin">Generando preview…</div><iframe loading="lazy" data-idx="'+idx+'" title="'+ind.label+'"></iframe></div>'+
+        '<div class="p-4 flex items-center justify-between gap-2"><div style="min-width:0"><p class="font-semibold text-sm truncate">'+ind.label+'</p><p class="muted text-xs mt-0.5">'+ind.cat+'</p></div><span class="badge">'+ind.theme+'</span></div>'+
+        '<div class="px-4 pb-4 flex gap-2"><button class="btn btn-p flex-1" data-open>Abrir página →</button><a class="btn" data-edit>Editar</a></div>';
+      card.querySelector("[data-open]").addEventListener("click", function(){ openFull(ind.config); });
+      card.querySelector("[data-edit]").setAttribute("href", "/app/index.html?industry=" + ind.key);
+      grid.appendChild(card);
+      io.observe(card.querySelector("iframe"));
+    });
+  }
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "agencia-nodo",
+  "lang": "es",
+  "theme": "indigo-tech",
+  "meta": { "title": "Nodo — Estudio digital", "description": "Agencia de diseño y desarrollo. Site de ejemplo con Multiatlas Studio." },
+  "sections": [
+    { "use": "nav-simple", "copy": { "brand": "Nodo", "link1": "Trabajo", "link1_href": "#gallery", "link2": "Servicios", "link2_href": "#features", "link3": "Planes", "link3_href": "#pricing", "cta": "Cotizar", "cta_href": "#contacto" } },
+    { "use": "hero-split", "copy": {
+      "eyebrow": "✦ Estudio de diseño & producto",
+      "headline_1": "Marcas digitales",
+      "headline_em": "que",
+      "headline_2": "se recuerdan",
+      "sub": "Diseñamos y construimos webs y productos que se ven premium y convierten. Estrategia, diseño y código en un solo equipo.",
+      "cta": "Empezar proyecto", "cta_href": "#contacto", "cta2": "Ver trabajo", "cta2_href": "#gallery",
+      "img": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1000&q=60" } },
+    { "use": "logos-strip", "copy": { "label": "Marcas con las que hemos trabajado", "l1": "Aurora", "l2": "Vértice", "l3": "Kairós", "l4": "Ébano", "l5": "Prisma", "l6": "Óptica" } },
+    { "use": "feature-split", "copy": {
+      "r1_eyebrow": "Diseño", "r1_title": "Identidad y web que trabajan juntas", "r1_desc": "No entregamos bonito y ya: diseñamos para un objetivo de negocio medible.", "r1_b1": "Branding + web", "r1_b2": "Sistema de diseño reutilizable", "r1_img": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=60",
+      "r2_eyebrow": "Desarrollo", "r2_title": "Código rápido, mantenible y tuyo", "r2_desc": "Sitios veloces, SEO cuidado y cero dependencia de nosotros para editar.", "r2_b1": "Performance y SEO", "r2_b2": "Te entregamos todo", "r2_img": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=900&q=60" } },
+    { "use": "gallery-hover", "copy": { "eyebrow": "Portafolio", "headline": "Trabajo reciente", "sub": "Una muestra de lo que hacemos." } },
+    { "use": "pricing-trio", "copy": {
+      "eyebrow": "Cómo trabajamos", "headline": "Alcances claros, precio cerrado", "sub": "Elige el punto de partida; lo afinamos en la llamada.",
+      "p1_name": "Landing", "p1_price": "$18k", "p1_period": "MXN · 1 página", "p1_f1": "Diseño a medida", "p1_f2": "Copywriting", "p1_f3": "Entrega 1–2 semanas", "p1_cta": "Cotizar landing",
+      "p2_name": "Sitio completo", "p2_badge": "Más pedido", "p2_price": "$45k", "p2_period": "MXN · multi-página", "p2_f1": "Hasta 6 páginas", "p2_f2": "Identidad + web", "p2_f3": "CMS editable", "p2_f4": "SEO base", "p2_cta": "Cotizar sitio",
+      "p3_name": "Producto", "p3_price": "Custom", "p3_period": "app o plataforma", "p3_f1": "Discovery + diseño", "p3_f2": "Desarrollo a medida", "p3_f3": "Soporte continuo", "p3_cta": "Agendar llamada" } },
+    { "use": "testimonials-marquee", "copy": { "eyebrow": "Clientes", "headline": "Lo que dicen de trabajar con Nodo" } },
+    { "use": "cta-banner", "copy": { "headline": "¿Tienes un proyecto en mente?", "sub": "Cuéntanoslo. Primera llamada de estrategia sin costo.", "cta": "Agendar llamada", "cta_href": "#contacto", "cta2": "Ver portafolio", "cta2_href": "#gallery" } },
+    { "use": "contact-form", "copy": { "eyebrow": "Hablemos", "headline": "Cuéntanos tu proyecto", "sub": "Respondemos en menos de 24 horas hábiles.", "form_subject": "Lead DEMO Nodo — Multiatlas Studio", "email_directo": "hola@nodo-demo.mx", "form_action": "#", "nota": "Formulario de demostración.", "opt1": "Landing", "opt2": "Sitio completo", "opt3": "Producto / app", "opt4": "Branding", "opt5": "Otro" } },
+    { "use": "footer-cta", "copy": { "headline": "Construyamos algo memorable", "sub": "Nodo · Demo creada con Multiatlas Studio.", "brand": "Nodo", "tagline": "Estudio de diseño y desarrollo. Sitio de demostración.", "legal": "Demo de Multiatlas Studio — negocio ficticio." } }
+  ]
+}

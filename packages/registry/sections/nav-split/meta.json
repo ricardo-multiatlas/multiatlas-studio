@@ -1,0 +1,16 @@
+{
+  "slug": "nav-split",
+  "title": "Nav 3 zonas (marca · enlaces centro · CTA)",
+  "category": "Navigation",
+  "industry_tags": ["b2b", "saas", "corporativo", "general"],
+  "variants": ["three-zone"],
+  "reference": "Barra con enlaces centrados absolutos",
+  "defaults": {
+    "brand": "Mi Negocio",
+    "link1": "Servicios", "link1_href": "#servicios",
+    "link2": "Ventajas", "link2_href": "#features",
+    "link3": "Planes", "link3_href": "#pricing",
+    "link4": "Contacto", "link4_href": "#contacto",
+    "cta": "Contacto", "cta_href": "#contacto"
+  }
+}

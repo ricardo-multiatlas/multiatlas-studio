@@ -1,0 +1,14 @@
+{
+  "slug": "nav-simple",
+  "title": "Nav de negocio (texto)",
+  "category": "Navigation",
+  "industry_tags": ["general"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "defaults": {
+    "brand": "Mi Negocio",
+    "link1": "Servicios", "link1_href": "#servicios",
+    "link2": "Nosotros", "link2_href": "#equipo",
+    "link3": "Ubicación", "link3_href": "#ubicacion",
+    "cta": "Contacto", "cta_href": "#contacto"
+  }
+}

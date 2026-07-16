@@ -1,0 +1,16 @@
+{
+  "slug": "nav-header",
+  "title": "Nav con logo",
+  "category": "Navigation",
+  "industry_tags": ["general"],
+  "variants": ["multiatlas", "multiatlas-noche"],
+  "defaults": {
+    "logo_src": "assets/logo-lockup.svg",
+    "logo_alt": "Multiatlas Studio",
+    "link1": "Registry", "link1_href": "#gallery",
+    "link2": "Cómo funciona", "link2_href": "#features",
+    "link3": "Precios", "link3_href": "#pricing",
+    "cta": "Empezar",
+    "cta_href": "#pricing"
+  }
+}
