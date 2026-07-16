@@ -68,7 +68,7 @@ export function wrapSection(slug, html, anim = "") {
   return `<div class="ma-sec" data-anim="${anim || "up"}">${html}</div>`;
 }
 
-export function pageShell({ title, description = "", lang = "es", tokens, body, fx = "", scroll = "" }) {
+export function pageShell({ title, description = "", lang = "es", tokens, body, fx = "", scroll = "", bg = "" }) {
   const vars = Object.entries(tokens).map(([k, v]) => `${k}: ${v};`).join("\n      ");
   const themeCss = readFileSync(join(THEME_DIR, "theme.css"), "utf8");
   return `<!DOCTYPE html>
@@ -90,8 +90,9 @@ ${fontsLink(tokens) ? `<link href="${fontsLink(tokens)}" rel="stylesheet" />` : 
 ${themeCss}
 </style>
 </head>
-<body class="ma-noise${fx ? " " + fx : ""}${scroll === "snap" ? " ma-snap" : ""}">
+<body class="ma-noise${fx ? " " + fx : ""}${scroll === "snap" ? " ma-snap" : ""}${bg ? " has-bg" : ""}">
 <script>document.body.classList.add("js")</script>
+${bg ? `<div class="ma-bg ma-bg-${bg}"></div>` : ""}
 ${body}
 <script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"></script>
 <script>
@@ -135,7 +136,7 @@ export function composeSite(config, outDir) {
     title: config.meta?.title ?? config.name,
     description: config.meta?.description ?? "",
     lang: config.lang ?? "es",
-    tokens, body, fx: config.fx ?? "", scroll: config.scroll ?? "",
+    tokens, body, fx: config.fx ?? "", scroll: config.scroll ?? "", bg: config.bg ?? "",
   });
   const dir = outDir ?? join(ROOT, "dist", config.name);
   mkdirSync(dir, { recursive: true });

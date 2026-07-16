@@ -76,6 +76,60 @@ body {
 }
 .ma-pulse { animation: ma-pulse-glow 4.5s ease-in-out infinite; }
 
+/* ══ Fondos animados (vibe motionsites) — capa fija detrás del contenido ══ */
+.ma-bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: var(--ma-bg); }
+body.has-bg { background: transparent; }
+
+/* Aurora: manchas de color a la deriva */
+.ma-bg-aurora::before, .ma-bg-aurora::after { content: ""; position: absolute; width: 62vw; height: 62vw; border-radius: 50%; filter: blur(90px); opacity: .5; }
+.ma-bg-aurora::before { background: var(--ma-accent); top: -12%; left: -8%; animation: ma-aur1 19s ease-in-out infinite; }
+.ma-bg-aurora::after { background: var(--ma-accent-2, var(--ma-accent)); bottom: -16%; right: -8%; animation: ma-aur2 23s ease-in-out infinite; }
+@keyframes ma-aur1 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(18vw,9vh) scale(1.2) } }
+@keyframes ma-aur2 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(-14vw,-7vh) scale(1.12) } }
+
+/* Estrellas / partículas flotando (dos capas con parallax) */
+.ma-bg-stars::before, .ma-bg-stars::after { content: ""; position: absolute; inset: -60%; background-repeat: repeat;
+  background-image:
+    radial-gradient(1.6px 1.6px at 20px 30px, color-mix(in srgb, var(--ma-text) 55%, transparent) 50%, transparent),
+    radial-gradient(1.2px 1.2px at 90px 120px, color-mix(in srgb, var(--ma-text) 38%, transparent) 50%, transparent),
+    radial-gradient(1.8px 1.8px at 160px 60px, color-mix(in srgb, var(--ma-accent) 65%, transparent) 50%, transparent); }
+.ma-bg-stars::before { background-size: 230px 230px; animation: ma-stars 60s linear infinite; opacity: .7; }
+.ma-bg-stars::after { background-size: 360px 360px; animation: ma-stars 130s linear infinite; opacity: .4; }
+@keyframes ma-stars { from { transform: translateY(0) } to { transform: translateY(230px) } }
+
+/* Rejilla en perspectiva que se desplaza (tech / web3) */
+.ma-bg-grid::before { content: ""; position: absolute; inset: -10% 0 0 0; height: 160%;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--ma-accent) 20%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--ma-accent) 20%, transparent) 1px, transparent 1px);
+  background-size: 46px 46px; transform: perspective(420px) rotateX(62deg); transform-origin: 50% 0;
+  animation: ma-grid 6s linear infinite; opacity: .55;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 35%, transparent); mask-image: linear-gradient(180deg, transparent, #000 35%, transparent); }
+@keyframes ma-grid { from { background-position: 0 0 } to { background-position: 0 46px } }
+
+/* Malla de gradiente que "respira" */
+.ma-bg-mesh { background:
+    radial-gradient(60% 60% at 20% 20%, color-mix(in srgb, var(--ma-accent) 22%, transparent), transparent),
+    radial-gradient(50% 50% at 82% 28%, color-mix(in srgb, var(--ma-accent-2, var(--ma-accent)) 18%, transparent), transparent),
+    radial-gradient(60% 60% at 50% 92%, color-mix(in srgb, var(--ma-accent-3, var(--ma-accent)) 16%, transparent), transparent),
+    var(--ma-bg);
+  background-size: 200% 200%; animation: ma-gradient-shift 26s ease infinite; }
+
+/* Puntos flotantes */
+.ma-bg-dots::before { content: ""; position: absolute; inset: -50%;
+  background-image: radial-gradient(color-mix(in srgb, var(--ma-accent) 38%, transparent) 1.5px, transparent 1.6px);
+  background-size: 42px 42px; animation: ma-float 9s ease-in-out infinite; opacity: .4; }
+
+/* Título con shimmer (brillo que recorre el texto) */
+.ma-shimmer { background: linear-gradient(90deg, var(--ma-accent-2, var(--ma-accent)), var(--ma-accent), var(--ma-accent-2, var(--ma-accent)));
+  background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+  animation: ma-gradient-shift 4.5s linear infinite; }
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .ma-bg::before, .ma-bg::after, .ma-bg, .ma-shimmer, .ma-float, .ma-pulse, .ma-marquee-track { animation: none !important; }
+}
+
 /* Reveal on scroll — SOLO si hay JS (clase .js en body); sin JS todo es visible */
 .ma-reveal { transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease; }
 .js .ma-reveal { opacity: 0; transform: translateY(28px); }
@@ -170,13 +224,14 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
 </head>
 <body class="ma-noise">
 <script>document.body.classList.add("js")</script>
+
 <!-- hero-split -->
 <section class="relative overflow-hidden py-20 md:py-28 px-6">
   <div class="ma-glow-orb w-[420px] h-[420px] -top-32 -left-32 opacity-60" style="background: var(--ma-glow);"></div>
   <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div>
       <span class="ma-eyebrow ma-reveal">✦ Tu propuesta en una línea</span>
-      <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.05]">Lo que haces, <em class="italic" style="color: var(--ma-accent-2);">contado</em> como se merece</h1>
+      <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.05]">Lo que haces, <em class="italic ma-shimmer" style="color: var(--ma-accent-2);">contado</em> como se merece</h1>
       <p class="ma-muted ma-reveal text-base md:text-lg mt-6 max-w-md">Una frase clara de lo que ofreces y por qué eres la mejor opción. Directo, sin humo.</p>
       <div class="ma-reveal flex flex-wrap gap-4 mt-9">
         <a href="#contacto" class="ma-btn ma-btn-gradient">Empezar →</a>

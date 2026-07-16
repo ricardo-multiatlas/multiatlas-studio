@@ -97,6 +97,12 @@
   <div class="flex-1 flex min-h-0">
     <!-- sidebar -->
     <aside class="w-[340px] shrink-0 panel scroll p-4" style="border-width:0 1px 0 0">
+      <p class="seclabel">✨ Generar con IA</p>
+      <textarea id="ai-prompt" rows="3" class="field mt-3" placeholder="Describe tu negocio: giro, nombre, tono y qué ofreces… Ej: 'Cafetería de especialidad en Guadalajara, ambiente acogedor, con repostería artesanal.'"></textarea>
+      <button id="ai-generate" class="btn btn-primary mt-2" style="width:100%;justify-content:center">Generar mi site con IA</button>
+      <p id="ai-status" class="muted text-xs mt-2"></p>
+      <div class="my-5" style="height:1px;background:var(--line)"></div>
+
       <p class="seclabel">Empieza con una plantilla</p>
       <div id="presets" class="flex flex-wrap gap-2 mt-3"></div>
 
@@ -194,7 +200,7 @@
       '<link href="' + INTER_LINK + '" rel="stylesheet" />\n' +
       (fontsLink(tokens) ? '<link href="' + fontsLink(tokens) + '" rel="stylesheet" />\n' : '') +
       '<style>\n    :root {\n      ' + vars + '\n    }\n' + D.themeCss + '\n</style>\n</head>\n' +
-      '<body class="ma-noise' + (config.fx ? ' ' + config.fx : '') + (config.scroll === "snap" ? " ma-snap" : "") + '">\n<script>document.body.classList.add("js")<\/script>\n' + body + SHELL + '\n</body>\n</html>';
+      '<body class="ma-noise' + (config.fx ? ' ' + config.fx : '') + (config.scroll === "snap" ? " ma-snap" : "") + (config.bg ? " has-bg" : "") + '">\n<script>document.body.classList.add("js")<\/script>\n' + (config.bg ? '<div class="ma-bg ma-bg-' + config.bg + '"></div>\n' : '') + body + SHELL + '\n</body>\n</html>';
     // Logos → data URI (site autocontenido)
     Object.keys(D.logos).forEach(function (p) {
       if (D.logos[p]) html = html.split(p).join(D.logos[p]);
@@ -386,6 +392,30 @@
       b.classList.add("active");
       $("preview").style.width = b.dataset.vw === "mobile" ? "390px" : "100%";
     });
+  });
+
+  // ---------- Generar con IA (Nivel 2, /api/generate) ----------
+  function loadConfig(cfg) { state = { key: "ia", config: cfg, sel: null }; state.config.name = state.config.name || "mi-site"; syncAll(); }
+  var aiBtn = $("ai-generate");
+  if (aiBtn) aiBtn.addEventListener("click", async function () {
+    var prompt = ($("ai-prompt").value || "").trim();
+    var st = $("ai-status");
+    if (!prompt) { st.textContent = "Escribe una descripción de tu negocio."; return; }
+    var old = aiBtn.textContent; aiBtn.disabled = true; aiBtn.textContent = "Generando…"; st.textContent = "La IA está armando tu site…";
+    try {
+      var headers = { "Content-Type": "application/json" };
+      if (window.MA_AUTH && window.MA_AUTH.isEnabled()) {
+        if (!window.MA_AUTH.isSignedIn()) { window.MA_AUTH.openSignIn(); throw new Error("__login"); }
+        var t = await window.MA_AUTH.token(); if (t) headers.Authorization = "Bearer " + t;
+      }
+      var r = await fetch("/api/generate", { method: "POST", headers: headers, body: JSON.stringify({ prompt: prompt }) });
+      if (r.status === 501) { st.textContent = "La IA aún no está configurada (falta OPENROUTER_API_KEY en Vercel)."; return; }
+      if (r.status === 401) { if (window.MA_AUTH) window.MA_AUTH.openSignIn(); st.textContent = "Inicia sesión para generar con IA."; return; }
+      var d = await r.json();
+      if (d && d.config) { loadConfig(d.config); st.textContent = "¡Listo! Tu site está en la vista previa. Edítalo a tu gusto."; }
+      else { st.textContent = (d && d.error) || "No se pudo generar. Intenta de nuevo."; }
+    } catch (e) { if (e.message !== "__login") st.textContent = "No se pudo conectar. Intenta de nuevo."; }
+    finally { aiBtn.disabled = false; aiBtn.textContent = old; }
   });
 
   // Gate → studio (con Stripe si está configurado; si no, entra en modo demo)

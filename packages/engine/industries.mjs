@@ -547,12 +547,23 @@ export function styleFx(style) {
   return "";
 }
 
+// Fondo animado por industria (vibe motionsites). ~58% recibe uno; el resto queda limpio.
+// Oscuras → stars/grid/aurora/mesh; claras → mesh/dots/aurora (mejor contraste).
+export function bgFor(ind, r) {
+  if (r() < 0.42) return "";
+  const dark = ["stars", "grid", "aurora", "mesh"];
+  const light = ["mesh", "dots", "aurora"];
+  const pool = ind && ind.dark ? dark : light;
+  return pool[Math.floor(r() * pool.length)];
+}
+
 export function buildIndustryConfig(ind) {
   const r = makeRng(seedFor(ind.key));
   const bps = BLUEPRINTS[ind.arch] || BLUEPRINTS.b2b;
   const content = pickR(r, bps).slice();
   const nav = pickR(r, NAVS);
   const scroll = r() < 0.22 ? "snap" : "";
+  const bg = bgFor(ind, r);
 
   // Garantiza formulario de contacto y footer.
   if (content.indexOf("contact-form") === -1) content.push("contact-form");
@@ -584,7 +595,7 @@ export function buildIndustryConfig(ind) {
   });
 
   return {
-    name: ind.key, lang: "es", theme: { tokens }, fx: styleFx(ind.style), scroll,
+    name: ind.key, lang: "es", theme: { tokens }, fx: styleFx(ind.style), scroll, bg,
     meta: { title: `${ind.label} — creado con Multiatlas Studio`, description: `${ind.label}: sitio premium compuesto con Multiatlas Studio.` },
     sections,
   };
