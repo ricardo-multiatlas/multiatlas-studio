@@ -1,10 +1,11 @@
 <!-- hero-product -->
 <section class="relative overflow-hidden py-28 md:py-36 px-6">
-  <div class="ma-glow-orb w-[480px] h-[480px] top-[-140px] right-[-120px]" style="background: var(--ma-glow);"></div>
+  <video class="ma-video-bg" src="{{video_url}}" autoplay muted loop playsinline style="opacity: {{video_opacity}};"></video>
+  <div class="ma-glow-orb w-[480px] h-[480px] top-[-140px] right-[-120px]" data-parallax="0.1" style="background: var(--ma-glow);"></div>
   <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
     <div>
-      <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
-      <h1 class="ma-display ma-reveal text-3xl md:text-5xl font-semibold mt-6 leading-[1.1]">{{headline}}</h1>
+      <span class="ma-eyebrow ma-glass ma-reveal">{{eyebrow}}</span>
+      <h1 class="ma-display text-3xl md:text-5xl font-semibold mt-6 leading-[1.1]" data-chars>{{headline}}</h1>
       <p class="ma-muted ma-reveal text-base mt-6 max-w-md">{{sub}}</p>
       <div class="ma-reveal mt-9">
         <a href="{{cta_href}}" class="ma-btn ma-btn-gradient">{{cta}} →</a>

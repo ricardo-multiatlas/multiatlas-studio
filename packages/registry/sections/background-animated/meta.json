@@ -2,8 +2,14 @@
   "slug": "background-animated",
   "title": "Fondo animado (banda CTA)",
   "category": "Backgrounds",
-  "industry_tags": ["general"],
-  "variants": ["dark-glow", "light-editorial"],
+  "premium": true,
+  "industry_tags": [
+    "general"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
   "reference": "Motionsites Backgrounds",
   "defaults": {
     "headline": "Fondos animados diseñados para convertir",

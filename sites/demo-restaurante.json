@@ -21,6 +21,7 @@
     "title": "Casa Origen — Cocina de raíz (Demo Multiatlas Studio)",
     "description": "Demo generada con el motor de Multiatlas Studio."
   },
+  "bg": "dots",
   "sections": [
     {
       "use": "nav-simple",
@@ -38,6 +39,7 @@
     },
     {
       "use": "hero-glow",
+      "anim": "blur",
       "copy": {
         "eyebrow": "Demo · Hecho con Multiatlas Studio",
         "headline_1": "Cocina de",
@@ -53,6 +55,7 @@
     },
     {
       "use": "menu-list",
+      "anim": "rise",
       "copy": {
         "eyebrow": "La carta",
         "headline": "Temporada de brasa y maíz",
@@ -91,6 +94,7 @@
     },
     {
       "use": "location-hours",
+      "anim": "left",
       "copy": {
         "eyebrow": "La casa",
         "headline": "Encuéntranos",
@@ -107,6 +111,7 @@
     },
     {
       "use": "faq-accordion",
+      "anim": "stagger",
       "copy": {
         "eyebrow": "Reservas",
         "headline": "Antes de tu visita",
@@ -122,6 +127,7 @@
     },
     {
       "use": "contact-form",
+      "anim": "right",
       "copy": {
         "eyebrow": "Reservas",
         "headline": "Reserva tu mesa",
@@ -147,6 +153,7 @@
     },
     {
       "use": "footer-cta",
+      "anim": "rise",
       "copy": {
         "headline": "Te esperamos en la mesa",
         "sub": "Casa Origen · Demo creada con Multiatlas Studio.",

@@ -12,6 +12,8 @@
     "headline_2": "aquí",
     "sub": "Una propuesta clara, directa y hecha para tu público. Da el primer paso hoy.",
     "cta": "Empezar", "cta_href": "#contacto",
-    "cta2": "Conocer más", "cta2_href": "#features"
+    "cta2": "Conocer más", "cta2_href": "#features",
+    "video_url": "",
+    "video_opacity": "0.22"
   }
 }

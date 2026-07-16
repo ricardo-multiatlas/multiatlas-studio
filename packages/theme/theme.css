@@ -192,3 +192,31 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
 .fx-brutal .ma-card { border: 2px solid var(--ma-text); border-radius: 0; box-shadow: 7px 7px 0 var(--ma-text); backdrop-filter: none; }
 .fx-brutal .ma-btn { border-radius: 0; border: 2px solid var(--ma-text); box-shadow: 4px 4px 0 var(--ma-text); }
 .fx-brutal .ma-eyebrow, .fx-brutal .ma-card { border-radius: 0; }
+
+/* ══ Motion Pack v2 (nivel motionsites) ══ */
+
+/* Titular carácter-por-carácter — sin JS todo queda visible (misma filosofía que .ma-reveal) */
+.ma-word { display: inline-block; white-space: nowrap; }
+.js [data-chars] .ma-ch { display: inline-block; opacity: 0; transform: translateX(-18px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+.js [data-chars].ma-in .ma-ch { opacity: 1; transform: none; }
+
+/* Ken Burns — zoom lento de ida y vuelta en imágenes de fondo */
+@keyframes ma-kenburns { from { transform: scale(1) } to { transform: scale(1.14) } }
+.ma-kenburns { animation: ma-kenburns 20s ease-in-out infinite alternate; will-change: transform; }
+
+/* Video de fondo de sección — oculto si no hay src */
+.ma-video-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.ma-video-bg[src=""], .ma-video-bg:not([src]) { display: none; }
+
+/* Liquid glass — vidrio líquido sobre los tokens del tema (funciona en claro y oscuro) */
+/* El radio va en :where() (especificidad 0) para que el componente anfitrión conserve su forma
+   (ej. .ma-eyebrow píldora con border-radius: 999px); el ::before hereda el radio final. */
+:where(.ma-glass) { border-radius: var(--ma-radius); }
+.ma-glass { position: relative; overflow: hidden; background: color-mix(in srgb, var(--ma-bg) 45%, transparent); -webkit-backdrop-filter: blur(10px) saturate(1.25); backdrop-filter: blur(10px) saturate(1.25); box-shadow: inset 0 1px 1px color-mix(in srgb, #fff 12%, transparent); }
+.ma-glass::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.4px;
+  background: linear-gradient(180deg, color-mix(in srgb, #fff 30%, transparent) 0%, color-mix(in srgb, #fff 8%, transparent) 22%, transparent 42%, transparent 60%, color-mix(in srgb, #fff 8%, transparent) 80%, color-mix(in srgb, #fff 30%, transparent) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; pointer-events: none; }
+
+/* Parallax vertical — el shell escribe el transform vía [data-parallax] */
+.ma-parallax { will-change: transform; }

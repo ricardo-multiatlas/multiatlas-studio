@@ -220,6 +220,34 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
 .fx-brutal .ma-btn { border-radius: 0; border: 2px solid var(--ma-text); box-shadow: 4px 4px 0 var(--ma-text); }
 .fx-brutal .ma-eyebrow, .fx-brutal .ma-card { border-radius: 0; }
 
+/* ══ Motion Pack v2 (nivel motionsites) ══ */
+
+/* Titular carácter-por-carácter — sin JS todo queda visible (misma filosofía que .ma-reveal) */
+.ma-word { display: inline-block; white-space: nowrap; }
+.js [data-chars] .ma-ch { display: inline-block; opacity: 0; transform: translateX(-18px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+.js [data-chars].ma-in .ma-ch { opacity: 1; transform: none; }
+
+/* Ken Burns — zoom lento de ida y vuelta en imágenes de fondo */
+@keyframes ma-kenburns { from { transform: scale(1) } to { transform: scale(1.14) } }
+.ma-kenburns { animation: ma-kenburns 20s ease-in-out infinite alternate; will-change: transform; }
+
+/* Video de fondo de sección — oculto si no hay src */
+.ma-video-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.ma-video-bg[src=""], .ma-video-bg:not([src]) { display: none; }
+
+/* Liquid glass — vidrio líquido sobre los tokens del tema (funciona en claro y oscuro) */
+/* El radio va en :where() (especificidad 0) para que el componente anfitrión conserve su forma
+   (ej. .ma-eyebrow píldora con border-radius: 999px); el ::before hereda el radio final. */
+:where(.ma-glass) { border-radius: var(--ma-radius); }
+.ma-glass { position: relative; overflow: hidden; background: color-mix(in srgb, var(--ma-bg) 45%, transparent); -webkit-backdrop-filter: blur(10px) saturate(1.25); backdrop-filter: blur(10px) saturate(1.25); box-shadow: inset 0 1px 1px color-mix(in srgb, #fff 12%, transparent); }
+.ma-glass::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.4px;
+  background: linear-gradient(180deg, color-mix(in srgb, #fff 30%, transparent) 0%, color-mix(in srgb, #fff 8%, transparent) 22%, transparent 42%, transparent 60%, color-mix(in srgb, #fff 8%, transparent) 80%, color-mix(in srgb, #fff 30%, transparent) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; pointer-events: none; }
+
+/* Parallax vertical — el shell escribe el transform vía [data-parallax] */
+.ma-parallax { will-change: transform; }
+
 </style>
 </head>
 <body class="ma-noise">
@@ -268,6 +296,97 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
       var h = String(Math.floor(s/3600)).padStart(2,"0"), m = String(Math.floor(s%3600/60)).padStart(2,"0"), x = String(Math.floor(s%60)).padStart(2,"0");
       el.textContent = h + ":" + m + ":" + x; }, 1000);
   });
+
+  // ── Motion Pack v2 ──
+  // Split de titulares [data-chars]: cada palabra → .ma-word, cada carácter → .ma-ch.
+  // Los espacios quedan como nodos de texto FUERA de .ma-word (así el wrap de línea funciona).
+  // Nodos elemento (ej. <em class="ma-shimmer">) → recursión dentro, se conserva su markup.
+  function splitChars(node, state) {
+    var kids = Array.prototype.slice.call(node.childNodes);
+    kids.forEach(function(child){
+      if (child.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        child.nodeValue.split(/(\s+)/).forEach(function(part){
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          var w = document.createElement("span"); w.className = "ma-word";
+          for (var j = 0; j < part.length; j++) {
+            // Pares sustitutos (emoji / caracteres astrales): un solo .ma-ch por punto de código
+            var ch = part.charAt(j), cc = part.charCodeAt(j);
+            if (cc >= 0xD800 && cc <= 0xDBFF && j + 1 < part.length) { ch += part.charAt(j + 1); j++; }
+            var c = document.createElement("span"); c.className = "ma-ch"; c.textContent = ch;
+            c.style.transitionDelay = (120 + state.i * 28) + "ms"; state.i++;
+            w.appendChild(c);
+          }
+          frag.appendChild(w);
+        });
+        node.replaceChild(frag, child);
+      } else if (child.nodeType === 1) {
+        splitChars(child, state);
+      }
+    });
+  }
+  var chEls = document.querySelectorAll("[data-chars]");
+  if (chEls.length) {
+    var ioCh = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("ma-in"); ioCh.unobserve(e.target); } }); }, { threshold: 0.2 });
+    chEls.forEach(function(el){
+      if (el.hasAttribute("data-chars-done")) return; // protección anti doble ejecución
+      el.setAttribute("data-chars-done", "");
+      splitChars(el, { i: 0 }); // contador de delay independiente por titular
+      ioCh.observe(el);
+    });
+  }
+
+  // Parallax vertical en [data-parallax] (factor por atributo; scroll con rAF-throttle).
+  // OJO: nunca combinar con ma-kenburns en el mismo elemento (el transform pisaría la animación).
+  var pxEls = document.querySelectorAll("[data-parallax]");
+  if (pxEls.length) {
+    var pxTick = false;
+    function pxApply() {
+      pxTick = false;
+      var y = window.scrollY;
+      pxEls.forEach(function(el){
+        var v = parseFloat(el.dataset.parallax) || 0.12;
+        el.style.transform = "translate3d(0," + (y * v) + "px,0)";
+      });
+    }
+    window.addEventListener("scroll", function(){ if (!pxTick) { pxTick = true; requestAnimationFrame(pxApply); } }, { passive: true });
+    pxApply(); // offset inicial: carga con scroll restaurado o entrada por #ancla (sin esto los orbes saltan al primer scroll)
+  }
+
+  // Count-up en [data-countup]: al entrar en viewport anima de 0 al valor en 1200ms (easeOutCubic),
+  // preservando prefijo/sufijo y decimales. Si el texto tiene más de un número (ej. "24/7"), no se toca.
+  var cuEls = document.querySelectorAll("[data-countup]");
+  if (cuEls.length) {
+    var ioCu = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        ioCu.unobserve(e.target);
+        var el = e.target, text = el.textContent;
+        var nums = text.match(/\d+(?:[.,]\d+)?/g);
+        if (!nums || nums.length !== 1) return;
+        var m = text.match(/^([^\d]*)(\d+(?:[.,]\d+)?)([\s\S]*)$/);
+        if (!m) return;
+        var pre = m[1], raw = m[2], suf = m[3];
+        var sep = raw.indexOf(",") > -1 ? "," : ".";
+        var target = parseFloat(raw.replace(",", "."));
+        var decs = (raw.split(/[.,]/)[1] || "").length;
+        if (!isFinite(target)) return;
+        var t0 = null;
+        function step(ts) {
+          if (t0 === null) t0 = ts;
+          var p = Math.min((ts - t0) / 1200, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          var val = (target * eased).toFixed(decs);
+          if (decs && sep === ",") val = val.replace(".", ",");
+          el.textContent = pre + val + suf;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    cuEls.forEach(function(el){ ioCu.observe(el); });
+  }
 })();
 </script>
 </body>

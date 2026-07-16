@@ -15,6 +15,8 @@
     "cta_href": "#contacto",
     "cta2": "Ver más",
     "cta2_href": "#servicios",
-    "img": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&q=60"
+    "img": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&q=60",
+    "video_url": "",
+    "video_opacity": "0.22"
   }
 }

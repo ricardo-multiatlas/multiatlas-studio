@@ -23,6 +23,8 @@
     "cta2": "Ver galería",
     "cta_href": "#pricing",
     "cta2_href": "#gallery",
-    "bg_img": ""
+    "bg_img": "",
+    "video_url": "",
+    "video_opacity": "0.22"
   }
 }

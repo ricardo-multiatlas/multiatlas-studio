@@ -1,10 +1,11 @@
 <!-- hero-center -->
 <section class="relative overflow-hidden py-24 md:py-36 px-6 text-center">
-  <div class="ma-glow-orb ma-pulse w-[460px] h-[460px] -top-32 left-1/2 -translate-x-1/2 opacity-50" style="background: var(--ma-glow);"></div>
-  <div class="ma-glow-orb w-[300px] h-[300px] bottom-[-120px] right-[-80px] opacity-40" style="background: color-mix(in srgb, var(--ma-accent-3) 30%, transparent);"></div>
+  <video class="ma-video-bg" src="{{video_url}}" autoplay muted loop playsinline style="opacity: {{video_opacity}};"></video>
+  <div class="ma-glow-orb ma-pulse w-[460px] h-[460px] -top-32 left-[calc(50%-230px)] opacity-50" data-parallax="0.1" style="background: var(--ma-glow);"></div>
+  <div class="ma-glow-orb w-[300px] h-[300px] bottom-[-120px] right-[-80px] opacity-40" data-parallax="0.18" style="background: color-mix(in srgb, var(--ma-accent-3) 30%, transparent);"></div>
   <div class="relative z-10 max-w-3xl mx-auto">
-    <span class="ma-eyebrow ma-reveal">{{eyebrow}}</span>
-    <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.06]">{{headline_1}} <em class="italic ma-shimmer" >{{headline_em}}</em> {{headline_2}}</h1>
+    <span class="ma-eyebrow ma-glass ma-reveal">{{eyebrow}}</span>
+    <h1 class="ma-display text-4xl md:text-5xl lg:text-6xl font-semibold mt-7 leading-[1.06]" data-chars>{{headline_1}} <em class="italic ma-shimmer" >{{headline_em}}</em> {{headline_2}}</h1>
     <p class="ma-muted ma-reveal text-base md:text-lg mt-6 max-w-xl mx-auto">{{sub}}</p>
     <div class="ma-reveal flex flex-wrap items-center justify-center gap-4 mt-9">
       <a href="{{cta_href}}" class="ma-btn ma-btn-gradient">{{cta}} →</a>

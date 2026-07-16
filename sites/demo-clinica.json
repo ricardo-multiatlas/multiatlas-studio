@@ -21,6 +21,8 @@
     "title": "NovaDent — Clínica dental (Demo Multiatlas Studio)",
     "description": "Demo generada con el motor de Multiatlas Studio."
   },
+  "bg": "mesh",
+  "fx": "fx-glass",
   "sections": [
     {
       "use": "nav-simple",
@@ -38,6 +40,7 @@
     },
     {
       "use": "hero-glow",
+      "anim": "blur",
       "copy": {
         "eyebrow": "Demo · Hecho con Multiatlas Studio",
         "headline_1": "Tu sonrisa,",
@@ -53,6 +56,7 @@
     },
     {
       "use": "services-grid",
+      "anim": "stagger",
       "copy": {
         "eyebrow": "Tratamientos",
         "headline": "Lo que hacemos por tu sonrisa",
@@ -85,6 +89,7 @@
     },
     {
       "use": "steps-process",
+      "anim": "rise",
       "copy": {
         "eyebrow": "Tu primera visita",
         "headline": "De la valoración al plan, en una sola cita",
@@ -98,6 +103,7 @@
     },
     {
       "use": "team-cards",
+      "anim": "zoom",
       "copy": {
         "eyebrow": "Especialistas",
         "headline": "Quiénes te atienden",
@@ -118,6 +124,7 @@
     },
     {
       "use": "faq-accordion",
+      "anim": "stagger",
       "copy": {
         "eyebrow": "Dudas frecuentes",
         "headline": "Antes de tu primera cita",
@@ -133,6 +140,7 @@
     },
     {
       "use": "location-hours",
+      "anim": "left",
       "copy": {
         "eyebrow": "La clínica",
         "headline": "Fácil de llegar, fácil de agendar",
@@ -148,6 +156,7 @@
     },
     {
       "use": "contact-form",
+      "anim": "right",
       "copy": {
         "eyebrow": "Agenda",
         "headline": "Reserva tu valoración",
@@ -173,6 +182,7 @@
     },
     {
       "use": "footer-cta",
+      "anim": "rise",
       "copy": {
         "headline": "Sonríe con confianza",
         "sub": "NovaDent · Demo creada con Multiatlas Studio.",

@@ -2,8 +2,16 @@
   "slug": "studio-generator",
   "title": "Generador — describe y previsualiza",
   "category": "Generator",
-  "industry_tags": ["general", "agencia", "saas"],
-  "variants": ["multiatlas", "multiatlas-noche"],
+  "premium": true,
+  "industry_tags": [
+    "general",
+    "agencia",
+    "saas"
+  ],
+  "variants": [
+    "multiatlas",
+    "multiatlas-noche"
+  ],
   "reference": "Describe-to-preview: compone una página real navegable en el navegador",
   "defaults": {
     "eyebrow": "Pruébalo ahora · sin costo",

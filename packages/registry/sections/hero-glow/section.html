@@ -1,11 +1,12 @@
 <!-- hero-glow -->
 <section class="relative overflow-hidden min-h-[92vh] flex items-center justify-center text-center px-6">
-  <img src="{{bg_img}}" alt="" class="absolute inset-0 w-full h-full object-cover" style="opacity: 0.16;" onerror="this.style.display='none'" />
-  <div class="ma-glow-orb ma-pulse w-[560px] h-[560px] -top-40 left-1/2 -translate-x-1/2" style="background: var(--ma-glow);"></div>
-  <div class="ma-glow-orb w-[380px] h-[380px] bottom-[-160px] right-[-100px] opacity-60" style="background: color-mix(in srgb, var(--ma-accent-3) 30%, transparent);"></div>
+  <video class="ma-video-bg" src="{{video_url}}" autoplay muted loop playsinline style="opacity: {{video_opacity}};"></video>
+  <img src="{{bg_img}}" alt="" class="ma-kenburns absolute inset-0 w-full h-full object-cover" style="opacity: 0.16;" onerror="this.style.display='none'" />
+  <div class="ma-glow-orb ma-pulse w-[560px] h-[560px] -top-40 left-[calc(50%-280px)]" data-parallax="0.1" style="background: var(--ma-glow);"></div>
+  <div class="ma-glow-orb w-[380px] h-[380px] bottom-[-160px] right-[-100px] opacity-60" data-parallax="0.18" style="background: color-mix(in srgb, var(--ma-accent-3) 30%, transparent);"></div>
   <div class="relative z-10 max-w-4xl mx-auto">
-    <span class="ma-eyebrow ma-reveal">✦ {{eyebrow}}</span>
-    <h1 class="ma-display ma-reveal text-4xl md:text-5xl lg:text-6xl font-semibold mt-8 leading-[1.08]">
+    <span class="ma-eyebrow ma-glass ma-reveal">✦ {{eyebrow}}</span>
+    <h1 class="ma-display text-4xl md:text-5xl lg:text-6xl font-semibold mt-8 leading-[1.08]" data-chars>
       {{headline_1}} <em class="italic ma-shimmer" >{{headline_em}}</em><br />{{headline_2}}
     </h1>
     <p class="ma-muted ma-reveal text-base md:text-lg mt-7 max-w-xl mx-auto">{{sub}}</p>

@@ -2,18 +2,40 @@
   "slug": "testimonials-marquee",
   "title": "Testimonios Marquee",
   "category": "Social proof",
-  "industry_tags": ["general"],
-  "variants": ["dark-glow", "light-editorial"],
+  "premium": true,
+  "industry_tags": [
+    "general"
+  ],
+  "variants": [
+    "dark-glow",
+    "light-editorial"
+  ],
   "reference": "21st.dev marquees",
   "repeat": "testis",
   "defaults": {
     "eyebrow": "Lo que dicen",
     "headline": "Clientes que ya lo recomiendan",
     "testis": [
-      { "quote": "El resultado superó lo que esperábamos. Rápido, claro y muy profesional.", "name": "Laura G.", "role": "Clienta" },
-      { "quote": "Atención impecable de principio a fin. Volvería sin dudarlo.", "name": "Marco R.", "role": "Cliente" },
-      { "quote": "Justo lo que necesitaba, sin complicaciones y con excelente trato.", "name": "Sofía M.", "role": "Clienta" },
-      { "quote": "Cumplieron todo lo prometido y más. Totalmente recomendados.", "name": "Andrés P.", "role": "Cliente" }
+      {
+        "quote": "El resultado superó lo que esperábamos. Rápido, claro y muy profesional.",
+        "name": "Laura G.",
+        "role": "Clienta"
+      },
+      {
+        "quote": "Atención impecable de principio a fin. Volvería sin dudarlo.",
+        "name": "Marco R.",
+        "role": "Cliente"
+      },
+      {
+        "quote": "Justo lo que necesitaba, sin complicaciones y con excelente trato.",
+        "name": "Sofía M.",
+        "role": "Clienta"
+      },
+      {
+        "quote": "Cumplieron todo lo prometido y más. Totalmente recomendados.",
+        "name": "Andrés P.",
+        "role": "Cliente"
+      }
     ]
   }
 }

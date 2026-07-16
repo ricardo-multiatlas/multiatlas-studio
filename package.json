@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Multiatlas Studio — generador registry-first de sites premium.",
   "scripts": {
-    "build": "node packages/engine/build-previews.mjs && node packages/engine/compose.mjs sites/multiatlas-studio.json dist/multiatlas-studio && node packages/engine/build-gallery.mjs && node packages/engine/build-app-data.mjs && node packages/engine/check-links.mjs",
+    "build": "node packages/engine/build-previews.mjs && node packages/engine/compose.mjs sites/multiatlas-studio.json dist/multiatlas-studio && node packages/engine/build-demos.mjs && node packages/engine/build-gallery.mjs && node packages/engine/build-app-data.mjs && node packages/engine/check-links.mjs",
     "migrate": "node db/migrate.mjs"
   },
   "dependencies": {

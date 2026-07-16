@@ -2,8 +2,15 @@
   "slug": "listings-grid",
   "title": "Listado de propiedades",
   "category": "Listings",
-  "industry_tags": ["inmobiliaria", "real estate"],
-  "variants": ["multiatlas", "multiatlas-noche"],
+  "premium": true,
+  "industry_tags": [
+    "inmobiliaria",
+    "real estate"
+  ],
+  "variants": [
+    "multiatlas",
+    "multiatlas-noche"
+  ],
   "repeat": "listings",
   "defaults": {
     "eyebrow": "Portafolio",
@@ -12,9 +19,33 @@
     "cta": "Ver todo el portafolio",
     "cta_href": "#contacto",
     "listings": [
-      { "img": "", "zona": "Zona uno", "precio": "$0.0 M", "titulo": "Propiedad uno", "rec": "3", "ban": "2", "m2": "180" },
-      { "img": "", "zona": "Zona dos", "precio": "$0.0 M", "titulo": "Propiedad dos", "rec": "2", "ban": "2", "m2": "120" },
-      { "img": "", "zona": "Zona tres", "precio": "$0.0 M", "titulo": "Propiedad tres", "rec": "4", "ban": "3", "m2": "260" }
+      {
+        "img": "",
+        "zona": "Zona uno",
+        "precio": "$0.0 M",
+        "titulo": "Propiedad uno",
+        "rec": "3",
+        "ban": "2",
+        "m2": "180"
+      },
+      {
+        "img": "",
+        "zona": "Zona dos",
+        "precio": "$0.0 M",
+        "titulo": "Propiedad dos",
+        "rec": "2",
+        "ban": "2",
+        "m2": "120"
+      },
+      {
+        "img": "",
+        "zona": "Zona tres",
+        "precio": "$0.0 M",
+        "titulo": "Propiedad tres",
+        "rec": "4",
+        "ban": "3",
+        "m2": "260"
+      }
     ]
   }
 }

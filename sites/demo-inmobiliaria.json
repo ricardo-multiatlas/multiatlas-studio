@@ -21,6 +21,8 @@
     "title": "Altavista Propiedades — Inmobiliaria (Demo Multiatlas Studio)",
     "description": "Demo generada con el motor de Multiatlas Studio."
   },
+  "bg": "aurora",
+  "fx": "fx-glass",
   "sections": [
     {
       "use": "nav-simple",
@@ -38,6 +40,7 @@
     },
     {
       "use": "hero-glow",
+      "anim": "blur",
       "copy": {
         "eyebrow": "Demo · Hecho con Multiatlas Studio",
         "headline_1": "Propiedades que",
@@ -48,28 +51,26 @@
         "cta_href": "#contacto",
         "cta2": "Ver propiedades",
         "cta2_href": "#propiedades",
-        "bg_img": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=60"
+        "bg_img": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=60",
+        "video_url": "",
+        "video_opacity": "0.20"
       }
     },
     {
       "use": "stats-band",
+      "anim": "zoom",
       "copy": {
-        "n1": "20",
-        "n1_suf": " años",
-        "n1_label": "asesorando patrimonio",
-        "n2": "450",
-        "n2_suf": "+",
-        "n2_label": "operaciones cerradas",
-        "n3": "12",
-        "n3_suf": "",
-        "n3_label": "zonas premium cubiertas",
-        "n4": "48",
-        "n4_suf": "h",
-        "n4_label": "para tu plan de venta"
+        "stats": [
+          { "n": "20", "suf": " años", "label": "asesorando patrimonio" },
+          { "n": "450", "suf": "+", "label": "operaciones cerradas" },
+          { "n": "12", "suf": "", "label": "zonas premium cubiertas" },
+          { "n": "48", "suf": "h", "label": "para tu plan de venta" }
+        ]
       }
     },
     {
       "use": "listings-grid",
+      "anim": "stagger",
       "copy": {
         "eyebrow": "Portafolio",
         "headline": "Propiedades seleccionadas este mes",
@@ -101,6 +102,7 @@
     },
     {
       "use": "steps-process",
+      "anim": "rise",
       "copy": {
         "eyebrow": "El método",
         "headline": "Comprar bien, paso a paso",
@@ -114,6 +116,7 @@
     },
     {
       "use": "faq-accordion",
+      "anim": "zoom",
       "copy": {
         "eyebrow": "Preguntas",
         "headline": "Lo que todo comprador pregunta",
@@ -129,6 +132,7 @@
     },
     {
       "use": "contact-form",
+      "anim": "left",
       "copy": {
         "eyebrow": "Contacto",
         "headline": "Agenda tu asesoría",
@@ -154,6 +158,7 @@
     },
     {
       "use": "footer-cta",
+      "anim": "rise",
       "copy": {
         "headline": "El patrimonio se construye con criterio",
         "sub": "Altavista Propiedades · Demo creada con Multiatlas Studio.",

@@ -2,6 +2,7 @@
   "slug": "pricing-duo",
   "title": "Pricing 2 columnas + countdown",
   "category": "Pricing",
+  "premium": true,
   "industry_tags": [
     "saas",
     "producto digital",

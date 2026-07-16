@@ -2,8 +2,18 @@
   "slug": "pricing-trio",
   "title": "Pricing 3 planes",
   "category": "Pricing",
-  "industry_tags": ["saas", "servicios", "membresía", "agencia"],
-  "variants": ["multiatlas", "indigo-tech", "noir-oro"],
+  "premium": true,
+  "industry_tags": [
+    "saas",
+    "servicios",
+    "membresía",
+    "agencia"
+  ],
+  "variants": [
+    "multiatlas",
+    "indigo-tech",
+    "noir-oro"
+  ],
   "reference": "Tres columnas con plan del medio destacado",
   "defaults": {
     "eyebrow": "Planes",

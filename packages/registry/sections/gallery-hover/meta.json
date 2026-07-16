@@ -2,6 +2,7 @@
   "slug": "gallery-hover",
   "title": "Galería de cards con hover",
   "category": "Galleries",
+  "premium": true,
   "industry_tags": [
     "portfolio",
     "agencia",
