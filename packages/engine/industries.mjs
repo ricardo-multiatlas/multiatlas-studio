@@ -561,7 +561,7 @@ function videoCatFor(ind) {
 // Opacidad según tema: en oscuros el video luce cinemático; en claros queda sutil para no matar contraste.
 export function videoFor(ind) {
   const pool = VIDEO[videoCatFor(ind)] || VIDEO.abstract;
-  return { video_url: pool[ind.i % pool.length], video_opacity: ind.dark ? "0.50" : "0.26" };
+  return { video_url: pool[ind.i % pool.length], video_opacity: ind.dark ? "0.92" : "0.82" };
 }
 
 // ─────────────────────────────────────────────────────── INDUSTRIES (datos + traducción)

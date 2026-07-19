@@ -1,6 +1,7 @@
 <!-- hero-glow -->
 <section class="relative overflow-hidden min-h-[92vh] flex items-center justify-center text-center px-6">
   <video class="ma-video-bg" src="{{video_url}}" autoplay muted loop playsinline onerror="this.remove()" oncanplay="this.classList.add('ma-live')" style="opacity: {{video_opacity}};"></video>
+  <div class="ma-video-scrim"></div>
   <img src="{{bg_img}}" alt="" class="ma-kenburns absolute inset-0 w-full h-full object-cover" style="opacity: 0.16;" onerror="this.style.display='none'" />
   <div class="ma-glow-orb ma-pulse w-[560px] h-[560px] -top-40 left-[calc(50%-280px)]" data-parallax="0.1" style="background: var(--ma-glow);"></div>
   <div class="ma-glow-orb w-[380px] h-[380px] bottom-[-160px] right-[-100px] opacity-60" data-parallax="0.18" style="background: color-mix(in srgb, var(--ma-accent-3) 30%, transparent);"></div>

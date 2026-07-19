@@ -222,4 +222,11 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
 .ma-parallax { will-change: transform; }
 
 /* Video de hero cargado → oculta la foto ken-burns de respaldo (evita doble capa) */
-.ma-video-bg.ma-live + img.ma-kenburns { display: none; }
+.ma-video-bg.ma-live ~ img.ma-kenburns { display: none; }
+/* Scrim de legibilidad: degradado del color del tema en bordes y detras del texto; el video conserva sus colores */
+.ma-video-scrim { position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .6s ease;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ma-bg) 60%, transparent), transparent 32%, transparent 58%, color-mix(in srgb, var(--ma-bg) 94%, transparent)),
+    radial-gradient(62% 52% at 50% 54%, color-mix(in srgb, var(--ma-bg) 42%, transparent), transparent 78%);
+}
+.ma-video-bg.ma-live ~ .ma-video-scrim { opacity:1; }
