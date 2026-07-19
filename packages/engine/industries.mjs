@@ -548,6 +548,17 @@ const VIDEO = {
   tienda:  ["https://videos.pexels.com/video-files/9509328/9509328-hd_2048_1080_25fps.mp4","https://videos.pexels.com/video-files/7669196/7669196-hd_2048_1080_25fps.mp4"],
   abstract:["https://videos.pexels.com/video-files/7670836/7670836-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/7677320/7677320-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/10296179/10296179-hd_1920_1080_25fps.mp4"],
 };
+// Amplía los pools cafe/fitness/belleza con videos Mixkit verificados (horizontal 1080p, HTTP 200 vía ffprobe).
+// Datos en packages/engine/video-pool-mixkit.json. Si el archivo falta, se ignora (los pools Pexels siguen).
+try {
+  const MIXKIT = JSON.parse(readFileSync(join(__dir, "video-pool-mixkit.json"), "utf8"));
+  for (const [cat, urls] of Object.entries(MIXKIT)) {
+    if (cat.startsWith("_") || !Array.isArray(urls)) continue;
+    if (Array.isArray(VIDEO[cat])) VIDEO[cat].push(...urls);
+    else VIDEO[cat] = [...urls];
+  }
+} catch (_) {}
+
 // Rubros con matiz propio primero (keywords), luego familia visual, y abstracto premium de fallback.
 function videoCatFor(ind) {
   const hay = (ind.key + " " + (ind.keywords || []).join(" ")).toLowerCase();
