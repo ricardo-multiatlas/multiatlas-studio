@@ -220,3 +220,6 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
 
 /* Parallax vertical — el shell escribe el transform vía [data-parallax] */
 .ma-parallax { will-change: transform; }
+
+/* Video de hero cargado → oculta la foto ken-burns de respaldo (evita doble capa) */
+.ma-video-bg.ma-live + img.ma-kenburns { display: none; }

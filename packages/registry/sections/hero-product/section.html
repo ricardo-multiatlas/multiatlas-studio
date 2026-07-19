@@ -1,6 +1,6 @@
 <!-- hero-product -->
 <section class="relative overflow-hidden py-28 md:py-36 px-6">
-  <video class="ma-video-bg" src="{{video_url}}" autoplay muted loop playsinline style="opacity: {{video_opacity}};"></video>
+  <video class="ma-video-bg" src="{{video_url}}" autoplay muted loop playsinline onerror="this.remove()" oncanplay="this.classList.add('ma-live')" style="opacity: {{video_opacity}};"></video>
   <div class="ma-glow-orb w-[480px] h-[480px] top-[-140px] right-[-120px]" data-parallax="0.1" style="background: var(--ma-glow);"></div>
   <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
     <div>

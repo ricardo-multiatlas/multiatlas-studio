@@ -529,6 +529,41 @@ function navCopy(slug, brand, links, ctaLabel) {
   });
 }
 
+// ─────────────────────────────────────────────────────── Video cinemático de hero por rubro
+// URLs de Pexels CDN (licencia libre comercial, sin token de expiración) + 1 Mixkit; TODAS verificadas
+// (HTTP 200, video/mp4, horizontales, 1080p, 3–21 MB). Si una muere, el <video> se autodestruye
+// (onerror en el template) y queda la foto ken-burns — nunca rompe la página.
+const VIDEO = {
+  salud:   ["https://videos.pexels.com/video-files/6630953/6630953-hd_2048_1080_25fps.mp4","https://videos.pexels.com/video-files/6502636/6502636-hd_2048_1080_25fps.mp4"],
+  inmob:   ["https://videos.pexels.com/video-files/15613412/15613412-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/3773486/3773486-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/8319683/8319683-hd_1920_1080_25fps.mp4"],
+  food:    ["https://videos.pexels.com/video-files/3196175/3196175-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/854216/854216-hd_1920_1080_25fps.mp4"],
+  cafe:    ["https://videos.pexels.com/video-files/4052733/4052733-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/2853794/2853794-hd_1920_1080_24fps.mp4"],
+  fitness: ["https://videos.pexels.com/video-files/3196220/3196220-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/5319759/5319759-hd_1920_1080_25fps.mp4"],
+  belleza: ["https://videos.pexels.com/video-files/6629950/6629950-hd_2048_1080_25fps.mp4","https://assets.mixkit.co/videos/52162/52162-720.mp4"],
+  saas:    ["https://videos.pexels.com/video-files/17599631/17599631-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/15439670/15439670-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/11041433/11041433-hd_1920_1080_30fps.mp4"],
+  pro:     ["https://videos.pexels.com/video-files/15191845/15191845-hd_1920_1080_60fps.mp4","https://videos.pexels.com/video-files/3246669/3246669-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/6952021/6952021-hd_1920_1080_25fps.mp4"],
+  auto:    ["https://videos.pexels.com/video-files/5309351/5309351-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/20151336/20151336-hd_1920_1080_24fps.mp4"],
+  hotel:   ["https://videos.pexels.com/video-files/4531362/4531362-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/3858859/3858859-hd_1920_1080_24fps.mp4","https://videos.pexels.com/video-files/19773860/19773860-hd_1920_1080_25fps.mp4"],
+  edu:     ["https://videos.pexels.com/video-files/20132264/20132264-hd_1920_1080_60fps.mp4","https://videos.pexels.com/video-files/8499710/8499710-hd_1920_1080_30fps.mp4"],
+  tienda:  ["https://videos.pexels.com/video-files/9509328/9509328-hd_2048_1080_25fps.mp4","https://videos.pexels.com/video-files/7669196/7669196-hd_2048_1080_25fps.mp4"],
+  abstract:["https://videos.pexels.com/video-files/7670836/7670836-hd_1920_1080_30fps.mp4","https://videos.pexels.com/video-files/7677320/7677320-hd_1920_1080_25fps.mp4","https://videos.pexels.com/video-files/10296179/10296179-hd_1920_1080_25fps.mp4"],
+};
+// Rubros con matiz propio primero (keywords), luego familia visual, y abstracto premium de fallback.
+function videoCatFor(ind) {
+  const hay = (ind.key + " " + (ind.keywords || []).join(" ")).toLowerCase();
+  if (/gym|fitness|crossfit|yoga|pilates|sport|entrenamiento|athlet/.test(hay)) return "fitness";
+  if (/spa|beauty|salon|barber|nail|esthetic|aesthetic|makeup|skincare|hair/.test(hay)) return "belleza";
+  if (/coffee|cafe|barista|tea|matcha|bakery|pastel/.test(hay)) return "cafe";
+  if (/\bauto|car dealer|cars|mechanic|vehicle|motorcycle|detailing/.test(hay)) return "auto";
+  const byFam = { salud:"salud", food:"food", inmob:"inmob", hotel:"hotel", edu:"edu", saas:"saas", tienda:"tienda", pro:"pro", creativo:"abstract" };
+  return byFam[ind.fam] || "abstract";
+}
+// Opacidad según tema: en oscuros el video luce cinemático; en claros queda sutil para no matar contraste.
+export function videoFor(ind) {
+  const pool = VIDEO[videoCatFor(ind)] || VIDEO.abstract;
+  return { video_url: pool[ind.i % pool.length], video_opacity: ind.dark ? "0.50" : "0.26" };
+}
+
 // ─────────────────────────────────────────────────────── INDUSTRIES (datos + traducción)
 export const INDUSTRIES = DATA.map((d, i) => {
   const es = ESBY[d.key] || {};
@@ -588,6 +623,7 @@ export function buildIndustryConfig(ind) {
   const sections = ordered.map(slug => {
     let copy = copyFor(slug, ind);
     if (/^nav/.test(slug)) copy = navCopy(slug, ind.label, links, ctaLabel);
+    if (/^hero-/.test(slug)) copy = Object.assign(copy, videoFor(ind)); // video cinemático del rubro
     if (/^hero-(glow|split|center)$/.test(slug)) copy = Object.assign(copy, { cta2_href: secondaryHref });
     copy = Object.assign(copy, itemsFor(slug, ind, r)); // arrays con nº variable por semilla
     const anim = /^nav/.test(slug) ? "" : animFor(slug, r, ci++);
