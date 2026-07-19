@@ -161,7 +161,7 @@
 (function () {
   var D = window.MA_DATA;
   if (!D) { document.body.innerHTML = "<p style='padding:2rem'>No se cargó registry-data.js</p>"; return; }
-  var AGENCY = "rubentoledano@multiatlas.net";
+  var AGENCY = "rubentoledano" + String.fromCharCode(64) + "multiatlas.net"; // ensamblado en runtime: no dejar el email en claro en el HTML (anti-scraping)
 
   // ---------- MOTOR (portado de compose.mjs, mismo resultado) ----------
   function fillTemplate(tpl, d) {
