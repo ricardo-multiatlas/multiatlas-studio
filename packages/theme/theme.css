@@ -226,7 +226,16 @@ section[id], footer[id], nav[id] { scroll-margin-top: 4.5rem; }
 /* Scrim de legibilidad: degradado del color del tema en bordes y detras del texto; el video conserva sus colores */
 .ma-video-scrim { position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .6s ease;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--ma-bg) 60%, transparent), transparent 32%, transparent 58%, color-mix(in srgb, var(--ma-bg) 94%, transparent)),
-    radial-gradient(62% 52% at 50% 54%, color-mix(in srgb, var(--ma-bg) 42%, transparent), transparent 78%);
+    linear-gradient(180deg, rgba(0,0,0,.14), transparent 22%, transparent 62%, rgba(0,0,0,.34)),
+    radial-gradient(58% 46% at 50% 52%, rgba(0,0,0,.16), transparent 76%);
 }
 .ma-video-bg.ma-live ~ .ma-video-scrim { opacity:1; }
+
+/* ── MODO CINE (cuando el video del hero carga): color pleno; el texto pasa a claro con sombra ── */
+.ma-video-bg.ma-live { opacity: 1 !important; }
+.ma-video-bg.ma-live ~ * :is(h1,h2) { color: #fff; text-shadow: 0 2px 28px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.5); }
+.ma-video-bg.ma-live ~ * .ma-shimmer { background: none; -webkit-text-fill-color: #fff; color: #fff; }
+.ma-video-bg.ma-live ~ * p, .ma-video-bg.ma-live ~ * .ma-muted { color: rgba(255,255,255,.88); text-shadow: 0 1px 14px rgba(0,0,0,.5); }
+.ma-video-bg.ma-live ~ * .ma-eyebrow { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(0,0,0,.28); }
+.ma-video-bg.ma-live ~ * .ma-btn-ghost { color: #fff; border-color: rgba(255,255,255,.55); }
+.ma-video-bg.ma-live ~ .ma-glow-orb { opacity: .35; }
